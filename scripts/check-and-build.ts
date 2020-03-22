@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import Ajv from 'ajv'
 
-import schema from '../build/quest.json'
+import schema from '../build/quest-schema.json'
 
 const ajv = new Ajv()
 ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-06.json'))

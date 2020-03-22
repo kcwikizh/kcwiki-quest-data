@@ -21,7 +21,7 @@ const questSchema = mapKeysDeep(schemaSource, (value: any, key: string) => {
 questSchema.$ref = '#/definitions/Quest'
 
 fs.writeFileSync(
-  'build/quest.json',
+  'build/quest-schema.json',
   JSON.stringify(questSchema, undefined, 2),
   'utf8'
 )

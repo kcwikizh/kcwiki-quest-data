@@ -1,8 +1,8 @@
 {
   "json.schemas": [
     {
-      "fileMatch": ["/data/*.json"],
-      "url": "./build/quest.json"
+      "fileMatch": ["data/*.json"],
+      "url": "./build/quest-schema.json"
     }
   ]
 }
