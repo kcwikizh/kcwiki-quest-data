@@ -1,6 +1,15 @@
 # Kcwiki Quest Data
 
-![Build and deploy](https://github.com/kcwikizh/kcwiki-quest-data/workflows/Build%20and%20deploy/badge.svg)
+![Build](https://github.com/kcwikizh/kcwiki-quest-data/workflows/Build%20and%20deploy/badge.svg)
+
+## Progress
+
+- [x] Add types and schema
+- [ ] 🚧 Data collation
+- [ ] Unit tests
+- [ ] Plugin tests
+- [ ] [Data snippets](https://code.visualstudio.com/docs/languages/json#_define-snippets-in-json-schemas)
+- [ ] Monitor new quest data
 
 ## Reference
 
