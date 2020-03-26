@@ -16,9 +16,13 @@ const questSchema = mapKeysDeep(schemaSource, (value: any, key: string) => {
     return 'markdownEnumDescriptions'
   }
   return key
-})
+}) as typeof schemaSource
+;(questSchema as any).$ref = '#/definitions/Quest'
 
-questSchema.$ref = '#/definitions/Quest'
+// disabled additional properties for every definitions
+Object.values(questSchema.definitions).forEach(
+  (obj: object) => ((obj as any).additionalProperties = false)
+)
 
 fs.writeFileSync(
   'build/quest-schema.json',
