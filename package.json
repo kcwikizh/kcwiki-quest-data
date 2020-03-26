@@ -5,6 +5,7 @@
   "scripts": {
     "generate": "mkdir -p build && quicktype --src types/index.ts --src-lang ts --lang schema --out build/schema.json && ts-node scripts/tweak-schema.ts",
     "build": "ts-node scripts/check-and-build.ts",
+    "postinstall": "npm run generate",
     "clean": "rm -rf build/"
   },
   "repository": {
