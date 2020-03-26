@@ -41,8 +41,8 @@
   ],
   "prerequisite": [],
   "requirements": {
-    "category": "scrapequipment",
-    "list": [
+    "category": "equipexchange",
+    "scraps": [
       {
         "name": "小口径主砲",
         "amount": 5

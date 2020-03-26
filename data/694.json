@@ -28,8 +28,8 @@
     693
   ],
   "requirements": {
-    "category": "scrapequipment",
-    "list": [
+    "category": "equipexchange",
+    "scraps": [
       {
         "name": "瑞雲",
         "amount": 4

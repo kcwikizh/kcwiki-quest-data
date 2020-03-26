@@ -16,6 +16,28 @@ interface Item {
   amount?: number
 }
 
+type FriendlyShipType =
+  | '艦'
+  | '駆逐'
+  | '軽巡'
+  | '重巡'
+  | '航巡'
+  | '水母'
+  | '空母'
+  | '軽母'
+  | '装母'
+  | '戦艦'
+  | '低速戦艦'
+  | '航戦'
+  | '高速艦'
+  | '潜水艦'
+  | '潜水空母'
+  | '潜水母艦'
+  | '海防艦'
+type EnemyType = '敵補給艦' | '敵潜水艦' | '敵空母' | '敵軽母'
+type OtherShipType = '他の艦'
+type ShipType = FriendlyShipType | EnemyType | OtherShipType
+
 /**
  * 资源（油弹钢铝）
  */
@@ -106,7 +128,11 @@ interface FleetRequirement {
    * 编成要求
    */
   groups: Group[]
-  disallowed?: string
+  disallowed?: ShipType
+  /**
+   * 第几舰队
+   */
+  fleetid?: number
 }
 
 interface EquipexchangeRequirement {
@@ -114,6 +140,7 @@ interface EquipexchangeRequirement {
    * 装备准备
    */
   category: 'equipexchange'
+  // TODO limit anyOf
   /**
    * 准备
    */
@@ -130,6 +157,19 @@ interface EquipexchangeRequirement {
    * 消耗物品
    */
   consumptions?: Item[]
+}
+
+/**
+ * May be can alternative with EquipexchangeRequirement
+ *
+ * @deprecated
+ */
+interface ScrapequipmentRequirement {
+  /**
+   * 废弃装备
+   */
+  category: 'scrapequipment'
+  list: Item[]
 }
 
 interface ExcerciseRequirement {
@@ -149,6 +189,7 @@ interface ExcerciseRequirement {
    * 是否要求同一天
    */
   daily?: boolean
+  groups?: Group[]
 }
 
 interface ExpeditionRequirement {
@@ -168,7 +209,7 @@ interface ExpeditionRequirement {
    */
   resources?: Resources
   groups?: Group[]
-  disallowed?: string
+  disallowed?: ShipType
 }
 
 interface ModelconversionRequirement {
@@ -239,14 +280,6 @@ interface ModernizationRequirement {
   resources: Resources
 }
 
-interface ScrapequipmentRequirement {
-  /**
-   * 废弃装备
-   */
-  category: 'scrapequipment'
-  list: Item[]
-}
-
 interface SinkRequirement {
   /**
    * 击沉
@@ -272,7 +305,7 @@ interface SortieRequirement {
    * 第几舰队
    */
   fleetid?: number
-  disallowed?: string
+  disallowed?: ShipType
 }
 
 type NormalRequirement =

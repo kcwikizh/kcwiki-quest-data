@@ -28,8 +28,8 @@
     682
   ],
   "requirements": {
-    "category": "scrapequipment",
-    "list": [
+    "category": "equipexchange",
+    "scraps": [
       {
         "name": "水上偵察機",
         "amount": 4
