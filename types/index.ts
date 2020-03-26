@@ -67,17 +67,17 @@ interface OrRequirement {
 
 type ConjunctionRequirement = AndRequirement | ThenRequirement // | OrRequirement
 
-/**
- * あ 号
- */
 interface AGouRequirement {
+  /**
+   * あ 号
+   */
   category: 'a-gou'
 }
 
-/**
- * 简单任务
- */
 interface SimpleRequirement {
+  /**
+   * 简单任务
+   */
   category: 'simple'
   subcategory:
     | 'equipment'
@@ -97,10 +97,10 @@ interface SimpleRequirement {
   batch?: boolean // TODO
 }
 
-/**
- * 编成任务
- */
 interface FleetRequirement {
+  /**
+   * 编成任务
+   */
   category: 'fleet'
   /**
    * 编成要求
@@ -109,10 +109,10 @@ interface FleetRequirement {
   disallowed?: string
 }
 
-/**
- * 装备准备
- */
 interface EquipexchangeRequirement {
+  /**
+   * 装备准备
+   */
   category: 'equipexchange'
   /**
    * 准备
@@ -132,10 +132,10 @@ interface EquipexchangeRequirement {
   consumptions?: Item[]
 }
 
-/**
- * 演习任务
- */
 interface ExcerciseRequirement {
+  /**
+   * 演习任务
+   */
   category: 'excercise'
   /**
    * 次数
@@ -151,10 +151,10 @@ interface ExcerciseRequirement {
   daily?: boolean
 }
 
-/**
- * 远征任务
- */
 interface ExpeditionRequirement {
+  /**
+   * 远征任务
+   */
   category: 'expedition'
   objects: {
     /**
@@ -171,10 +171,10 @@ interface ExpeditionRequirement {
   disallowed?: string
 }
 
-/**
- * 机种转换
- */
 interface ModelconversionRequirement {
+  /**
+   * 机种转换
+   */
   category: 'modelconversion'
   slots?: {
     /**
@@ -217,11 +217,12 @@ interface ModelconversionRequirement {
   use_skilled_crew?: true
 }
 
-/**
- * 近代化改修/舰装合成
- * 准备资源 resources，对 ship 近代化改造成功 times 次，每次消耗 consumptions
- */
 interface ModernizationRequirement {
+  /**
+   * 近代化改修/舰装合成
+   *
+   * 准备资源 resources，对 ship 近代化改造成功 times 次，每次消耗 consumptions
+   */
   category: 'modernization'
   times: number
   /**
@@ -238,18 +239,18 @@ interface ModernizationRequirement {
   resources: Resources
 }
 
-/**
- * 废弃装备
- */
 interface ScrapequipmentRequirement {
+  /**
+   * 废弃装备
+   */
   category: 'scrapequipment'
   list: Item[]
 }
 
-/**
- * 击沉
- */
 interface SinkRequirement {
+  /**
+   * 击沉
+   */
   category: 'sink'
   amount: number
   ship: string // TODO
@@ -257,10 +258,10 @@ interface SinkRequirement {
 
 type Result = 'A' | 'B' | 'C' | 'S' | 'クリア'
 
-/**
- * 出击任务
- */
 interface SortieRequirement {
+  /**
+   * 出击任务
+   */
   category: 'sortie'
   times: number
   map?: string | string[]
