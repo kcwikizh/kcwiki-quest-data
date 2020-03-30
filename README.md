@@ -5,8 +5,8 @@
 ## Progress
 
 - [x] Add types and schema
-- [ ] 🚧 Data collation
-- [ ] Unit tests
+- [x] Data collation
+- [x] 🚧 Unit tests
 - [ ] Plugin tests
 - [ ] [Data snippets](https://code.visualstudio.com/docs/languages/json#_define-snippets-in-json-schemas)
 - [ ] Monitor new quest data
@@ -14,6 +14,10 @@
 ## Reference
 
 - [kcwikizh/kcdata](https://github.com/kcwikizh/kcdata)
+- [任务 - 舰娘百科](https://zh.kcwiki.org/wiki/%E4%BB%BB%E5%8A%A1)
+- [KC3Kai/kc3-translations/quests.json](https://github.com/KC3Kai/kc3-translations/blob/master/data/jp/quests.json)
+- [poooi/plugin-quest](https://github.com/poooi/plugin-quest)
+
 - [Editing JSON with Visual Studio Code](https://code.visualstudio.com/docs/languages/json)
 - [In VS Code, how can I get JSON intellisense based on the files in a given directory?](https://stackoverflow.com/questions/40032498/in-vs-code-how-can-i-get-json-intellisense-based-on-the-files-in-a-given-direct)
 - [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
