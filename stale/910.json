@@ -34,7 +34,11 @@
   "prerequisite": [],
   "requirements": {
     "category": "sortie",
-    "map": ["47-1-P1", "47-1-P2", "47-1-P3"],
+    "map": [
+      "47-1-P1",
+      "47-1-P2",
+      "47-1-P3"
+    ],
     "boss": true,
     "result": "S",
     "times": 1,

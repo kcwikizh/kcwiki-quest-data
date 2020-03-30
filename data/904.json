@@ -46,7 +46,12 @@
   "prerequisite": [],
   "requirements": {
     "category": "sortie",
-    "map": ["2-5", "3-4", "4-5", "5-3"],
+    "map": [
+      "2-5",
+      "3-4",
+      "4-5",
+      "5-3"
+    ],
     "boss": true,
     "result": "S",
     "times": 1,

@@ -44,13 +44,22 @@
     "category": "expedition",
     "objects": [
       {
-        "id": [3, 5, 9, "A1", "A2"],
+        "id": [
+          3,
+          5,
+          9,
+          "A1",
+          "A2"
+        ],
         "times": 1
       }
     ],
     "groups": [
       {
-        "ship": ["駆逐艦", "海防艦"]
+        "ship": [
+          "駆逐艦",
+          "海防艦"
+        ]
       }
     ],
     "disallowed": "他の艦"

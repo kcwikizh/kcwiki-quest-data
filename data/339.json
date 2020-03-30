@@ -39,7 +39,10 @@
       ]
     }
   ],
-  "prerequisite": [177, 337],
+  "prerequisite": [
+    177,
+    337
+  ],
   "requirements": {
     "category": "excercise",
     "times": 3,
