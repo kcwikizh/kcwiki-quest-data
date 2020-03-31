@@ -6,10 +6,12 @@
     "generate": "mkdir -p build && quicktype --src types/index.ts --src-lang ts --lang schema --out build/schema.json && ts-node scripts/tweak-schema.ts",
     "build": "ts-node scripts/check-and-build.ts",
     "postinstall": "npm run generate",
-    "format": "prettier  --config ./prettier.config.js {data,draft,stale}/*.json",
+    "format": "prettier --config ./prettier.json.config.js {data,draft,stale}/*.json",
     "format:check": "npm run format -- --check",
     "format:fix": "npm run format -- --write",
-    "clean": "rm -rf build/"
+    "clean": "rm -rf build/",
+    "test": "jest",
+    "test:ci": "jest --ci"
   },
   "repository": {
     "type": "git",
@@ -24,12 +26,15 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "^25.1.4",
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.7.7",
     "ajv": "^6.12.0",
+    "jest": "^25.2.4",
     "lodash": "^4.17.15",
     "prettier": "^2.0.2",
     "quicktype": "^15.0.220",
+    "ts-jest": "^25.3.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3"
   }
