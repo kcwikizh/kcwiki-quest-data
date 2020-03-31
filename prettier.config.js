@@ -1,5 +1,5 @@
 module.exports = {
+  semi: false,
   singleQuote: true,
-  trailingComma: 'all',
-  parser: 'json-stringify'
+  trailingComma: 'all'
 }
