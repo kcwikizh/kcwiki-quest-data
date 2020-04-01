@@ -1,12 +1,9 @@
 import fs from 'fs'
-import path from 'path'
+import { loadAllJson } from './utils'
 
 console.log('Loading data...')
 
-const data = fs
-  .readdirSync('data')
-  .map((filename) => path.resolve('data', filename))
-  .map((file) => JSON.parse(fs.readFileSync(file, 'utf8')))
+const data = loadAllJson()
 
 fs.writeFileSync('build/all.json', JSON.stringify(data, undefined, 2))
 console.log('Build done!')
