@@ -1,6 +1,6 @@
 import fs from 'fs'
-
-import schema from '../build/schema.json'
+import path from 'path'
+import schema from '../build/schema-quicktype.json'
 import { mapKeysDeep } from './utils'
 
 const schemaSource = schema
@@ -24,8 +24,10 @@ Object.values(questSchema.definitions).forEach(
   (obj: object) => ((obj as any).additionalProperties = false),
 )
 
+const OUTPUT_PATH = path.resolve('build')
+
 fs.writeFileSync(
-  'build/quest-schema.json',
+  path.resolve(OUTPUT_PATH, 'schema-quest.json'),
   JSON.stringify(questSchema, undefined, 2),
   'utf8',
 )

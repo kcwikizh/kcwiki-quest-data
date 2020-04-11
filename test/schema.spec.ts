@@ -2,8 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import Ajv from 'ajv'
 import schemaDraft06 from 'ajv/lib/refs/json-schema-draft-06.json'
-
-import schema from '../build/quest-schema.json'
+import schema from '../build/schema-quest.json'
 import { loadAllJson } from '../scripts/utils'
 
 describe('Validating format', () => {

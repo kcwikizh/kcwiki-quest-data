@@ -4,7 +4,7 @@ module.exports = {
   trailingComma: 'all',
   overrides: [
     {
-      files: '{data,draft,stale}/*.json',
+      files: '{data,draft,outdated}/*.json',
       options: { parser: 'json-stringify' },
     },
   ],
