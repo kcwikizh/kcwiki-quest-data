@@ -21,11 +21,11 @@ const questSchema = mapKeysDeep(schemaSource, (value: any, key: string) => {
 
 // disabled additional properties for every definitions
 Object.values(questSchema.definitions).forEach(
-  (obj: object) => ((obj as any).additionalProperties = false)
+  (obj: object) => ((obj as any).additionalProperties = false),
 )
 
 fs.writeFileSync(
   'build/quest-schema.json',
   JSON.stringify(questSchema, undefined, 2),
-  'utf8'
+  'utf8',
 )

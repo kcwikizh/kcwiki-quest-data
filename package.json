@@ -6,7 +6,7 @@
     "generateSchema": "mkdir -p build && quicktype --src types/index.ts --src-lang ts --lang schema --out build/schema.json && ts-node scripts/tweak-schema.ts",
     "build": "ts-node scripts/build.ts",
     "postinstall": "npm run generateSchema",
-    "format": "prettier --config ./prettier.json.config.js {data,draft,stale}/*.json",
+    "format": "prettier --ignore-path .gitignore .",
     "format:check": "npm run format -- --check",
     "format:fix": "npm run format -- --write",
     "clean": "rm -rf build/",
