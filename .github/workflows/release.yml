@@ -1,0 +1,58 @@
+name: Create Release
+
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [13.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Get npm cache directory path
+        id: npm-cache-dir-path
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - name: Cache npm modules
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.npm-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run start
+
+      - name: Pack
+        id: pack-npm
+        run: echo "::set-output name=filename::$(npm pack | tail -1)"
+
+      - name: Unpack
+        run: tar -xvzf $filename
+        env:
+          filename: ${{ steps.pack-npm.outputs.filename }}
+
+      - name: Deploy
+        # https://github.com/peaceiris/actions-gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./package
+          publish_branch: release
+          disable_nojekyll: true
