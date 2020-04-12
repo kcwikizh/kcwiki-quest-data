@@ -1,6 +1,6 @@
 {
   "name": "kcwiki-quest-data",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Kancolle Quest Data",
   "scripts": {
     "start": "npm run generateSchema && npm run build",
