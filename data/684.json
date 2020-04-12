@@ -24,8 +24,7 @@
     "slots": [
       {
         "slot": 3,
-        "equipment": "彗星二二型(六三四空)",
-        "convert": true
+        "equipment": "彗星二二型(六三四空)"
       }
     ],
     "use_skilled_crew": true,

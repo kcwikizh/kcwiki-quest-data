@@ -28,8 +28,7 @@
       {
         "slot": 1,
         "equipment": "12.7cm連装砲B型改二",
-        "maxmodified": true,
-        "convert": true
+        "maxmodified": true
       }
     ],
     "consumptions": [

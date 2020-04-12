@@ -27,8 +27,7 @@
     "slots": [
       {
         "slot": 1,
-        "equipment": "TBF",
-        "convert": true
+        "equipment": "TBF"
       }
     ],
     "scraps": [

@@ -25,13 +25,11 @@
     "slots": [
       {
         "slot": 1,
-        "equipment": "試製晴嵐",
-        "convert": true
+        "equipment": "試製晴嵐"
       },
       {
         "slot": 2,
-        "equipment": "瑞雲(六三一空)",
-        "convert": true
+        "equipment": "瑞雲(六三一空)"
       }
     ],
     "secretary": [

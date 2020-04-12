@@ -23,8 +23,7 @@
     "slots": [
       {
         "slot": 1,
-        "equipment": "艦隊司令部施設",
-        "convert": true
+        "equipment": "艦隊司令部施設"
       }
     ],
     "scraps": [

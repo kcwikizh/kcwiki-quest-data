@@ -41,13 +41,11 @@
         "slots": [
           {
             "slot": 1,
-            "equipment": "零式艦戦52型",
-            "convert": true
+            "equipment": "零式艦戦52型"
           },
           {
             "slot": 2,
-            "equipment": "零式艦戦52型",
-            "convert": true
+            "equipment": "零式艦戦52型"
           }
         ],
         "scraps": [
