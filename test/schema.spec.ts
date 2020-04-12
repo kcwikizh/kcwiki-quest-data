@@ -4,6 +4,7 @@ import Ajv from 'ajv'
 import schemaDraft06 from 'ajv/lib/refs/json-schema-draft-06.json'
 import schema from '../build/schema-quest.json'
 import { loadAllJson } from '../scripts/utils'
+import { Quest } from '../types'
 
 describe('Validating format', () => {
   const DATA_DIR = 'data'
@@ -17,6 +18,12 @@ describe('Validating format', () => {
     } catch (error) {
       fail('json parse error: ' + error)
     }
+  })
+
+  it.each(files)(`%s match game_id`, (filename) => {
+    const file = fs.readFileSync(path.resolve(DATA_DIR, filename), 'utf8')
+    const json = JSON.parse(file) as Quest
+    expect(json.game_id).toBe(+filename.split('.')[0])
   })
 })
 
