@@ -1,0 +1,11 @@
+data
+scripts
+test
+.vscode
+.github
+main.ts
+
+.gitignore
+prettier.config.js
+jest.config.js
+*.tgz

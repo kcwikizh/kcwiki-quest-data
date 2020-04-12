@@ -39,6 +39,9 @@ jobs:
       - name: Prettier check
         run: npm run format:check
 
+      - name: Generate schema
+        run: npm run generateSchema
+
       - name: Test
         run: npm test
 

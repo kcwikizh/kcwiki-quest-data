@@ -2,15 +2,16 @@
   "name": "kcwiki-quest-data",
   "version": "0.2.0",
   "description": "Kancolle Quest Data",
+  "main": "main.js",
   "scripts": {
     "start": "npm run generateSchema && npm run build",
     "generateSchema": "mkdir -p build && quicktype --src types/index.ts --src-lang ts --lang schema --out build/schema-quicktype.json && ts-node scripts/tweak-schema.ts",
     "build": "ts-node scripts/build.ts",
-    "postinstall": "npm run generateSchema",
     "format": "prettier --ignore-path .gitignore .",
     "format:check": "npm run format -- --check",
     "format:fix": "npm run format -- --write",
     "clean": "rm -rf build/*",
+    "prepack": "tsc",
     "test": "jest",
     "test:ci": "jest --ci"
   },
