@@ -2,6 +2,24 @@
 
 ![Build](https://github.com/kcwikizh/kcwiki-quest-data/workflows/Build%20and%20deploy/badge.svg)
 
+The Structured data for Kantai Collection quest
+
+## Supported features
+
+- Auto complete for quest data
+
+![image](https://user-images.githubusercontent.com/18554747/79259047-08d52700-7ec7-11ea-8a0c-729392866905.png)
+
+- Hover documentation
+
+![image](https://user-images.githubusercontent.com/18554747/79258575-4c7b6100-7ec6-11ea-880f-48ce728e6063.png)
+
+- Types support
+- JSON schema support
+- Unit test
+- Linter
+- CI/CD
+
 ## Progress
 
 - [x] Add types and schema
@@ -10,6 +28,27 @@
 - [ ] Plugin tests
 - [ ] [Data snippets](https://code.visualstudio.com/docs/languages/json#_define-snippets-in-json-schemas)
 - [ ] Monitor new quest data
+
+## Instructions
+
+### Quest data update
+
+- Clone this repo
+- Run `npm install`
+- Run `npm run generateSchema`
+- Edit `data/*.json` in [vscode](https://code.visualstudio.com/)
+
+### Use in other libraries
+
+- Run `npm install --save-dev kcwikizh/kcwiki-quest-data#release`
+
+```js
+// API is currently in development and will be updated frequently
+import { questData } from 'kcwiki-quest-data'
+import type { Quest } from 'kcwiki-quest-data'
+```
+
+- Or use [gh-pages/data.min.json](https://github.com/kcwikizh/kcwiki-quest-data/tree/gh-pages) directly
 
 ## Reference
 
