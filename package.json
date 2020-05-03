@@ -1,6 +1,6 @@
 {
   "name": "kcwiki-quest-data",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Kancolle Quest Data",
   "main": "main.js",
   "scripts": {
