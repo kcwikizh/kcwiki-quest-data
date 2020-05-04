@@ -337,26 +337,30 @@ export interface Quest {
   wiki_id: string
   /**
    * 任务类别
-   * - `1`编成
-   * - `2`出击
-   * - `3`演习
-   * - `4`远征
-   * - `5`补给/入渠
-   * - `6`工厂
-   * - `7`改装
-   * - `8`出击(2)
-   * - `9`其他？
+   *
+   * 1. Composition
+   * 1. Sortie
+   * 1. Exercise
+   * 1. Expedition
+   * 1. Supply/Docking
+   * 1. Arsenal
+   * 1. Modernization
+   *
+   * @see https://github.com/poooi/plugin-quest/blob/master/index.es#L49-L57
    */
-  category: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+  category: 1 | 2 | 3 | 4 | 5 | 6 | 7 // | 8 | 9
   /**
    * 任务类型
-   * - `1`单次
-   * - `2`日常
-   * - `3`周常
-   * - `4`-3rd/-7th/-0th(在日期末尾为3, 7, 0的日子里出现的任务)(仅Bd4 截止20180113)
-   * - `5`-2nd/-8th(在日期末尾是2, 8的日子出现的任务)(仅Bd6 截止20180113)
-   * - `6`月常
-   * - `7`季常
+   *
+   * 1. One-time
+   * 1. Daily
+   * 1. Weekly
+   * 1. -3rd/-7th/-0th
+   * 1. -2nd/-8th
+   * 1. Monthly
+   * 1. Quarterly
+   *
+   * @see https://github.com/poooi/plugin-quest/blob/master/index.es#L69-L77
    */
   type: 1 | 2 | 3 | 4 | 5 | 6 | 7
   /**
@@ -370,19 +374,19 @@ export interface Quest {
   /**
    * 任务奖励 油
    */
-  reward_fuel: number
+  reward_fuel: Resources[0]
   /**
    * 任务奖励 弹
    */
-  reward_ammo: number
+  reward_ammo: Resources[1]
   /**
    * 任务奖励 钢
    */
-  reward_steel: number
+  reward_steel: Resources[2]
   /**
    * 任务奖励 铝
    */
-  reward_bauxite: number
+  reward_bauxite: Resources[3]
   /**
    * 任务奖励 其他奖励
    */
@@ -390,7 +394,7 @@ export interface Quest {
   /**
    * 前置任务
    */
-  prerequisite: number[] // TODO validation
+  prerequisite: number[]
   /**
    * 任务要求
    */
