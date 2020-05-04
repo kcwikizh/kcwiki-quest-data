@@ -12,12 +12,24 @@ const getCompilerOptions = (): ts.CompilerOptions => {
   const { config, error } = ts.readConfigFile(maybeFile, (path: string) =>
     fs.readFileSync(path).toString(),
   )
-
   if (error != undefined) {
     const message = `TS${error.code}: ${error.file}:${error.start} ${error.messageText}`
     throw new Error(message)
   }
-  return config.compilerOptions
+
+  const { options, errors } = ts.convertCompilerOptionsFromJson(
+    config.compilerOptions,
+    '',
+  )
+
+  if (errors.length) {
+    const message = errors
+      .map((e) => `TS${e.code}: ${e.file}:${e.start} ${e.messageText}`)
+      .join('\n')
+    throw new Error(message)
+  }
+
+  return options
 }
 const compilerOptions = getCompilerOptions()
 
