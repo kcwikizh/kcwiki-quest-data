@@ -10,7 +10,7 @@ describe('Validating format', () => {
   const DATA_DIR = 'data'
   const files = fs.readdirSync(DATA_DIR)
 
-  it.each(files)(`%s match json object format`, (filename) => {
+  it.each(files)('%s match json object format', (filename) => {
     const file = fs.readFileSync(path.resolve(DATA_DIR, filename), 'utf8')
     try {
       const json = JSON.parse(file)
@@ -20,7 +20,7 @@ describe('Validating format', () => {
     }
   })
 
-  it.each(files)(`%s match game_id`, (filename) => {
+  it.each(files)('%s match game_id', (filename) => {
     const file = fs.readFileSync(path.resolve(DATA_DIR, filename), 'utf8')
     const json = JSON.parse(file) as Quest
     expect(json.game_id).toBe(+filename.split('.')[0])
@@ -33,7 +33,7 @@ describe('Validating schema', () => {
   const validate = ajv.compile(schema)
 
   const data = loadAllJson()
-  it.each(data)(`%p match schema`, (quest) => {
+  it.each(data)('%p match schema', (quest) => {
     const valid = validate(quest)
     expect(valid).toEqual(true)
   })

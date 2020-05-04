@@ -22,3 +22,15 @@ describe('Validating quest prerequisite', () => {
     })
   }
 })
+
+describe('Validating quest data', () => {
+  const set = new Set<number>()
+
+  for (const quest of data) {
+    const gameId = quest.game_id
+    it(`game_id ${gameId} should be unique`, () => {
+      expect(set.has(gameId)).toBe(false)
+      set.add(gameId)
+    })
+  }
+})
