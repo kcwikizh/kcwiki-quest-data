@@ -74,8 +74,6 @@ const main = async () => {
     ? // Read from cache
       (JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8')) as PoiQuest[])
     : await fetchQuestReport()
-  !fs.existsSync(OUTPUT_FILE) &&
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(poiQuests, undefined, 2))
 
   const iteratee = (quest: Quest) => `${quest.game_id} ${quest.name}`
   const questMap = {
