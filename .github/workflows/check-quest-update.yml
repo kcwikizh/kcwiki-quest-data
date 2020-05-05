@@ -49,7 +49,7 @@ jobs:
           git add draft
           git commit --message 'feat(data): draft new quest'
           git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
-          git push --force-with-lease origin HEAD:bot/new-quest
+          git push --force origin HEAD:bot/new-quest
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
 
