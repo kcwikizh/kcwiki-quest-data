@@ -16,7 +16,8 @@ interface PoiQuest {
 }
 
 const URL = 'https://poi.moe/dump/quests.csv.gz'
-const OUTPUT_FILE = path.resolve('build', 'poi-quests.json')
+const OUTPUT_PATH = path.resolve('build')
+const OUTPUT_FILE = path.resolve(OUTPUT_PATH, 'poi-quests.json')
 
 const fetchQuestReport = async () => {
   const questsGz = await fetch(URL)
@@ -70,10 +71,17 @@ const needAddQuest = (poiQuest: PoiQuest) => {
 }
 
 const main = async () => {
+  if (!fs.existsSync(OUTPUT_PATH)) {
+    fs.mkdirSync(OUTPUT_PATH)
+  }
+
   const poiQuests = fs.existsSync(OUTPUT_FILE)
     ? // Read from cache
       (JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8')) as PoiQuest[])
     : await fetchQuestReport()
+  // Cache
+  !fs.existsSync(OUTPUT_FILE) &&
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(poiQuests, undefined, 2))
 
   const iteratee = (quest: Quest) => `${quest.game_id} ${quest.name}`
   const questMap = {
