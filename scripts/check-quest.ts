@@ -106,7 +106,7 @@ const main = async () => {
 
     fs.writeFileSync(
       path.resolve('draft', `${newQuest.game_id}.json`),
-      JSON.stringify(newQuest, undefined, 2),
+      JSON.stringify(newQuest, undefined, 2) + '\n',
     )
   }
 }
