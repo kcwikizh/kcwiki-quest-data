@@ -47,7 +47,7 @@ jobs:
           git config user.name 'kcwikizh'
           git config user.email 'dev@kcwiki.moe'
           git add draft
-          git commit --message 'feat(data): draft new quest'
+          git commit --message 'feat(data): draft new quest' || true
           git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
           git push --force origin HEAD:bot/new-quest
         env:
@@ -60,6 +60,6 @@ jobs:
           source_branch: 'bot/new-quest' # If blank, default: triggered branch
           pr_title: 'New Quest' # Title of pull request
           pr_body: '' # Full markdown support, requires pr_title to be set
-          pr_assignee: ${{ github.repository_owner }} # Comma-separated list (no spaces)
+          pr_assignee: ${{ github.repository.owner.login }} # Comma-separated list (no spaces)
           pr_label: 'data,bot' # Comma-separated list (no spaces)
           github_token: ${{ secrets.GITHUB_TOKEN }}
