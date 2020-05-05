@@ -16,7 +16,8 @@ interface PoiQuest {
 }
 
 const URL = 'https://poi.moe/dump/quests.csv.gz'
-const OUTPUT_FILE = path.resolve('build', 'poi-quests.json')
+const OUTPUT_PATH = path.resolve('build')
+const OUTPUT_FILE = path.resolve(OUTPUT_PATH, 'poi-quests.json')
 
 const fetchQuestReport = async () => {
   const questsGz = await fetch(URL)
@@ -70,10 +71,15 @@ const needAddQuest = (poiQuest: PoiQuest) => {
 }
 
 const main = async () => {
+  if (!fs.existsSync(OUTPUT_PATH)) {
+    fs.mkdirSync(OUTPUT_PATH)
+  }
+
   const poiQuests = fs.existsSync(OUTPUT_FILE)
     ? // Read from cache
       (JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8')) as PoiQuest[])
     : await fetchQuestReport()
+  // Cache
   !fs.existsSync(OUTPUT_FILE) &&
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(poiQuests, undefined, 2))
 
@@ -90,7 +96,10 @@ const main = async () => {
       continue
     }
 
-    console.log('- ', poiQuest.questId, poiQuest.title)
+    // @see https://stackoverflow.com/questions/59191913/get-output-of-a-specific-step-in-github-actions
+    console.log(
+      `::set-output name=quest${poiQuest.questId}::- ${poiQuest.questId} ${poiQuest.title}`,
+    )
     const newQuest = {
       game_id: +poiQuest.questId,
       category: +poiQuest.category,
@@ -100,7 +109,7 @@ const main = async () => {
 
     fs.writeFileSync(
       path.resolve('draft', `${newQuest.game_id}.json`),
-      JSON.stringify(newQuest, undefined, 2),
+      JSON.stringify(newQuest, undefined, 2) + '\n',
     )
   }
 }

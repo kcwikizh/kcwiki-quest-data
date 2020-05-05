@@ -1,0 +1,60 @@
+name: 'Check Quest update'
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # At every day 00:00(UTC).
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [13.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Get npm cache directory path
+        id: npm-cache-dir-path
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - name: Cache npm modules
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.npm-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Check Update
+        id: check-update
+        run: npm run checkPoi
+
+      - name: Push Branch
+        run: |
+          git config user.name 'kcwikizh'
+          git config user.email 'dev@kcwiki.moe'
+          git add draft
+          git commit --message 'feat(data): draft new quest' || true
+          git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
+          git push --force origin HEAD:bot/new-quest
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+
+      # see https://github.com/repo-sync/pull-request
+      - name: Create Pull Request
+        uses: repo-sync/pull-request@v2.2
+        with:
+          source_branch: 'bot/new-quest' # If blank, default: triggered branch
+          pr_title: 'New Quest' # Title of pull request
+          pr_body: ${{ join(steps.check-update.outputs.*, '\n') }} # Full markdown support, requires pr_title to be set
+          pr_label: 'data,bot' # Comma-separated list (no spaces)
+          github_token: ${{ secrets.GITHUB_TOKEN }}
