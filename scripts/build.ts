@@ -18,4 +18,11 @@ fs.writeFileSync(
   JSON.stringify(data),
 )
 
+const MD_PREFIX = '# Kantai Collection Quests\n\n'
+fs.writeFileSync(
+  path.resolve(OUTPUT_PATH, 'README.md'),
+  MD_PREFIX +
+    data.map((q) => `- ${q.game_id} ${q.wiki_id} ${q.name}`).join('\n'),
+)
+
 console.log('Build done!')
