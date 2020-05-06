@@ -55,6 +55,6 @@ jobs:
         with:
           source_branch: 'bot/new-quest' # If blank, default: triggered branch
           pr_title: 'New Quest' # Title of pull request
-          pr_body: ${{ join(steps.check-update.outputs.*, '\n') }} # Full markdown support, requires pr_title to be set
+          pr_body: ${{ join(steps.check-update.outputs.*, '%0A') }} # Full markdown support, requires pr_title to be set
           pr_label: 'data,bot' # Comma-separated list (no spaces)
           github_token: ${{ secrets.GITHUB_TOKEN }}
