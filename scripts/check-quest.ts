@@ -96,10 +96,13 @@ const main = async () => {
       continue
     }
 
+    // Output for github actions
     // @see https://stackoverflow.com/questions/59191913/get-output-of-a-specific-step-in-github-actions
+    // Using '%0A' as line break escape, see https://github.com/actions/create-release/issues/25
     console.log(
-      `::set-output name=quest${poiQuest.questId}::- ${poiQuest.questId} ${poiQuest.title}`,
+      `::set-output name=quest${poiQuest.questId}::- ${poiQuest.questId} ${poiQuest.title}%0A`,
     )
+
     const newQuest = {
       game_id: +poiQuest.questId,
       category: +poiQuest.category,
