@@ -98,7 +98,7 @@ const main = async () => {
 
     // @see https://stackoverflow.com/questions/59191913/get-output-of-a-specific-step-in-github-actions
     console.log(
-      `::set-output name=quest${poiQuest.questId}::- ${poiQuest.questId} ${poiQuest.title}`,
+      `::set-output name=quest${poiQuest.questId}::- ${poiQuest.questId} ${poiQuest.title}%0A`,
     )
     const newQuest = {
       game_id: +poiQuest.questId,
