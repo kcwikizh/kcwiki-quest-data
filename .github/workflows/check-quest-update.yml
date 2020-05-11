@@ -28,11 +28,19 @@ jobs:
         run: npm run checkPoi
 
       - name: Push Branch
+        id: push
         run: |
+          # Do not proceed if there are no file differences
+          LINES_CHANGED=$(git diff-index --name-only HEAD draft | wc -l)
+          if [[ "$LINES_CHANGED" = "0" ]]; then 
+            echo "No file changes detected in draft." 
+            echo "::set-output name=skipPR::true"
+            exit 0
+          fi
           git config user.name 'kcwikizh'
           git config user.email 'dev@kcwiki.moe'
           git add draft
-          git commit --message 'feat(data): draft new quest' || true
+          git commit --message 'feat(data): draft new quest'
           git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
           git push --force origin HEAD:bot/new-quest
         env:
@@ -44,6 +52,7 @@ jobs:
 
       # see https://github.com/repo-sync/pull-request
       - name: Create Pull Request
+        if: steps.push.outputs.skipPR != 'true'
         uses: repo-sync/pull-request@v2.2
         with:
           source_branch: 'bot/new-quest' # If blank, default: triggered branch
