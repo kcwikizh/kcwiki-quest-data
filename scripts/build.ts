@@ -10,7 +10,7 @@ const data = loadAllJson()
 
 fs.writeFileSync(
   path.resolve(OUTPUT_PATH, 'data.json'),
-  JSON.stringify(data, undefined, 2),
+  JSON.stringify(data, undefined, 2) + '\n',
 )
 
 fs.writeFileSync(

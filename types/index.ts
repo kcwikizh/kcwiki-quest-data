@@ -368,7 +368,7 @@ export interface Quest {
    */
   name: string
   /**
-   * 任务详情
+   * 任务描述
    */
   detail: string
   /**
