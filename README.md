@@ -2,7 +2,7 @@
 
 ![Build](https://github.com/kcwikizh/kcwiki-quest-data/workflows/Build%20and%20deploy/badge.svg)
 
-The Structured data for Kantai Collection quest
+🚧 The Structured data for Kantai Collection quest
 
 ## Supported features
 
@@ -19,15 +19,9 @@ The Structured data for Kantai Collection quest
 - Unit test
 - Linter
 - CI/CD
+- Monitor new quest data from [poi server](https://github.com/poooi/poi-server) dump
 
-## Progress
-
-- [x] Add types and schema
-- [x] Data collation
-- [x] 🚧 Unit tests
-- [ ] Plugin tests
-- [ ] [Data snippets](https://code.visualstudio.com/docs/languages/json#_define-snippets-in-json-schemas)
-- [ ] Monitor new quest data
+![image](https://user-images.githubusercontent.com/18554747/81589987-1661cc00-93f5-11ea-8dd2-aaadfc3a524d.png)
 
 ## Instructions
 
@@ -40,12 +34,23 @@ The Structured data for Kantai Collection quest
 
 ### Use in other libraries
 
-- Run `npm install --save-dev kcwikizh/kcwiki-quest-data#release`
+To install the latest version, run the following command:
+
+```sh
+npm install --save kcwikizh/kcwiki-quest-data#release
+```
+
+Or if you're using [yarn](https://classic.yarnpkg.com/en/docs/install/):
+
+```sh
+yarn add kcwikizh/kcwiki-quest-data#release
+```
 
 ```js
 // API is currently in development and will be updated frequently
 import { questData } from 'kcwiki-quest-data'
 import type { Quest } from 'kcwiki-quest-data'
+import quest101 from 'kcwiki-quest-data/data/101.json'
 ```
 
 - Or use [gh-pages/data.min.json](https://github.com/kcwikizh/kcwiki-quest-data/tree/gh-pages) directly
