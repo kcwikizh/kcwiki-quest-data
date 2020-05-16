@@ -1,11 +1,8 @@
-data
-scripts
-test
-.vscode
-.github
-main.ts
+*
+!dist/*
+!build/*
 
-.gitignore
-prettier.config.js
-jest.config.js
-*.tgz
+!data/*
+!draft/*
+!outdated/*
+!script/*
