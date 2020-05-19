@@ -67,7 +67,8 @@ const main = async () => {
       try {
         return [quest.game_id, reqstr(quest.requirements)]
       } catch (e) {
-        return [quest.game_id, '']
+        console.error('Error at parse ', quest.game_id)
+        throw e
       }
     })
     await fs.outputJSON(
