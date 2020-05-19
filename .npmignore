@@ -1,7 +1,5 @@
 *
 !dist/*
-!build/*
-
 !data/*
 !draft/*
 !outdated/*

@@ -4,6 +4,10 @@ import { loadAllJson } from './utils'
 
 const OUTPUT_PATH = path.resolve('build')
 
+if (!fs.existsSync(OUTPUT_PATH)) {
+  fs.mkdirSync(OUTPUT_PATH)
+}
+
 console.log('Loading data...')
 
 const data = loadAllJson()

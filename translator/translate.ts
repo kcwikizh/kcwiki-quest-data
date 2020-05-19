@@ -2,16 +2,17 @@
 // Thanks for [KagamiChan](https://github.com/KagamiChan)
 // Licensed under [the MIT license](https://github.com/poooi/plugin-quest/blob/master/LICENSE).
 
-import { Quest } from '../types'
+import questData from '../build/data.json'
+import type { Quest } from '../types'
 
 const fs = require('fs-extra')
 const path = require('path')
 const { map, fromPairs } = require('lodash')
 const generateReqstr = require('./reqstr')
 const i18next = require('i18next')
-const questData: Quest[] = require('../build/data.json')
 
-const LOCALES = ['zh-CN', 'zh-TW', 'ja-JP', 'en-US']
+const OUTPUT_PATH = path.resolve('build', 'i18n')
+export const LOCALES = ['zh-CN', 'zh-TW', 'ja-JP', 'en-US'] as const
 
 const initI18n = async () => {
   const res = await Promise.all(
@@ -32,8 +33,6 @@ const initI18n = async () => {
 
 const main = async () => {
   try {
-    const content = questData
-
     await initI18n()
 
     await LOCALES.forEach(async (lng) => {
@@ -42,7 +41,7 @@ const main = async () => {
         'resources',
       ])
       const reqstr = generateReqstr(translate, lng)
-      const result = map(content, (quest: Quest) => {
+      const result = map(questData, (quest: Quest) => {
         try {
           return [quest.game_id, reqstr(quest.requirements)]
         } catch (e) {
@@ -50,7 +49,7 @@ const main = async () => {
         }
       })
       await fs.outputJSON(
-        path.resolve(`./build/i18n/${lng}.json`),
+        path.resolve(OUTPUT_PATH, `${lng}.json`),
         fromPairs(result),
         { spaces: 2 },
       )

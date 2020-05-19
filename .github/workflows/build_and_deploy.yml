@@ -39,14 +39,11 @@ jobs:
       - name: Prettier check
         run: npm run format:check
 
-      - name: Generate schema
-        run: npm run generateSchema
+      - name: Build
+        run: npm run build
 
       - name: Test
         run: npm test
-
-      - name: Build
-        run: npm run build
 
       - name: Deploy
         if: github.ref == 'refs/heads/master'
