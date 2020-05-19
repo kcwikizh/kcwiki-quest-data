@@ -53,8 +53,7 @@
   "The info for this quest is incorrect, report it": "このクエストの情報が正しくない、報告する",
 
   "req": {
-    "option": {
-    },
+    "option": {},
 
     "result": {
       "クリア": "クリア",
@@ -209,9 +208,7 @@
       "separator": "；次に",
       "word": "，再び"
     }
-
   },
 
-  "":""
-
+  "": ""
 }

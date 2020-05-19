@@ -70,8 +70,7 @@
   "The info for this quest is incorrect, report it": "這個任務的信息有錯誤，我要報錯",
 
   "req": {
-    "option": {
-    },
+    "option": {},
 
     "result": {
       "クリア": "完成全圖",
@@ -104,7 +103,6 @@
       "fleetid": "，限第{{id}}艦隊",
       "disallowed": "，{{disallowed}}不可"
     },
-
 
     "sortie": {
       "main": "{{map}}{{boss}}{{result}}{{times}}{{groups}}{{fleet}}{{disallowed}}",
@@ -227,8 +225,7 @@
       "separator": "；之後",
       "word": "，再"
     }
-
   },
 
-  "":""
+  "": ""
 }
