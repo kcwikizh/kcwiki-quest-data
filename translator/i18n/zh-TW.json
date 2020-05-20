@@ -1,0 +1,231 @@
+{
+  "Plugin Description": "任務信息查詢 & 任務面板強化，感謝[艦娘百科](https://zh.kcwiki.moe)維護數據",
+  "Quest Information": "任務信息",
+
+  "Composition": "編成",
+  "Sortie": "出擊",
+  "Exercise": "演習",
+  "Expedition": "遠征",
+  "Supply/Docking": "補給/入渠",
+  "Arsenal": "工廠",
+  "Modernization": "改裝",
+  "Marriage": "結婚任務",
+  "One-time": "單次任務",
+  "Daily": "每日任務",
+  "Weekly": "每週任務",
+  "Monthly": "每月任務",
+  "Quarterly": "每季任務",
+  "-3rd/-7th/-0th": "3/7/0日任務",
+  "-2nd/-8th": "2/8日任務",
+
+  "Quest Type": "任務類型",
+  "Quest Name": "任務名稱",
+  "Quests": "任務",
+  "Select Quest": "任務選擇",
+  "Reward": "獎勵",
+  "Requires": "前置任務",
+  "Unlocks": "後續任務",
+  "Note": "備註",
+  "Requirement": "完成條件",
+
+  "Fuel": "燃料",
+  "Ammo": "彈藥",
+  "Steel": "鋼材",
+  "Bauxite": "鋁土",
+
+  "Operable": "可執行",
+  "Locked": "未開放",
+  "Completed": "已完成",
+
+  "艦": "任意艦船",
+  "他の艦": "其它艦船",
+  "駆逐": "驅逐",
+  "軽巡": "輕巡",
+  "重巡": "重巡",
+  "航巡": "航巡",
+  "水母": "水母",
+  "空母": "空母",
+  "裝母": "裝母",
+  "軽母": "輕母",
+  "戦艦": "戰艦",
+  "低速戦艦": "低速戰艦",
+  "航戦": "航戰",
+  "高速艦": "高速艦船",
+  "潛水艦": "潛水艇",
+  "潛水空母": "潛水空母",
+  "潛水母艦": "潛水母艦（大鯨）",
+  "海防艦": "海防艦",
+
+  "敵補給艦": "補給艦",
+  "敵潛水艦": "潛水艦",
+  "敵空母": "空母",
+  "敵軽母": "輕母",
+
+  "電探": "電探",
+
+  "Undocumented quest, please wait for updates": "任務未收錄，請等待更新",
+
+  "multiple_choices": "從以下 {{amount}} 項中選擇一項",
+
+  "The info for this quest is incorrect, report it": "這個任務的信息有錯誤，我要報錯",
+
+  "req": {
+    "option": {},
+
+    "result": {
+      "クリア": "完成全圖",
+      "S": "獲得S勝",
+      "A": "獲得A勝或以上",
+      "B": "獲得B勝或以上",
+      "C": "獲得C敗或以上"
+    },
+
+    "group": {
+      "main": "{{lv}}{{ship}}{{select}}{{flagship}}{{place}}{{amount}}{{note}}",
+      "lv": "Lv.{{lv}}",
+      "lvmore": "Lv.{{lv}}或以上",
+      "amount": "{{amount}}只",
+      "amountonly": "僅{{amount}}只",
+      "amountmore": "{{amount}}只或以上",
+      "select": "任意{{amount}}只",
+      "note": "({{note}})",
+      "flagship": "（旗艦）",
+      "place": "（{{place}}號艦）",
+      "class": "{{class}}級"
+    },
+
+    "groups": {
+      "delim": "+"
+    },
+
+    "fleet": {
+      "main": "編組{{groups}}{{disallowed}}{{fleet}}",
+      "fleetid": "，限第{{id}}艦隊",
+      "disallowed": "，{{disallowed}}不可"
+    },
+
+    "sortie": {
+      "main": "{{map}}{{boss}}{{result}}{{times}}{{groups}}{{fleet}}{{disallowed}}",
+      "map": "{{map}}",
+      "boss": "Boss戰",
+      "!boss": "出擊",
+      "result": "{{result}}",
+      "times": "{{times}}次",
+      "groups": "，需要{{groups}}",
+      "fleet": "，限第{{id}}艦隊",
+      "disallowed": "，{{disallowed}}不可"
+    },
+
+    "sink": {
+      "main": "擊沉{{ship}}{{amount}}",
+      "amount": "{{amount}}只",
+      "ship": "{{ship}}"
+    },
+
+    "a-gou": "S勝利6次，BOSS戰勝利12次，進行BOSS戰24次，出擊36次(一次出擊多次戰鬥算一次)",
+
+    "expedition": {
+      "main": "{{objects}}{{resources}}{{groups}}{{disallowed}}",
+      "object": "{{name}}成功{{times}}次",
+      "any": "遠征",
+      "id": "遠征{{id}}",
+      "resources": "，消耗{{resources}}",
+      "delim": "，",
+      "groups": "，需要{{groups}}",
+      "disallowed": "，{{disallowed}}不可"
+    },
+
+    "simple": {
+      "equipment": "開發裝備{{times}}次(失敗也可)",
+
+      "ship": "建造艦船{{times}}次",
+
+      "scrapequipment": "廢棄裝備{{times}}{{batch}}",
+      "scrapequipment_batch": "件，可一次性廢棄",
+      "scrapequipment_!batch": "次",
+
+      "scrapship": "解體艦船{{times}}次",
+
+      "modernization": "近代化改造成功{{times}}次",
+
+      "improvement": "裝備改修{{times}}次(失敗也可)",
+
+      "resupply": "進行補給{{times}}次",
+
+      "repair": "入渠{{times}}次",
+
+      "battle": "進行{{times}}次戰鬥",
+
+      "resource": "{{name}}{{amount}}",
+      "resource_delim": "、"
+    },
+
+    "excercise": {
+      "main": "演習{{victory}}{{times}}次{{daily}}{{groups}}",
+      "victory": "勝利",
+      "daily": "，限一日內",
+      "groups": "，需要{{groups}}"
+    },
+
+    "modelconversion": {
+      "main": "{{secretary_equip}}，然後{{objects}}{{note}}",
+      "noextra": "{{secretary_equip}}",
+      "equip": "祕書艦{{secretary}}在{{slot}}搭載未上鎖的{{fullyskilled}}{{maxmodified}}{{equipment}}",
+      "noequip": "祕書艦設爲{{secretary}}",
+      "secretarydefault": "空母",
+      "scraps": "廢棄{{scraps}}",
+      "scrap": "{{name}}{{amount}}只",
+      "consumptions": "消耗{{consumptions}}",
+      "consumption": "{{name}}{{amount}}個",
+      "equipmentdelim": "、",
+      "scrapdelim": "，",
+      "fullyskilled": "、滿熟練度的",
+      "maxmodified": "、改修Max的",
+      "useskilledcrew": "，同時消耗一個熟練搭乘員",
+      "slot": {
+        "0": "任意格",
+        "1": "第一格",
+        "2": "第二格",
+        "3": "第三格",
+        "4": "第四格"
+      }
+    },
+
+    "scrapequipment": {
+      "main": "廢棄{{scraps}}",
+      "scrap": "{{name}}{{amount}}只",
+      "scrapdelim": "，"
+    },
+
+    "equipexchange": {
+      "main": "{{scraps}}{{equipments}}{{delim}}{{consumptions}}",
+      "equipments": "準備{{equipments}}",
+      "equipment": "{{name}}{{amount}}只",
+      "scraps": "廢棄{{scraps}}，",
+      "scrap": "{{name}}{{amount}}只",
+      "consumptions": "消耗{{consumptions}}",
+      "consumption": "{{name}}{{amount}}個",
+      "delim": "，"
+    },
+
+    "modernization": {
+      "main": "{{resources}}對{{ship}}近代化改造成功{{times}}次{{consumptions}}",
+      "consumptions": "，每次消耗{{consumptions}}",
+      "consumption": "{{ship}}{{amount}}艘",
+      "resources": "準備{{resources}}，",
+      "delim": "，"
+    },
+
+    "and": {
+      "separator": "；以及",
+      "word": "和"
+    },
+
+    "then": {
+      "separator": "；之後",
+      "word": "，再"
+    }
+  },
+
+  "": ""
+}
