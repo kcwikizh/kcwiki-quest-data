@@ -34,7 +34,7 @@ const initI18n = async () => {
 /**
  * @example
  * import zh_CN from './i18n/zh-CN.json'
- * export const translation = {
+ * export default {
  *   'zh-CN': zh_CN,
  * }
  */
@@ -46,7 +46,7 @@ const generateTranslation = (locales: readonly string[]) => {
     .join('\n')
 
   const exportCode =
-    'export const translation = {\n' +
+    'export default {\n' +
     locales
       .map((locale) => `  '${locale}': ${locale.replace('-', '_')},`)
       .join('\n') +
