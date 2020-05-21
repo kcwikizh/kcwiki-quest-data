@@ -2,33 +2,43 @@ import type { Quest } from '../types'
 import { translationResources, postQuestMap, UNKNOWN_QUEST } from './data'
 import { questDataMap } from './data'
 
-type Lang = keyof typeof translationResources
-
 class MaybeQuest {
-  quest: Quest | undefined
+  private questId: number | undefined
 
-  constructor(q: Quest) {
-    this.quest = q
+  constructor(id?: number) {
+    this.questId = id
   }
 
-  ensure() {
-    if (this.quest && this.quest.game_id > 0) {
-      return new QuestHelper(this.quest)
+  static just(id: number) {
+    return new MaybeQuest(id)
+  }
+
+  static nothing() {
+    return new MaybeQuest()
+  }
+
+  ensure(resolve?: (quest: QuestHelper) => any, reject?: (err: Error) => any) {
+    if (this.questId) {
+      const quest = questDataMap[this.questId]
+      if (quest) {
+        resolve?.(new QuestHelper(quest))
+        return new QuestHelper(quest)
+      }
     }
-    return undefined
+    reject?.(new Error('Quest Not Fund'))
   }
 
   forceEnsure() {
-    if (this.quest && this.quest.game_id > 0) {
-      return new QuestHelper(this.quest)
+    return this.ensure() ?? new QuestHelper(UNKNOWN_QUEST)
     }
-    return new QuestHelper(UNKNOWN_QUEST)
   }
-}
+
+type Lang = keyof typeof translationResources
+let defaultLanguage: Lang = 'zh-CN'
 
 export class QuestHelper {
-  quest: Quest
-  lng: Lang = 'zh-CN'
+  private quest: Quest
+  lng: Lang = defaultLanguage
 
   constructor(q: Quest) {
     this.quest = q
@@ -38,7 +48,7 @@ export class QuestHelper {
     quest: T,
   ): T extends number ? MaybeQuest : QuestHelper => {
     if (typeof quest === 'number') {
-      return new MaybeQuest(questDataMap[quest]) as any
+      return MaybeQuest.just(quest) as any
     }
     return new QuestHelper(quest as Quest) as any
   }

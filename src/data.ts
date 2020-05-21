@@ -5,7 +5,7 @@ import data from '../build/data.json'
 
 export const UNKNOWN_QUEST: Quest = {
   game_id: -1,
-  wiki_id: '',
+  wiki_id: 'UNKNOWN',
   category: 1,
   type: 1,
   name: 'UNKNOWN',
