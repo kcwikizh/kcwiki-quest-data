@@ -30,8 +30,8 @@ class MaybeQuest {
 
   forceEnsure() {
     return this.ensure() ?? new QuestHelper(UNKNOWN_QUEST)
-    }
   }
+}
 
 type Lang = keyof typeof translationResources
 let defaultLanguage: Lang = 'zh-CN'
@@ -51,6 +51,18 @@ export class QuestHelper {
       return MaybeQuest.just(quest) as any
     }
     return new QuestHelper(quest as Quest) as any
+  }
+
+  /**
+   * Change default language will **not** change the instances already created.
+   */
+  static setDefaultLanguage(lang: Lang) {
+    defaultLanguage = lang
+    return QuestHelper
+  }
+
+  static getDefaultLanguage() {
+    return defaultLanguage
   }
 
   static query = (searchString: string) => {
