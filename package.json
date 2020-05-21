@@ -29,7 +29,9 @@
   ],
   "author": "kcwikizh",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "@types/lodash": "^4.14.149",
@@ -41,7 +43,6 @@
     "i18next": "^19.4.4",
     "inflection": "^1.12.0",
     "jest": "^25.2.4",
-    "lodash": "^4.17.15",
     "node-fetch": "^2.6.0",
     "poi-plugin-translator": "latest",
     "prettier": "^2.0.2",
