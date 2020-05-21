@@ -17,7 +17,10 @@ class MaybeQuest {
     return new MaybeQuest()
   }
 
-  ensure(resolve?: (quest: QuestHelper) => any, reject?: (err: Error) => any) {
+  ensure(
+    resolve?: (questContainer: QuestHelper) => any,
+    reject?: (err: Error) => any,
+  ) {
     if (this.questId) {
       const quest = questDataMap[this.questId]
       if (quest) {
@@ -33,12 +36,13 @@ class MaybeQuest {
   }
 }
 
-type Lang = keyof typeof translationResources
-let defaultLanguage: Lang = 'zh-CN'
+export type QuestHelperLang = keyof typeof translationResources
+const DEFAULT_LANGUAGE = 'zh-CN'
+let defaultLanguage: QuestHelperLang = DEFAULT_LANGUAGE
 
 export class QuestHelper {
   private quest: Quest
-  lng: Lang = defaultLanguage
+  lng: QuestHelperLang = defaultLanguage
 
   constructor(q: Quest) {
     this.quest = q
@@ -53,16 +57,25 @@ export class QuestHelper {
     return new QuestHelper(quest as Quest) as any
   }
 
+  static nothing() {
+    return MaybeQuest.nothing().forceEnsure()
+  }
+
   /**
    * Change default language will **not** change the instances already created.
    */
-  static setDefaultLanguage(lang: Lang) {
+  static setDefaultLanguage(lang: QuestHelperLang) {
     defaultLanguage = lang
-    return QuestHelper
+    return this
   }
 
   static getDefaultLanguage() {
     return defaultLanguage
+  }
+
+  static reset() {
+    defaultLanguage = DEFAULT_LANGUAGE
+    return this
   }
 
   static query = (searchString: string) => {
@@ -74,7 +87,7 @@ export class QuestHelper {
     return this.quest
   }
 
-  changeLanguage(lng: Lang) {
+  changeLanguage(lng: QuestHelperLang) {
     this.lng = lng
     return this
   }
@@ -86,10 +99,16 @@ export class QuestHelper {
   }
 
   getPrerequisite() {
-    return this.quest.prerequisite.map((q) => QuestHelper.of(q))
+    return this.quest.prerequisite
+      .map((q) => QuestHelper.of(q))
+      .map((maybe) => maybe.ensure())
+      .filter((i): i is QuestHelper => !!i)
   }
 
   getPostQuest() {
-    return postQuestMap[this.quest.game_id].map((q) => QuestHelper.of(q))
+    return postQuestMap[this.quest.game_id]
+      .map((q) => QuestHelper.of(q))
+      .map((maybe) => maybe.ensure())
+      .filter((i): i is QuestHelper => !!i)
   }
 }
