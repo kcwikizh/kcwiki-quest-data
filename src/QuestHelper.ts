@@ -4,6 +4,28 @@ import { questDataMap } from './data'
 
 type Lang = keyof typeof translationResources
 
+class MaybeQuest {
+  quest: Quest | undefined
+
+  constructor(q: Quest) {
+    this.quest = q
+  }
+
+  ensure() {
+    if (this.quest && this.quest.game_id > 0) {
+      return new QuestHelper(this.quest)
+    }
+    return undefined
+  }
+
+  forceEnsure() {
+    if (this.quest && this.quest.game_id > 0) {
+      return new QuestHelper(this.quest)
+    }
+    return new QuestHelper(UNKNOWN_QUEST)
+  }
+}
+
 export class QuestHelper {
   quest: Quest
   lng: Lang = 'zh-CN'
@@ -12,28 +34,18 @@ export class QuestHelper {
     this.quest = q
   }
 
-  static of = (quest: number | Quest) => {
-    if (typeof quest !== 'number') {
-      return new QuestHelper(quest)
+  static of = <T extends number | Quest>(
+    quest: T,
+  ): T extends number ? MaybeQuest : QuestHelper => {
+    if (typeof quest === 'number') {
+      return new MaybeQuest(questDataMap[quest]) as any
     }
-
-    if (!questDataMap[quest]) {
-      // unknown quest
-      return new QuestHelper(UNKNOWN_QUEST)
-    }
-    return new QuestHelper(questDataMap[quest])
+    return new QuestHelper(quest as Quest) as any
   }
 
   static query = (searchString: string) => {
     // TODO impl query
     return []
-  }
-
-  ensure() {
-    if (this.quest && this.quest.game_id > 0) {
-      return this
-    }
-    return undefined
   }
 
   unwrap() {
