@@ -6,7 +6,7 @@ describe('data', () => {
   })
 
   it('postQuestMap should always return array', () => {
-    const invaildId = 9e9
-    expect(postQuestMap[invaildId]).toEqual([])
+    const invalidId = 9e9
+    expect(postQuestMap[invalidId]).toEqual([])
   })
 })

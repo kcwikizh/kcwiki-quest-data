@@ -1,5 +1,5 @@
 import { QuestHelper } from '../QuestHelper'
-import { questDataMap, UNKNOWN_QUEST } from '../data'
+import { questDataMap, getUnknownQuest } from '../data'
 
 describe('QuestHelper basic usages', () => {
   it('should get correct quest', () => {
@@ -44,9 +44,9 @@ describe('QuestHelper basic usages', () => {
 
   it('forceEnsure fail should get UNKNOWN_QUEST', () => {
     const nonExistId = 9e9
-    expect(QuestHelper.nothing().unwrap()).toEqual(UNKNOWN_QUEST)
+    expect(QuestHelper.nothing().unwrap()).toEqual(getUnknownQuest())
     expect(QuestHelper.of(nonExistId).forceEnsure().unwrap()).toEqual(
-      UNKNOWN_QUEST,
+      getUnknownQuest(nonExistId),
     )
   })
 
@@ -83,6 +83,20 @@ describe('QuestHelper basic usages', () => {
       .forceEnsure()
       .getPostQuest()
     expect(postQuest).toEqual([])
+  })
+
+  it('change quest should affect other instance', () => {
+    const quest101 = QuestHelper.of(101).forceEnsure().unwrap()
+    // @ts-expect-error
+    QuestHelper.of(101).forceEnsure().unwrap().something = 1
+
+    // @ts-expect-error
+    expect(quest101.something).toBe(1)
+    // @ts-expect-error
+    expect(QuestHelper.of(101).forceEnsure().unwrap().something).toBe(1)
+    // reset
+    // @ts-expect-error
+    quest101.something === undefined
   })
 })
 

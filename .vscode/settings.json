@@ -4,5 +4,6 @@
       "fileMatch": ["/data/*.json", "/draft/*.json"],
       "url": "./build/schema-quest.json"
     }
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

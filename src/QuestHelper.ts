@@ -1,5 +1,5 @@
 import type { Quest } from '../types'
-import { translationResources, postQuestMap, UNKNOWN_QUEST } from './data'
+import { translationResources, postQuestMap, getUnknownQuest } from './data'
 import { questDataMap } from './data'
 
 class MaybeQuest {
@@ -32,7 +32,7 @@ class MaybeQuest {
   }
 
   forceEnsure() {
-    return this.ensure() ?? new QuestHelper(UNKNOWN_QUEST)
+    return this.ensure() ?? new QuestHelper(getUnknownQuest(this.questId))
   }
 }
 
@@ -41,7 +41,7 @@ const DEFAULT_LANGUAGE = 'zh-CN'
 let defaultLanguage: QuestHelperLang = DEFAULT_LANGUAGE
 
 export class QuestHelper {
-  private quest: Quest
+  private readonly quest: Quest
   lng: QuestHelperLang = defaultLanguage
 
   constructor(q: Quest) {
