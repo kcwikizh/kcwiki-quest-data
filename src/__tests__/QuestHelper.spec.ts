@@ -4,7 +4,7 @@ import { questDataMap, getUnknownQuest } from '../data'
 describe('QuestHelper basic usages', () => {
   it('should get correct quest', () => {
     const questId = 101
-    expect(QuestHelper.of(questId).ensure()?.unwrap()).toEqual(
+    expect(QuestHelper.of(questId).ensure()?.unwrap()).toBe(
       questDataMap[questId],
     )
   })
@@ -52,7 +52,7 @@ describe('QuestHelper basic usages', () => {
 
   it('should has consistent behavior between ensure and forceEnsure', () => {
     const questId = 102
-    expect(QuestHelper.of(questId).ensure()?.unwrap()).toEqual(
+    expect(QuestHelper.of(questId).ensure()?.unwrap()).toBe(
       QuestHelper.of(questId).forceEnsure().unwrap(),
     )
   })
@@ -109,29 +109,29 @@ describe('QuestHelper with language', () => {
     const defaultLang = QuestHelper.getDefaultLanguage()
     const lng1 = 'en-US'
     QuestHelper.setDefaultLanguage(lng1)
-    expect(QuestHelper.getDefaultLanguage()).toEqual(lng1)
+    expect(QuestHelper.getDefaultLanguage()).toBe(lng1)
     const nothing1 = QuestHelper.nothing()
 
     expect(nothing1.lng).toEqual(lng1)
 
     const lng2 = 'ja-JP'
     QuestHelper.setDefaultLanguage(lng2)
-    expect(QuestHelper.getDefaultLanguage()).toEqual(lng2)
+    expect(QuestHelper.getDefaultLanguage()).toBe(lng2)
     const nothing2 = QuestHelper.nothing()
 
-    expect(nothing1.lng).toEqual(lng1)
-    expect(nothing2.lng).toEqual(lng2)
+    expect(nothing1.lng).toBe(lng1)
+    expect(nothing2.lng).toBe(lng2)
 
     nothing1.changeLanguage(lng2)
-    expect(nothing1.lng).toEqual(lng2)
+    expect(nothing1.lng).toBe(lng2)
 
     QuestHelper.reset()
-    expect(QuestHelper.getDefaultLanguage()).toEqual(defaultLang)
+    expect(QuestHelper.getDefaultLanguage()).toBe(defaultLang)
   })
 
   it('should translate work', () => {
     const nothing = QuestHelper.nothing()
-    expect(nothing.translate()).toEqual(undefined)
+    expect(nothing.translate()).toBe(undefined)
 
     const q = QuestHelper.of(101).forceEnsure()
     const translates = ([
