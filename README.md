@@ -30,7 +30,7 @@
 - Clone this repo
 - Run `npm install`
 - Run `npm run generateSchema`
-- Edit `data/*.json` in [vscode](https://code.visualstudio.com/)
+- Edit `data/*.json` or `draft/*.json` in [vscode](https://code.visualstudio.com/)
 
 ### Use in other libraries
 
@@ -48,9 +48,18 @@ yarn add kcwikizh/kcwiki-quest-data#release
 
 ```js
 // API is currently in development and will be updated frequently
-import { questData } from 'kcwiki-quest-data'
-import type { Quest } from 'kcwiki-quest-data'
+import type { Quest } from 'kcwiki-quest-data' // quest json type
+import { questData } from 'kcwiki-quest-data' // all quests json array
+import { questDataMap } from 'kcwiki-quest-data' // all quests json keyBy game_id
 import quest101 from 'kcwiki-quest-data/data/101.json'
+import { QuestHelper } from 'kcwiki-quest-data'
+
+QuestHelper.of(101).ensure()?.unwrap().wiki_id // "A01"
+QuestHelper.of(101).ensure(
+  (questContainer) => console.error(questContainer.unwrap().wiki_id),
+  (err) => console.error('Error!', err),
+) // "A01"
+QuestHelper.of(99999999).forceEnsure().unwrap().name // "UNKNOWN_QUEST"
 ```
 
 - Or use [gh-pages/data.min.json](https://github.com/kcwikizh/kcwiki-quest-data/tree/gh-pages) directly
@@ -61,8 +70,7 @@ import quest101 from 'kcwiki-quest-data/data/101.json'
 - [任务 - 舰娘百科](https://zh.kcwiki.org/wiki/%E4%BB%BB%E5%8A%A1)
 - [KC3Kai/kc3-translations/quests.json](https://github.com/KC3Kai/kc3-translations/blob/master/data/jp/quests.json)
 - [poooi/plugin-quest](https://github.com/poooi/plugin-quest)
+- [poooi/plugin-translator](https://github.com/poooi/plugin-translator)
 
 - [Editing JSON with Visual Studio Code](https://code.visualstudio.com/docs/languages/json)
-- [typescript-json-schema](https://github.com/YousefED/typescript-json-schema)
 - [quicktype](https://github.com/quicktype/quicktype)
-- [JSON Schema Store](http://schemastore.org/json/)
