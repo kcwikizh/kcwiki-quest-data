@@ -37,7 +37,7 @@ class MaybeQuest {
 }
 
 export type QuestHelperLang = keyof typeof translationResources
-const DEFAULT_LANGUAGE = 'zh-CN'
+const DEFAULT_LANGUAGE = 'ja-JP'
 let defaultLanguage: QuestHelperLang = DEFAULT_LANGUAGE
 
 export class QuestHelper {
@@ -92,10 +92,17 @@ export class QuestHelper {
     return this
   }
 
-  translate(lng = this.lng): string | undefined {
-    return (translationResources[lng] as { [key: string]: string })[
+  translate(lng = this.lng, fallback = true): string | undefined {
+    const t = (translationResources[lng] as { [key: string]: string })?.[
       this.quest.game_id
     ]
+    if (t !== undefined || !fallback) {
+      return t
+    }
+
+    return (translationResources[DEFAULT_LANGUAGE] as {
+      [key: string]: string
+    })?.[this.quest.game_id]
   }
 
   getPrerequisite() {

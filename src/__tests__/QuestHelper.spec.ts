@@ -134,16 +134,29 @@ describe('QuestHelper with language', () => {
     expect(nothing.translate()).toBe(undefined)
 
     const q = QuestHelper.of(101).forceEnsure()
-    const translates = ([
-      'zh-CN',
-      'zh-TW',
-      'ja-JP',
-      'en-US',
-    ] as const).map((l) => q.translate(l))
+    expect(q.translate('zh-CN')).toMatchInlineSnapshot(`"编组任意舰船2只"`)
+    expect(q.translate('zh-TW')).toMatchInlineSnapshot(`"編組任意艦船2只"`)
+    expect(q.translate('ja-JP')).toMatchInlineSnapshot(
+      `"艦2隻による艦隊を編成"`,
+    )
+    expect(q.translate('en-US')).toMatchInlineSnapshot(
+      `"Have 2 any ships in your fleet"`,
+    )
 
-    translates.forEach((t) => {
-      expect(t).toBeTruthy()
-      expect(t!.length).toBeGreaterThan(0)
-    })
+    // Unknown language will fallback to the default language
+    // @ts-expect-error
+    expect(q.translate('ko-KR')).toBe(q.translate('ja-JP'))
+
+    // Close fallback
+    // @ts-expect-error
+    expect(q.translate('UNKNOWN-LANG', false)).toBe(undefined)
+  })
+
+  it('translate fail return undefined', () => {
+    const nothing = QuestHelper.nothing()
+    expect(nothing.translate()).toBe(undefined)
+
+    const unknowQuest = QuestHelper.of(999999).forceEnsure()
+    expect(unknowQuest.translate('en-US')).toBe(undefined)
   })
 })
