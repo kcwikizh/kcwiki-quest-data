@@ -5,8 +5,8 @@ describe('data', () => {
     expect(translationResources).toMatchSnapshot()
   })
 
-  it('postQuestMap should always return array', () => {
+  it('postQuestMap maybe return undefined', () => {
     const invalidId = 9e9
-    expect(postQuestMap[invalidId]).toEqual([])
+    expect(postQuestMap[invalidId]).toEqual(undefined)
   })
 })

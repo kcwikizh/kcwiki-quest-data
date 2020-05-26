@@ -1,5 +1,10 @@
 import type { Quest } from '../types'
-import { translationResources, postQuestMap, getUnknownQuest } from './data'
+import {
+  translationResources,
+  postQuestMap,
+  getUnknownQuest,
+  questData,
+} from './data'
 import { questDataMap } from './data'
 
 class MaybeQuest {
@@ -62,6 +67,13 @@ export class QuestHelper {
   }
 
   /**
+   * Return all wrapped quest
+   */
+  static all() {
+    return questData.map((q) => QuestHelper.of(q))
+  }
+
+  /**
    * Change default language will **not** change the instances already created.
    */
   static setDefaultLanguage(lang: QuestHelperLang) {
@@ -73,6 +85,9 @@ export class QuestHelper {
     return defaultLanguage
   }
 
+  /**
+   * Reset default language
+   */
   static reset() {
     defaultLanguage = DEFAULT_LANGUAGE
     return this
@@ -83,6 +98,9 @@ export class QuestHelper {
     return []
   }
 
+  /**
+   * Return wrapped quest data
+   */
   unwrap() {
     return this.quest
   }
@@ -105,6 +123,9 @@ export class QuestHelper {
     })?.[this.quest.game_id]
   }
 
+  /**
+   * Get all wrapped prerequisite quest
+   */
   getPrerequisite() {
     return this.quest.prerequisite
       .map((q) => QuestHelper.of(q))
@@ -112,10 +133,15 @@ export class QuestHelper {
       .filter((i): i is QuestHelper => !!i)
   }
 
+  /**
+   * Get all wrapped post quest
+   */
   getPostQuest() {
-    return postQuestMap[this.quest.game_id]
-      .map((q) => QuestHelper.of(q))
-      .map((maybe) => maybe.ensure())
-      .filter((i): i is QuestHelper => !!i)
+    return (
+      postQuestMap[this.quest.game_id]
+        ?.map((q) => QuestHelper.of(q))
+        .map((maybe) => maybe.ensure())
+        .filter((i): i is QuestHelper => !!i) ?? []
+    )
   }
 }
