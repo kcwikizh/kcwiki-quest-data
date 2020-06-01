@@ -22,6 +22,52 @@ const postQuestMap = data.reduce(
   {},
 )
 
+const buildDict = () => {
+  const walkKeys = [
+    'reward_other',
+    'choices',
+    'requirements',
+    'list',
+    'groups',
+    'map',
+    'ship',
+    'name',
+  ]
+  const walkQuest = (q: object | Array<any>): string[] => {
+    if (!q) {
+      return []
+    }
+
+    const walkEntries = Array.isArray(q)
+      ? Object.values(q)
+      : Object.keys(q)
+          .filter((k) => walkKeys.includes(k))
+          .map((k) => (q as any)[k])
+
+    return [
+      ...walkEntries.filter((v) => typeof v === 'string').map((v) => v),
+      ...walkEntries
+        .filter((v) => typeof v === 'object')
+        // @ts-ignore
+        .flatMap((v) => walkQuest(v)),
+    ]
+  }
+
+  const dictSet: { [k: string]: Set<number> } = {}
+  data.forEach((q) => {
+    const id = q.game_id
+    const keywords = walkQuest(q)
+    keywords.forEach((k) => {
+      if (!dictSet[k]) dictSet[k] = new Set()
+      dictSet[k].add(id)
+    })
+  })
+
+  const dict: { [k: string]: number[] } = {}
+  Object.entries(dictSet).forEach(([k, v]) => (dict[k] = Array.from(v)))
+  return dict
+}
+
 fs.writeFileSync(
   path.resolve(OUTPUT_PATH, 'data.json'),
   JSON.stringify(data, undefined, 2) + '\n',
@@ -35,6 +81,11 @@ fs.writeFileSync(
 fs.writeFileSync(
   path.resolve(OUTPUT_PATH, 'post-quest.json'),
   JSON.stringify(postQuestMap, undefined, 2) + '\n',
+)
+
+fs.writeFileSync(
+  path.resolve(OUTPUT_PATH, 'dict.json'),
+  JSON.stringify(buildDict(), undefined, 2) + '\n',
 )
 
 const MD_PREFIX = '# Kantai Collection Quests\n\n'
