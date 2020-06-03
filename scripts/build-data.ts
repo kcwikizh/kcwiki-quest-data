@@ -33,6 +33,8 @@ const buildDict = () => {
     'ship',
     'name',
   ]
+  const blockValues = ['艦']
+
   const walkQuest = (q: object | Array<any>): string[] => {
     if (!q) {
       return []
@@ -45,7 +47,10 @@ const buildDict = () => {
           .map((k) => (q as any)[k])
 
     return [
-      ...walkEntries.filter((v) => typeof v === 'string').map((v) => v),
+      ...walkEntries
+        .filter((v) => typeof v === 'string')
+        .filter((v) => !blockValues.includes(v))
+        .map((v) => v),
       ...walkEntries
         .filter((v) => typeof v === 'object')
         // @ts-ignore

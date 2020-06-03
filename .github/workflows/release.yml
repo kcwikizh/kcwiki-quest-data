@@ -42,6 +42,12 @@ jobs:
       - name: Test
         run: npm test
 
+      - name: Publish
+        if: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Pack
         id: pack-npm
         run: echo "::set-output name=filename::$(npm pack | tail -1)"
