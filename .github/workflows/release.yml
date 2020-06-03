@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Get npm cache directory path
         id: npm-cache-dir-path
@@ -43,7 +44,6 @@ jobs:
         run: npm test
 
       - name: Publish
-        if: ${{ secrets.NPM_TOKEN }}
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
