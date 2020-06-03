@@ -32,8 +32,8 @@ describe('query', () => {
     `)
     expect(query('A03 A04 A04')).toMatchInlineSnapshot(`
       Array [
-        103,
         104,
+        103,
       ]
     `)
   })

@@ -30,8 +30,8 @@ export const query = (words: string) => {
   return Object.keys(countMap)
     .sort(
       (a, b) =>
-        countMap[(a as unknown) as keyof typeof countMap] -
-        countMap[(b as unknown) as keyof typeof countMap],
+        countMap[(b as unknown) as keyof typeof countMap] -
+        countMap[(a as unknown) as keyof typeof countMap],
     )
     .map((strId) => +strId)
 }
