@@ -24,6 +24,7 @@ const postQuestMap = data.reduce(
 
 const buildDict = () => {
   const walkKeys = [
+    'wiki_id',
     'reward_other',
     'choices',
     'requirements',
@@ -62,10 +63,12 @@ const buildDict = () => {
   data.forEach((q) => {
     const id = q.game_id
     const keywords = walkQuest(q)
-    keywords.forEach((k) => {
-      if (!dictSet[k]) dictSet[k] = new Set()
-      dictSet[k].add(id)
-    })
+    keywords
+      .map((keyword) => keyword.toLowerCase()) // dict key always lowercase
+      .forEach((k) => {
+        if (!dictSet[k]) dictSet[k] = new Set()
+        dictSet[k].add(id)
+      })
   })
 
   const dict: { [k: string]: number[] } = {}
