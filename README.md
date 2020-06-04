@@ -1,8 +1,10 @@
 # Kcwiki Quest Data
 
+[![npm](https://img.shields.io/npm/v/kcwiki-quest-data)](https://www.npmjs.com/package/kcwiki-quest-data)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/kcwiki-quest-data)
 ![Build](https://github.com/kcwikizh/kcwiki-quest-data/workflows/Build%20and%20deploy/badge.svg)
 
-🚧 The Structured data for Kantai Collection quest
+The Structured data for Kantai Collection quest
 
 ## Supported features
 
@@ -37,13 +39,21 @@
 To install the latest version, run the following command:
 
 ```sh
-npm install --save kcwikizh/kcwiki-quest-data#release
+# Stable version
+npm install kcwiki-quest-data
+
+# Nightly version
+npm install kcwikizh/kcwiki-quest-data#nightly
 ```
 
 Or if you're using [yarn](https://classic.yarnpkg.com/en/docs/install/):
 
 ```sh
-yarn add kcwikizh/kcwiki-quest-data#release
+# Stable version
+yarn add kcwiki-quest-data
+
+# Nightly version
+yarn add kcwikizh/kcwiki-quest-data#nightly
 ```
 
 ```js
@@ -71,6 +81,5 @@ QuestHelper.of(99999999).forceEnsure().unwrap().name // "UNKNOWN_QUEST"
 - [KC3Kai/kc3-translations/quests.json](https://github.com/KC3Kai/kc3-translations/blob/master/data/jp/quests.json)
 - [poooi/plugin-quest](https://github.com/poooi/plugin-quest)
 - [poooi/plugin-translator](https://github.com/poooi/plugin-translator)
-
 - [Editing JSON with Visual Studio Code](https://code.visualstudio.com/docs/languages/json)
 - [quicktype](https://github.com/quicktype/quicktype)
