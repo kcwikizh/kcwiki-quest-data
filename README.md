@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/kcwiki-quest-data)](https://www.npmjs.com/package/kcwiki-quest-data)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/kcwiki-quest-data)
-![Build](https://github.com/kcwikizh/kcwiki-quest-data/workflows/Build%20and%20deploy/badge.svg)
+![build](https://github.com/kcwikizh/kcwiki-quest-data/workflows/build/badge.svg)
 
 The Structured data for Kantai Collection quest
 
