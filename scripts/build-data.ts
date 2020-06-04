@@ -32,6 +32,7 @@ const buildDict = () => {
     'groups',
     'map',
     'ship',
+    'shipclass',
     'name',
   ]
   const blockValues = ['艦']
