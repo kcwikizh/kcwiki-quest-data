@@ -1,14 +1,15 @@
-name: Create Release
+name: build
 
 on:
   push:
-    # Sequence of patterns matched against refs/tags
-    tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
 
     strategy:
       matrix:
@@ -21,7 +22,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: 'https://registry.npmjs.org'
 
       - name: Get npm cache directory path
         id: npm-cache-dir-path
@@ -37,16 +37,24 @@ jobs:
       - name: Install
         run: npm ci
 
+      - name: Prettier check
+        run: npm run format:check
+
       - name: Build
         run: npm run build
 
       - name: Test
         run: npm test
 
-      - name: Publish
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Deploy
+        if: github.ref == 'refs/heads/master'
+        # https://github.com/peaceiris/actions-gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          force_orphan: true
+          disable_nojekyll: true
 
       - name: Pack
         id: pack-npm
@@ -57,11 +65,12 @@ jobs:
         env:
           filename: ${{ steps.pack-npm.outputs.filename }}
 
-      - name: Deploy
+      - name: Deploy nightly
         # https://github.com/peaceiris/actions-gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./package
-          publish_branch: release
+          force_orphan: true
+          publish_branch: nightly
           disable_nojekyll: true

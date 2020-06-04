@@ -1,4 +1,4 @@
-name: 'Check Quest update'
+name: Check quest update
 
 on:
   schedule:
