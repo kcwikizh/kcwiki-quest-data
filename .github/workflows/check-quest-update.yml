@@ -30,8 +30,9 @@ jobs:
       - name: Push Branch
         id: push
         run: |
+          git add draft
           # Do not proceed if there are no file differences
-          LINES_CHANGED=$(git diff-index --name-only HEAD draft | wc -l)
+          LINES_CHANGED=$(git diff-index --name-only --cached HEAD | wc -l)
           if [[ "$LINES_CHANGED" = "0" ]]; then 
             echo "No file changes detected in draft." 
             echo "::set-output name=skipPR::true"
@@ -39,7 +40,6 @@ jobs:
           fi
           git config user.name 'kcwikizh'
           git config user.email 'dev@kcwiki.moe'
-          git add draft
           git commit --message 'feat(data): draft new quest'
           git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
           git push --force origin HEAD:bot/new-quest
