@@ -57,7 +57,6 @@ yarn add kcwikizh/kcwiki-quest-data#nightly
 ```
 
 ```js
-// API is currently in development and will be updated frequently
 import type { Quest } from 'kcwiki-quest-data' // quest json type
 import { questData } from 'kcwiki-quest-data' // all quests json array
 import { questDataMap } from 'kcwiki-quest-data' // all quests json keyBy game_id
@@ -66,13 +65,39 @@ import { QuestHelper } from 'kcwiki-quest-data'
 
 QuestHelper.of(101).ensure()?.unwrap().wiki_id // "A01"
 QuestHelper.of(101).ensure(
-  (questContainer) => console.error(questContainer.unwrap().wiki_id),
+  (questContainer) => console.log(questContainer.unwrap().wiki_id),
   (err) => console.error('Error!', err),
 ) // "A01"
 QuestHelper.of(99999999).forceEnsure().unwrap().name // "UNKNOWN_QUEST"
 ```
 
 - Or use [gh-pages/data.min.json](https://github.com/kcwikizh/kcwiki-quest-data/tree/gh-pages) directly
+
+## API
+
+### Quest
+
+The type of quest json.
+
+### QuestHelper
+
+#### Basic
+
+- `QuestHelper.of(gameId: number): MaybeQuest`
+- `QuestHelper.of(quest: Quest): QuestHelper`
+- `QuestHelper.unwrap(): Quest`
+
+#### Utils
+
+- `QuestHelper.translate(lng: string): string`
+- `QuestHelper.getPrerequisite(): QuestHelper[]`
+- `QuestHelper.getPostQuest(): QuestHelper[]`
+
+### MaybeQuest
+
+- `MaybeQuest.ensure(): QuestHelper | undefined`
+- `MaybeQuest.ensure((questContainer: QuestHelper) => {}, (error: Error) => {})`
+- `MaybeQuest.forceEnsure(): QuestHelper`
 
 ## Reference
 
