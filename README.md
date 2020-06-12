@@ -83,8 +83,9 @@ The type of quest json.
 
 #### Basic
 
-- `QuestHelper.of(gameId: number): MaybeQuest`
-- `QuestHelper.of(quest: Quest): QuestHelper`
+- `static QuestHelper.of(gameId: number): MaybeQuest`
+- `static QuestHelper.of(quest: Quest): QuestHelper`
+- `QuestHelper.id: number`
 - `QuestHelper.unwrap(): Quest`
 
 #### Utils
@@ -97,7 +98,7 @@ The type of quest json.
 
 - `MaybeQuest.ensure(): QuestHelper | undefined`
 - `MaybeQuest.ensure((questContainer: QuestHelper) => {}, (error: Error) => {})`
-- `MaybeQuest.forceEnsure(): QuestHelper`
+- `MaybeQuest.forceEnsure(): QuestHelper<Quest | UNKNOWN_QUEST>`
 
 ## Reference
 

@@ -104,6 +104,13 @@ export class QuestHelper {
   }
 
   /**
+   * the game id
+   */
+  get id() {
+    return this.quest.game_id
+  }
+
+  /**
    * Return wrapped quest data
    */
   unwrap() {
