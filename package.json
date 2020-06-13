@@ -9,7 +9,7 @@
     "buildData": "ts-node scripts/build-data.ts",
     "translate": "ts-node translator/index.ts",
     "tsc": "tsc",
-    "build": "npm run generateSchema && npm run buildData && npm run translate && npm run tsc",
+    "build": "npm start && npm run tsc",
     "checkPoi": "ts-node scripts/check-quest.ts",
     "format": "prettier --ignore-path .gitignore .",
     "format:check": "npm run format -- --check",
@@ -17,6 +17,9 @@
     "clean": "rm -rf build/* dist",
     "test": "jest",
     "test:ci": "jest --ci --coverage"
+  },
+  "bin": {
+    "query": "ts-node src/query.ts"
   },
   "repository": {
     "type": "git",
