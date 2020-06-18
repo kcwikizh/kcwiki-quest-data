@@ -27,6 +27,9 @@ const initI18n = async () => {
 
   i18next.init({
     resources: fromPairs(res),
+    interpolation: {
+      escapeValue: false,
+    },
     // debug: true,
   })
 }
