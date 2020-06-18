@@ -93,7 +93,6 @@ The type of quest json.
 - `QuestHelper.translate(lng: string): string`
 - `QuestHelper.getPrerequisite(): QuestHelper[]`
 - `QuestHelper.getPostQuest(): QuestHelper[]`
-- `static QuestHelper.query(searchString: string): QuestHelper[]`
 
 ### MaybeQuest
 

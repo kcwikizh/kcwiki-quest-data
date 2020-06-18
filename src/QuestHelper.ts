@@ -5,7 +5,6 @@ import {
   getUnknownQuest,
   questData,
 } from './data'
-import { query } from './query'
 import { questDataMap } from './data'
 
 class MaybeQuest {
@@ -92,15 +91,6 @@ export class QuestHelper {
   static reset() {
     defaultLanguage = DEFAULT_LANGUAGE
     return this
-  }
-
-  static query = (searchString: string) => {
-    return (
-      query(searchString)
-        .map((q) => QuestHelper.of(q))
-        .map((maybe) => maybe.ensure())
-        .filter((i): i is QuestHelper => !!i) ?? []
-    )
   }
 
   /**

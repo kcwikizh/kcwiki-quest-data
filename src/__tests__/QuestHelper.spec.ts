@@ -160,10 +160,3 @@ describe('QuestHelper with language', () => {
     expect(unknowQuest.translate('en-US')).toBe(undefined)
   })
 })
-
-describe('query', () => {
-  it('query work', () => {
-    const querySomething = QuestHelper.query('A03')
-    expect(querySomething).toEqual([QuestHelper.of(103).forceEnsure()])
-  })
-})
