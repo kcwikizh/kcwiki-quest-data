@@ -445,6 +445,8 @@ Object {
     "904": "Sortie to World 2-5,3-4,4-5,5-3 once with Ayanami Kai Ni and Shikinami Kai Ni and obtain an S-Rank at the boss",
     "905": "Sortie to World 1-6 once with 3 DEs and 2 any ships and clear, other ships not allowed; Sortie to World 1-1,1-2,1-3,1-5 once with 3 DEs and 2 any ships and obtain an S-Rank at the boss, other ships not allowed",
     "911": "Sortie to World 1-3,1-4,1-5,2-2,2-3 once with Okinami Kai Ni, Naganami, Kishinami, Asashimo and 2 any ships and obtain an S-Rank at the boss",
+    "914": "Sortie to World 4-1,4-2,4-3,4-4 once with 3 CAs, 1 DD and 2 any ships and obtain an A-Rank or better at the boss",
+    "916": "Sortie to World 5-1,5-2,5-3,5-4,5-5 once with Hiei Kai Ni C, any 1 from Kongou/Haruna/Kirishima, 1 CL and 1 or more DDs and obtain an S-Rank at the boss",
   },
   "ja-JP": Object {
     "101": "艦2隻による艦隊を編成",
@@ -889,6 +891,8 @@ Object {
     "904": "綾波改二+敷波改二で2-5,3-4,4-5,5-3ボス戦に1回S勝利",
     "905": "海防艦3隻+艦2隻で1-6に1回クリア(他の艦は不可)。また海防艦3隻+艦2隻で1-1,1-2,1-3,1-5ボス戦に1回S勝利(他の艦は不可)",
     "911": "沖波改二+長波+岸波+朝霜+艦2隻で1-3,1-4,1-5,2-2,2-3ボス戦に1回S勝利",
+    "914": "重巡3隻+駆逐1隻+艦2隻で4-1,4-2,4-3,4-4ボス戦に1回A勝利以上",
+    "916": "比叡改二丙+金剛/榛名/霧島の中から1隻+軽巡1隻+駆逐1隻以上で5-1,5-2,5-3,5-4,5-5ボス戦に1回S勝利",
   },
   "zh-CN": Object {
     "101": "编组任意舰船2只",
@@ -1333,6 +1337,8 @@ Object {
     "904": "2-5,3-4,4-5,5-3Boss战获得S胜1次，需要綾波改二+敷波改二",
     "905": "1-6出击完成全图1次，需要海防舰3只+任意舰船2只，其它舰船不可；以及1-1,1-2,1-3,1-5Boss战获得S胜1次，需要海防舰3只+任意舰船2只，其它舰船不可",
     "911": "1-3,1-4,1-5,2-2,2-3Boss战获得S胜1次，需要沖波改二+長波+岸波+朝霜+任意舰船2只",
+    "914": "4-1,4-2,4-3,4-4Boss战获得A胜或以上1次，需要重巡3只+驱逐1只+任意舰船2只",
+    "916": "5-1,5-2,5-3,5-4,5-5Boss战获得S胜1次，需要比叡改二丙+金剛/榛名/霧島任意1只+轻巡1只+驱逐1只或以上",
   },
   "zh-TW": Object {
     "101": "編組任意艦船2只",
@@ -1777,6 +1783,8 @@ Object {
     "904": "2-5,3-4,4-5,5-3Boss戰獲得S勝1次，需要綾波改二+敷波改二",
     "905": "1-6出擊完成全圖1次，需要海防艦3只+任意艦船2只，其它艦船不可；以及1-1,1-2,1-3,1-5Boss戰獲得S勝1次，需要海防艦3只+任意艦船2只，其它艦船不可",
     "911": "1-3,1-4,1-5,2-2,2-3Boss戰獲得S勝1次，需要沖波改二+長波+岸波+朝霜+任意艦船2只",
+    "914": "4-1,4-2,4-3,4-4Boss戰獲得A勝或以上1次，需要重巡3只+驅逐1只+任意艦船2只",
+    "916": "5-1,5-2,5-3,5-4,5-5Boss戰獲得S勝1次，需要比叡改二丙+金剛/榛名/霧島任意1只+輕巡1只+驅逐1只或以上",
   },
 }
 `;
