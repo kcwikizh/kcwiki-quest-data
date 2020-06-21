@@ -1,0 +1,82 @@
+{
+  "game_id": 916,
+  "wiki_id": "B144",
+  "category": 2,
+  "type": 4,
+  "name": "「比叡改二丙」見参！第三戦隊、南方突入！",
+  "detail": "「比叡改二丙」含む金剛型高速戦艦2隻以上、軽巡級1隻、駆逐艦1隻以上を含む艦隊を南方海域に投入！南方海域前面、珊瑚諸島沖、サブ島沖海域、サーモン海域、同北方の敵艦隊を捕捉、これを撃滅せよ！",
+  "reward_fuel": 1942,
+  "reward_ammo": 2020,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "艦本新設計 増設バルジ(大型艦)★+2",
+          "amount": 1
+        },
+        {
+          "name": "零式水上偵察機11型乙★+2",
+          "amount": 1
+        },
+        {
+          "name": "戦闘詳報",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "35.6cm連装砲改二",
+          "amount": 1
+        },
+        {
+          "name": "新型砲熕兵装資材",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    292
+  ],
+  "requirements": {
+    "category": "sortie",
+    "map": [
+      "5-1",
+      "5-2",
+      "5-3",
+      "5-4",
+      "5-5"
+    ],
+    "boss": true,
+    "result": "S",
+    "times": 1,
+    "groups": [
+      {
+        "ship": "比叡改二丙"
+      },
+      {
+        "ship": [
+          "金剛",
+          "榛名",
+          "霧島"
+        ],
+        "select": 1
+      },
+      {
+        "ship": "軽巡",
+        "amount": 1
+      },
+      {
+        "ship": "駆逐",
+        "amount": [
+          1,
+          99
+        ]
+      }
+    ]
+  }
+}
