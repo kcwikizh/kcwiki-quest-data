@@ -87,7 +87,7 @@ interface OrRequirement {
   list: NormalRequirement[]
 }
 
-type ConjunctionRequirement = AndRequirement | ThenRequirement // | OrRequirement
+type ConjunctionRequirement = AndRequirement | ThenRequirement | OrRequirement
 
 interface AGouRequirement {
   /**

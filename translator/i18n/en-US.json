@@ -199,6 +199,11 @@
     "then": {
       "separator": "; then ",
       "word": " then "
+    },
+
+    "or": {
+      "separator": "; or ",
+      "word": " or "
     }
   },
 
