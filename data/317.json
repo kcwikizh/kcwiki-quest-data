@@ -39,7 +39,7 @@
     673
   ],
   "requirements": {
-    "category": "and",
+    "category": "then",
     "list": [
       {
         "category": "excercise",
