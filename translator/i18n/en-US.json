@@ -197,7 +197,7 @@
     },
 
     "then": {
-      "separator": "; then",
+      "separator": "; then ",
       "word": " then "
     }
   },
