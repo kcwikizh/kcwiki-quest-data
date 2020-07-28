@@ -646,6 +646,10 @@ class Requirement {
     return this.list.map(parseRequirement).join(_$('req.then.separator'))
   }
 
+  get or() {
+    return this.list.map(parseRequirement).join(_$('req.or.separator'))
+  }
+
   // FORMAT:
   // "requirements": {
   //   "category": "modernization",

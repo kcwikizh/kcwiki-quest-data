@@ -207,6 +207,11 @@
     "then": {
       "separator": "；次に",
       "word": "，再び"
+    },
+
+    "or": {
+      "separator": "; または",
+      "word": "，または"
     }
   },
 

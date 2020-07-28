@@ -224,6 +224,11 @@
     "then": {
       "separator": "；之後",
       "word": "，再"
+    },
+
+    "or": {
+      "separator": "；或者",
+      "word": "或"
     }
   },
 
