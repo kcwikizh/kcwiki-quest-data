@@ -14,6 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -32,7 +34,8 @@ jobs:
         run: |
           git add draft
           # Do not proceed if there are no file differences
-          LINES_CHANGED=$(git diff-index --name-only --cached HEAD | wc -l)
+          COMMIT=$(git rev-parse --verify origin/$TARGET_BRANCH || echo HEAD)
+          LINES_CHANGED=$(git diff-index --name-only --cached $COMMIT | wc -l)
           if [[ "$LINES_CHANGED" = "0" ]]; then 
             echo "No file changes detected in draft." 
             echo "::set-output name=skipPR::true"
@@ -42,9 +45,10 @@ jobs:
           git config user.email 'dev@kcwiki.moe'
           git commit --message 'feat(data): draft new quest'
           git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
-          git push --force origin HEAD:bot/new-quest
+          git push --force origin HEAD:$TARGET_BRANCH
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
+          TARGET_BRANCH: bot/new-quest
 
       - name: Get current date
         id: date
