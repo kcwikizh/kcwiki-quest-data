@@ -35,8 +35,8 @@ jobs:
           git add draft
           # Do not proceed if there are no file differences
           COMMIT=$(git rev-parse --verify origin/$TARGET_BRANCH || echo HEAD)
-          LINES_CHANGED=$(git diff-index --name-only --cached $COMMIT | wc -l)
-          if [[ "$LINES_CHANGED" = "0" ]]; then 
+          FilES_CHANGED=$(git diff-index --name-only --cached $COMMIT | wc -l)
+          if [[ "$FILES_CHANGED" = "0" ]]; then 
             echo "No file changes detected in draft." 
             echo "::set-output name=skipPR::true"
             exit 0
