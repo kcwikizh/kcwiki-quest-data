@@ -3,6 +3,7 @@ name: Check quest update
 on:
   schedule:
     - cron: '0 0 * * *' # At every day 00:00(UTC).
+  workflow_dispatch:
 
 jobs:
   check:
@@ -36,8 +37,8 @@ jobs:
           # Do not proceed if there are no file differences
           COMMIT=$(git rev-parse --verify origin/$TARGET_BRANCH || echo HEAD)
           FILES_CHANGED=$(git diff-index --name-only --cached $COMMIT | wc -l)
-          if [[ "$FILES_CHANGED" = "0" ]]; then 
-            echo "No file changes detected in draft." 
+          if [[ "$FILES_CHANGED" = "0" ]]; then
+            echo "No file changes detected in draft."
             echo "::set-output name=skipPR::true"
             exit 0
           fi
