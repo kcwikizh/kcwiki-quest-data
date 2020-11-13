@@ -108,6 +108,12 @@ const main = async () => {
       category: +poiQuest.category,
       type: +poiQuest.type,
       name: poiQuest.title,
+      release_date: new Date().toLocaleString('zh-CN', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        timeZone: 'Asia/Shanghai',
+      }),
     }
 
     fs.writeFileSync(
