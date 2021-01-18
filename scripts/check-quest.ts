@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { unzipSync } from 'zlib'
-import fetch from 'node-fetch'
+import { fetch } from './proxy-fetch'
 import csv from 'csvtojson'
 import { keyBy } from 'lodash'
 import { loadAllJson } from './utils'
