@@ -15,7 +15,7 @@ interface PoiQuest {
   type: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
 }
 
-const URL = 'https://poi.moe/dump/quests.csv.gz'
+const URL = 'https://api.poi.moe/dump/quests.csv.gz'
 const OUTPUT_PATH = path.resolve('build')
 const OUTPUT_FILE = path.resolve(OUTPUT_PATH, 'poi-quests.json')
 
