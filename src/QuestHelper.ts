@@ -125,12 +125,12 @@ export class QuestHelper {
       return undefined
     }
     // fallback to kcwiki translation
-    const kcT = translationResources[lng]
+    const kcT = translationResources[lng] ?? ({} as const)
     if (gameId in kcT) {
       return kcT[gameId as keyof typeof kcT]
     }
 
-    const defaultLagT = kcanotifyTranslation[DEFAULT_LANGUAGE]
+    const defaultLagT = kcanotifyTranslation[DEFAULT_LANGUAGE] ?? ({} as const)
     if (gameId in defaultLagT) {
       return defaultLagT[gameId as keyof typeof defaultLagT]
     }
