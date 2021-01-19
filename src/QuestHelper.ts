@@ -116,12 +116,10 @@ export class QuestHelper {
 
   translate(lng = this.lng, fallback = true): string | undefined {
     const gameId = String(this.quest.game_id)
-    const langT = kcanotifyTranslation[lng] ?? {}
+    const langT = kcanotifyTranslation[lng] ?? ({} as const)
     if (gameId in langT) {
-      const t = langT[gameId as keyof typeof langT].desc
-      if (t !== undefined) {
-        return t
-      }
+      const t = langT[gameId as keyof typeof langT]
+      return t
     }
     if (!fallback) {
       return undefined
@@ -134,7 +132,7 @@ export class QuestHelper {
 
     const defaultLagT = kcanotifyTranslation[DEFAULT_LANGUAGE]
     if (gameId in defaultLagT) {
-      return defaultLagT[gameId as keyof typeof defaultLagT].desc
+      return defaultLagT[gameId as keyof typeof defaultLagT]
     }
     return undefined
   }

@@ -1,7 +1,9 @@
 import keyBy from 'lodash/keyBy'
+import mapValues from 'lodash/mapValues'
 import type { Quest } from '../types'
 import kcData from '../build/data.json'
 import postQuest from '../build/post-quest.json'
+import kcanotifyData from '../build/kcanotify-gamedata'
 
 export const getUnknownQuest = (id = -1): Quest => ({
   game_id: id,
@@ -25,5 +27,8 @@ export const getUnknownQuest = (id = -1): Quest => ({
 export const questData = kcData as Quest[]
 export const questDataMap = keyBy(questData, 'game_id')
 export const postQuestMap = postQuest as { [key: number]: number[] }
+export const kcanotifyTranslation = mapValues(kcanotifyData, (data) =>
+  mapValues(data, (item) => item.desc),
+)
+
 export { default as translationResources } from '../build/i18n'
-export { default as kcanotifyTranslation } from '../build/kcanotify-gamedata'
