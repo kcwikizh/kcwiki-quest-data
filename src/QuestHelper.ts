@@ -1,6 +1,7 @@
 import type { Quest } from '../types'
 import {
   translationResources,
+  kcanotifyTranslation,
   postQuestMap,
   getUnknownQuest,
   questData,
@@ -41,7 +42,8 @@ class MaybeQuest {
   }
 }
 
-export type QuestHelperLang = keyof typeof translationResources
+export type QuestHelperLang = keyof typeof kcanotifyTranslation &
+  keyof typeof translationResources
 const DEFAULT_LANGUAGE = 'ja-JP'
 let defaultLanguage: QuestHelperLang = DEFAULT_LANGUAGE
 
@@ -113,16 +115,28 @@ export class QuestHelper {
   }
 
   translate(lng = this.lng, fallback = true): string | undefined {
-    const t = (translationResources[lng] as { [key: string]: string })?.[
-      this.quest.game_id
-    ]
-    if (t !== undefined || !fallback) {
-      return t
+    const gameId = String(this.quest.game_id)
+    const langT = kcanotifyTranslation[lng] ?? {}
+    if (gameId in langT) {
+      const t = langT[gameId as keyof typeof langT].desc
+      if (t !== undefined) {
+        return t
+      }
+    }
+    if (!fallback) {
+      return undefined
+    }
+    // fallback to kcwiki translation
+    const kcT = translationResources[lng]
+    if (gameId in kcT) {
+      return kcT[gameId as keyof typeof kcT]
     }
 
-    return (translationResources[DEFAULT_LANGUAGE] as {
-      [key: string]: string
-    })?.[this.quest.game_id]
+    const defaultLagT = kcanotifyTranslation[DEFAULT_LANGUAGE]
+    if (gameId in defaultLagT) {
+      return defaultLagT[gameId as keyof typeof defaultLagT].desc
+    }
+    return undefined
   }
 
   /**
