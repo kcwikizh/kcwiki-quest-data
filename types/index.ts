@@ -338,6 +338,7 @@ export interface Quest {
   /**
    * 任务类别
    *
+   * 0. Unknown
    * 1. Composition
    * 1. Sortie
    * 1. Exercise
@@ -348,7 +349,7 @@ export interface Quest {
    *
    * @see https://github.com/poooi/plugin-quest/blob/master/index.es#L49-L57
    */
-  category: 1 | 2 | 3 | 4 | 5 | 6 | 7 // | 8 | 9
+  category: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 // | 8 | 9
   /**
    * 任务类型
    *
