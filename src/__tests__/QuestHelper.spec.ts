@@ -134,13 +134,17 @@ describe('QuestHelper with language', () => {
     expect(nothing.translate()).toBe(undefined)
 
     const q = QuestHelper.of(101).forceEnsure()
-    expect(q.translate('zh-CN')).toMatchInlineSnapshot(`"编组任意舰船2只"`)
-    expect(q.translate('zh-TW')).toMatchInlineSnapshot(`"編組任意艦船2只"`)
+    expect(q.translate('zh-CN')).toMatchInlineSnapshot(
+      `"以2艘以上的阵容编成「舰队」"`,
+    )
+    expect(q.translate('zh-TW')).toMatchInlineSnapshot(
+      `"以2艘以上的陣容編成「艦隊」"`,
+    )
     expect(q.translate('ja-JP')).toMatchInlineSnapshot(
-      `"艦2隻による艦隊を編成"`,
+      `"2隻以上の艦で編成される「艦隊」を編成せよ！"`,
     )
     expect(q.translate('en-US')).toMatchInlineSnapshot(
-      `"Have 2 any ships in your fleet"`,
+      `"Have 2 ships in your main fleet."`,
     )
 
     // Unknown language will fallback to the default language
