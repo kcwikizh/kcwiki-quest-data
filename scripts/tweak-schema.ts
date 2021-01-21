@@ -21,7 +21,7 @@ const questSchema = mapKeysDeep(schemaSource, (value: any, key: string) => {
 
 // disabled additional properties for every definitions
 Object.values(questSchema.definitions).forEach(
-  (obj: object) => ((obj as any).additionalProperties = false),
+  (obj: Record<string, any>) => ((obj as any).additionalProperties = false),
 )
 
 const OUTPUT_PATH = path.resolve('build')

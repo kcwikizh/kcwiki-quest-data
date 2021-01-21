@@ -29,6 +29,7 @@ describe('Validating format', () => {
 
 describe('Validating schema', () => {
   const ajv = new Ajv()
+  ajv.addKeyword('markdownDescription')
   ajv.addMetaSchema(schemaDraft06)
   const validate = ajv.compile(schema)
 
