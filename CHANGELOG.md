@@ -1,3 +1,20 @@
+## [v0.8.0](https://github.com/kcwikizh/kcwiki-quest-data/compare/v0.7.3...v0.8.0) (2021-01-21)
+
+## Data
+
+- Fix B144 type
+- Update draft
+
+### Features
+
+- Add kcanotify translation
+- Export `kcanotifyTranslation`
+
+### Breaking Changes
+
+- Prefer to use kcanotify translation
+- Add `0`(Unknown) on `Quest.category` type
+
 ## [v0.7.3](https://github.com/kcwikizh/kcwiki-quest-data/compare/v0.7.2...v0.7.3) (2020-10-25)
 
 ### Data
