@@ -16,8 +16,7 @@
     }
   ],
   "prerequisite": [
-    104,
-    293
+    104
   ],
   "requirements": {
     "category": "fleet",
