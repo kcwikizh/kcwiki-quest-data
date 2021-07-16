@@ -1,0 +1,66 @@
+{
+  "game_id": 339,
+  "wiki_id": "C42",
+  "category": 3,
+  "type": 7,
+  "name": "「十九駆」演習！",
+  "detail": "駆逐艦演習任務：第十九駆逐隊「磯波」「浦波」「綾波」「敷波」の4隻を含む演習艦隊を編成。<br>同艦隊で本日中に演習で【S判定】勝利3回以上を達成せよ！精鋭十九駆、じゃ、見ててよね！",
+  "reward_fuel": 190,
+  "reward_ammo": 190,
+  "reward_steel": 190,
+  "reward_bauxite": 100,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "給糧艦「間宮」",
+          "amount": 1
+        },
+        {
+          "name": "改修資材",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "三式爆雷投射機",
+          "amount": 1
+        },
+        {
+          "name": "12.7cm連装砲B型改二",
+          "amount": 1
+        },
+        {
+          "name": "開発資材",
+          "amount": 8
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    177,
+    337
+  ],
+  "requirements": {
+    "category": "excercise",
+    "times": 3,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": "綾波"
+      },
+      {
+        "ship": "敷波"
+      },
+      {
+        "ship": "磯波"
+      },
+      {
+        "ship": "浦波"
+      }
+    ]
+  }
+}

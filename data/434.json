@@ -1,0 +1,58 @@
+{
+  "game_id": 434,
+  "wiki_id": "D32",
+  "category": 4,
+  "type": 1,
+  "name": "特設護衛船団司令部、活動開始！",
+  "detail": "海上護衛任務：遠征任務「警備任務」「海上護衛任務」「兵站強化任務」「海峡警備行動」<br>「タンカー護衛任務」の各任務を、海防艦・駆逐艦などを主軸とした護衛艦艇で実施せよ！",
+  "reward_fuel": 1000,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 500,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "給糧艦「伊良湖」",
+          "amount": 2
+        },
+        {
+          "name": "高速修復材",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "洋上補給",
+          "amount": 2
+        },
+        {
+          "name": "改修資材",
+          "amount": 3
+        },
+        {
+          "name": "緊急修理資材",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "expedition",
+    "objects": [
+      {
+        "id": [
+          3,
+          5,
+          9,
+          "A1",
+          "A2"
+        ],
+        "times": 1
+      }
+    ]
+  }
+}
