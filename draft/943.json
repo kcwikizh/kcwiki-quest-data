@@ -19,7 +19,7 @@
         },
         {
           "name": "天山一二型甲",
-          "category": "装备",
+          "category": "装備",
           "amount": 1
         },
         {
@@ -32,17 +32,17 @@
       "choices": [
         {
           "name": "8cm高角炮改+增设机枪★+2",
-          "category": "装备",
+          "category": "装備",
           "amount": 1
         },
         {
           "name": "零式舰战63型（爆战）",
-          "category": "装备",
+          "category": "装備",
           "amount": 2
         },
         {
-          "name": "天山一二型甲改（空六号电探改装备机）",
-          "category": "装备",
+          "name": "天山一二型甲改（空六号电探改装備机）",
+          "category": "装備",
           "amount": 1
         }
       ]

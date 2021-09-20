@@ -12,24 +12,24 @@
   "reward_other": [
     {
       "name": "流星改（一航战）",
-      "category": "装备",
+      "category": "装備",
       "amount": 1
     },
     {
       "choices": [
         {
           "name": "试制 秋水",
-          "category": "装备",
+          "category": "装備",
           "amount": 1
         },
         {
           "name": "一式陆攻 二二型甲★+2",
-          "category": "装备",
+          "category": "装備",
           "amount": 1
         },
         {
           "name": "KA号观测机★+3",
-          "category": "装备",
+          "category": "装備",
           "amount": 3
         }
       ]

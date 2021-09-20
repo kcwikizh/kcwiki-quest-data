@@ -13,24 +13,24 @@
   "reward_other": [
     {
       "name": "15.2cm连装炮改二",
-      "category": "装备",
+      "category": "装備",
       "amount": 1
     },
     {
       "choices": [
         {
           "name": "15.2cm连装炮",
-          "category": "装备",
+          "category": "装備",
           "amount": 2
         },
         {
           "name": "8cm高角炮",
-          "category": "装备",
+          "category": "装備",
           "amount": 2
         },
         {
           "name": "25mm三连装机铳",
-          "category": "装备",
+          "category": "装備",
           "amount": 2
         }
       ]

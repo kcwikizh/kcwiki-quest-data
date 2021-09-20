@@ -15,12 +15,12 @@
       "choices": [
         {
           "name": "二式12cm迫击炮改",
-          "category": "装备",
+          "category": "装備",
           "amount": 2
         },
         {
           "name": "舰载型 四式20cm对地喷进炮",
-          "category": "装备",
+          "category": "装備",
           "amount": 1
         },
         {
@@ -33,7 +33,7 @@
       "choices": [
         {
           "name": "大发动艇",
-          "category": "装备",
+          "category": "装備",
           "amount": 2
         },
         {

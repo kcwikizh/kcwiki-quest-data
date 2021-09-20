@@ -14,7 +14,7 @@
       "choices": [
         {
           "name": "鼓筒（运输用）",
-          "category": "装备",
+          "category": "装備",
           "amount": 2
         },
         {
@@ -27,12 +27,12 @@
       "choices": [
         {
           "name": "大发动艇",
-          "category": "装备",
+          "category": "装備",
           "amount": 1
         },
         {
           "name": "洋上补给",
-          "category": "装备",
+          "category": "装備",
           "amount": 2
         },
         {

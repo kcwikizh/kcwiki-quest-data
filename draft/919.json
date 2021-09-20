@@ -30,12 +30,12 @@
       "choices": [
         {
           "name": "天山",
-          "category": "装备",
+          "category": "装備",
           "amount": 3
         },
         {
           "name": "OS2U",
-          "category": "装备",
+          "category": "装備",
           "amount": 1
         }
       ]

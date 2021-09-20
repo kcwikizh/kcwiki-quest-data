@@ -15,7 +15,7 @@
       "choices": [
         {
           "name": "8cm高角炮改+增设机枪",
-          "category": "装备",
+          "category": "装備",
           "amount": 1
         },
         {
@@ -36,12 +36,12 @@
         },
         {
           "name": "甲标的 丙型",
-          "category": "装备",
+          "category": "装備",
           "amount": 2
         },
         {
           "name": "强风改",
-          "category": "装备",
+          "category": "装備",
           "amount": 1
         }
       ]
