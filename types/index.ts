@@ -335,6 +335,7 @@ export interface Quest {
    * 任务在wiki的编号
    */
   wiki_id: string
+  release_date?: string
   /**
    * 任务类别
    *
