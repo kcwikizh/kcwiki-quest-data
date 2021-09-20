@@ -1,6 +1,63 @@
 {
   "game_id": 925,
+  "wiki_id": "B153",
   "category": 9,
   "type": 4,
-  "name": "改加賀型航空母艦「加賀改二」、抜錨！"
+  "name": "改加賀型航空母艦「加賀改二」、抜錨！",
+  "detail": "旗艦「加賀改二」型航空母艦、僚艦に正規空母1隻以上を含む機動部隊を編成、西方海域カスガダマ島、カレー洋リランカ島沖、北方海域全域、南方海域珊瑚諸島沖に展開！各方面の敵戦力を撃滅せよ！",
+  "reward_fuel": 1942,
+  "reward_ammo": 2020,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "流星改（一航战）",
+      "category": "装备",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "试制 秋水",
+          "category": "装备",
+          "amount": 1
+        },
+        {
+          "name": "一式陆攻 二二型甲★+2",
+          "category": "装备",
+          "amount": 1
+        },
+        {
+          "name": "KA号观测机★+3",
+          "category": "装备",
+          "amount": 3
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    924
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "4-4",
+      "4-5",
+      "3-4",
+      "5-2"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "加贺改二（戊/护）",
+        "flagship": true
+      },
+      {
+        "ship": "正规空母",
+        "amount": 1
+      }
+    ]
+  }
 }

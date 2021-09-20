@@ -1,7 +1,59 @@
 {
   "game_id": 1104,
+  "wiki_id": "F99",
   "category": 11,
   "type": 5,
   "name": "潜水艦電子兵装の量産",
-  "release_date": "2021/6/23"
+  "detail": "「13号対空電探改」x3廃棄、開発資材x100と「九三式水中聴音機」「22号水上電探」各x2を準備せよ！　※任務達成後、用意した開発資材及び必要装備(低改修値のもの優先)は消費します",
+  "reward_fuel": 100,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "潜水艦搭載電探&水防式望遠鏡",
+      "category": "装備",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "開発資材",
+          "amount": 5
+        },
+        {
+          "name": "改修資材",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    1103
+  ],
+  "requirements": {
+    "category": "equipexchange",
+    "equipments": [
+      {
+        "name": "九三式水中聴音機",
+        "amount": 2
+      },
+      {
+        "name": "13号対空電探改",
+        "amount": 2
+      }
+    ],
+    "scraps": [
+      {
+        "name": "61cm三連装(酸素)魚雷",
+        "amount": 3
+      }
+    ],
+    "consumptions": [
+      {
+        "name": "開発資材",
+        "amount": 100
+      }
+    ]
+  }
 }

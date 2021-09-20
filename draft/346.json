@@ -1,6 +1,66 @@
 {
   "game_id": 346,
+  "wiki_id": "C50",
   "category": 3,
   "type": 5,
-  "name": "最精鋭！主力オブ主力、演習開始！"
+  "name": "最精鋭！主力オブ主力、演習開始！",
+  "detail": "第十駆逐隊演習任務：改装甲型駆逐艦「夕雲改二」「巻雲改二」「風雲改二」「秋雲改二」の4隻を含む艦隊を編成、同駆逐隊を含む精鋭艦隊で、本日中に【S判定】以上の勝利を4回以上達成せよ！",
+  "reward_fuel": 250,
+  "reward_ammo": 250,
+  "reward_steel": 250,
+  "reward_bauxite": 250,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "开发资材",
+          "amount": 6
+        },
+        {
+          "name": "高速修复材",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "勋章",
+          "amount": 1
+        },
+        {
+          "name": "新型航空兵装资材",
+          "amount": 1
+        },
+        {
+          "name": "间宫",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    197,
+    323
+  ],
+  "requirements": {
+    "category": "excercise",
+    "times": 4,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": [
+          "夕云改二",
+          "卷云改二",
+          "风云改二",
+          "秋云改二"
+        ],
+        "amount": [
+          4,
+          99
+        ]
+      }
+    ]
+  }
 }

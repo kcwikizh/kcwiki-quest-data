@@ -1,7 +1,50 @@
 {
   "game_id": 940,
+  "wiki_id": "B168",
   "category": 9,
   "type": 4,
   "name": "二水戦旗艦、この「矢矧」が預かります！",
-  "release_date": "2021/4/1"
+  "release_date": "2021/4/1",
+  "detail": "旗艦に「矢矧改二(改二乙含む)」、随伴駆逐艦2隻を配備した精鋭水雷戦隊で、南西諸島防衛線、沖ノ島沖、サブ島沖海域、サーモン海域北方の敵艦隊を撃滅せよ！二水戦旗艦「矢矧」、抜錨！",
+  "reward_fuel": 1945,
+  "reward_ammo": 2021,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "15.2cm连装炮改二★+2",
+      "category": "装备",
+      "amount": 1
+    },
+    {
+      "name": "矢矧的挂轴",
+      "category": "家具",
+      "amount": 1
+    }
+  ],
+  "prerequisite": [
+    860
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "1-4",
+      "2-5",
+      "5-3",
+      "5-5"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "矢矧",
+        "flagship": true
+      },
+      {
+        "ship": "驱逐舰",
+        "amount": 2
+      }
+    ]
+  }
 }

@@ -1,7 +1,54 @@
 {
   "game_id": 718,
+  "wiki_id": "G10",
   "category": 7,
   "type": 4,
   "name": "「最上型」改修工事を実施せよ！",
-  "release_date": "2021/4/1"
+  "detail": "最上型近代化改修：鋼材1100及弾薬1100を準備、「最上型」を近代化改修！「軽巡級」×3隻同時使用で2回成功させよ！※任務達成後、準備資源は消費します。",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 600,
+  "reward_other": [
+    {
+      "name": "補強増設",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "8cm高角砲",
+          "amount": 2
+        },
+        {
+          "name": "25mm単装機銃",
+          "amount": 2
+        },
+        {
+          "name": "開発資材",
+          "amount": 8
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "modernization",
+    "times": 2,
+    "shipclass": "最上",
+    "consumptions": [
+      {
+        "ship": [
+          "軽巡洋艦"
+        ],
+        "amount": 3
+      }
+    ],
+    "resources": [
+      0,
+      1100,
+      1100,
+      0
+    ]
+  }
 }

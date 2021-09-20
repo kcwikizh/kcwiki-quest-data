@@ -1,7 +1,52 @@
 {
   "game_id": 716,
+  "wiki_id": "G08",
   "category": 7,
   "type": 5,
   "name": "「軽巡」級の改修工事を実施せよ！",
-  "release_date": "2021/3/3"
+  "detail": "軽巡近代化改修:鋼材800及びボーキサイト400を準備、任意の軽巡級を近代化改修！「軽巡級」*3隻同時使用により2回成功させよ！※任務達成後、準備資源は消費します。",
+  "reward_fuel": 500,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "高速修復材",
+          "amount": 2
+        },
+        {
+          "name": "開発資材",
+          "amount": 3
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "modernization",
+    "times": 2,
+    "ship": [
+      "軽巡洋艦",
+      "重雷装巡洋艦",
+      "練習巡洋艦"
+    ],
+    "consumptions": [
+      {
+        "ship": [
+          "軽巡洋艦",
+          "重雷装巡洋艦",
+          "練習巡洋艦"
+        ],
+        "amount": 3
+      }
+    ],
+    "resources": [
+      0,
+      0,
+      800,
+      400
+    ]
+  }
 }

@@ -1,6 +1,53 @@
 {
   "game_id": 197,
+  "wiki_id": "A93",
   "category": 1,
   "type": 4,
-  "name": "主力オブ主力、精強「十駆」出撃準備ヨシ！"
+  "name": "主力オブ主力、精強「十駆」出撃準備ヨシ！",
+  "detail": "第十駆逐隊編成任務：改装甲型駆逐艦「夕雲改二」「巻雲改二」「風雲改二」、そして「秋雲改二」の4隻から成る完全編成の最精強「第十駆逐隊」(4隻編成)を編成せよ！",
+  "reward_fuel": 100,
+  "reward_ammo": 100,
+  "reward_steel": 100,
+  "reward_bauxite": 100,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "高速修復材",
+          "amount": 6
+        },
+        {
+          "name": "特注家具職人",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "12.7cm連装砲D型改二★+2",
+      "category": "装備",
+      "amount": 1
+    }
+  ],
+  "prerequisite": [
+    892
+  ],
+  "requirements": {
+    "category": "fleet",
+    "groups": [
+      {
+        "ship": "夕雲改二",
+        "flagship": true
+      },
+      {
+        "ship": "巻雲改二"
+      },
+      {
+        "ship": "風雲改二"
+      },
+      {
+        "ship": "秋雲改二"
+      }
+    ],
+    "disallowed": "他の艦"
+  }
 }

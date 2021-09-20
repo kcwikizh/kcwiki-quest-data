@@ -1,6 +1,79 @@
 {
   "game_id": 917,
+  "wiki_id": "B145",
   "category": 9,
   "type": 4,
-  "name": "改装航空軽巡「Gotland andra」、出撃！"
+  "name": "改装航空軽巡「Gotland andra」、出撃！",
+  "detail": "「Gotland andra」旗艦、随伴駆逐艦1隻以上を含む艦隊で、南西諸島海域沖ノ島海域に出撃！さらに西方カレー洋海域、カスガダマ島、カレー洋リランカ島沖に展開！同方面の敵を撃滅せよ！",
+  "reward_fuel": 700,
+  "reward_ammo": 700,
+  "reward_steel": 700,
+  "reward_bauxite": 1000,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "剑鱼（Swordfish）（水上机型）",
+          "category": "装备",
+          "amount": 2
+        },
+        {
+          "name": "S9鹗（Osprey）",
+          "category": "装备",
+          "amount": 2
+        },
+        {
+          "name": "剑鱼（Swordfish）Mk.III改（水上机型）",
+          "category": "装备",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "改修资材",
+          "amount": 4
+        },
+        {
+          "name": "新型航空兵装资材",
+          "amount": 1
+        },
+        {
+          "name": "补强增设",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    218,
+    809
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "2-4",
+      "4-2",
+      "4-4",
+      "4-5"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "Gotland andra",
+        "flagship": true
+      },
+      {
+        "ship": "駆逐",
+        "amount": 1
+      },
+      {
+        "ship": "艦",
+        "amount": 4
+      }
+    ]
+  }
 }

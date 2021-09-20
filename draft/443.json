@@ -1,7 +1,54 @@
 {
   "game_id": 443,
+  "wiki_id": "D39",
   "category": 4,
   "type": 4,
   "name": "西方連絡作戦による航空技術獲得",
-  "release_date": "2021/3/3"
+  "detail": "西方連絡作戦実施：欧州友軍の航空技術入手のため、複数の潜水艦による「潜水艦派遣作戦」を複数回実施し、これらを見事成功させよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 300,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "Bf109T改",
+          "amount": 1
+        },
+        {
+          "name": "Do 17 Z-2",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "新型兵装資材",
+          "amount": 1
+        },
+        {
+          "name": "新型航空兵装資材",
+          "amount": 2
+        },
+        {
+          "name": "改修資材",
+          "amount": 4
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    442
+  ],
+  "requirements": {
+    "category": "expedition",
+    "objects": [
+      {
+        "times": 2,
+        "id": 30
+      }
+    ]
+  }
 }

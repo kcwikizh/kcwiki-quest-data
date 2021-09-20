@@ -1,7 +1,56 @@
 {
   "game_id": 719,
+  "wiki_id": "G10",
   "category": 7,
   "type": 4,
   "name": "続：「最上型」改修工事を実施せよ！",
-  "release_date": "2021/4/1"
+  "detail": "最上型近代化改修：鋼材1200及弾薬1200を準備、「最上型」を近代化改修！「重巡級」×4隻同時使用で2回成功させよ！※任務達成後、準備資源は消費します。",
+  "reward_fuel": 600,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "21号対空電探改二",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "20.3cm(3号)連装砲",
+          "amount": 2
+        },
+        {
+          "name": "瑞雲12型",
+          "amount": 2
+        },
+        {
+          "name": "改修資材",
+          "amount": 5
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    718
+  ],
+  "requirements": {
+    "category": "modernization",
+    "times": 2,
+    "shipclass": "最上",
+    "consumptions": [
+      {
+        "ship": [
+          "重巡洋艦"
+        ],
+        "amount": 4
+      }
+    ],
+    "resources": [
+      0,
+      1200,
+      1200,
+      0
+    ]
+  }
 }

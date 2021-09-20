@@ -1,7 +1,70 @@
 {
   "game_id": 934,
+  "wiki_id": "B160",
   "category": 9,
   "type": 4,
   "name": "奇跡の駆逐艦「雪風」、再び出撃す！",
-  "release_date": "2020/11/14"
+  "release_date": "2020/11/14",
+  "detail": "旗艦に「丹陽」または帰還後の「雪風改二」を配備した精強な艦隊で、東部オリョール海、沖ノ島海域、沖ノ島沖、アルフォンシーノ方面、マラッカ海峡ペナン島沖深部に展開！敵艦隊主力を捕捉撃滅せよ！",
+  "reward_fuel": 1971,
+  "reward_ammo": 0,
+  "reward_steel": 1939,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "勋章",
+          "amount": 1
+        },
+        {
+          "name": "补强增设",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "现地改装12.7cm连装高角炮★+4",
+          "category": "装备",
+          "amount": 1
+        },
+        {
+          "name": "现地改装10cm连装高角炮★+4",
+          "amount": 1
+        },
+        {
+          "name": "新型兵装资材",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    927,
+    891
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "2-3",
+      "2-4",
+      "2-5",
+      "3-3",
+      "7-3P2"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": [
+          "丹阳",
+          "雪风改二"
+        ],
+        "flagship": true
+      }
+    ]
+  }
 }

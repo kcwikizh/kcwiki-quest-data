@@ -1,6 +1,86 @@
 {
   "game_id": 912,
+  "wiki_id": "By3",
   "category": 9,
   "type": 5,
-  "name": "工作艦「明石」護衛任務"
+  "name": "工作艦「明石」護衛任務",
+  "detail": "工作艦護衛任務：旗艦に工作艦「明石」、護衛の駆逐艦3隻以上で製油所地帯沿岸、鎮守府近海航路、南西諸島近海、バシー海峡、東部オリョール海に展開。「明石」を護衛、同海域での作戦を成功させよ！",
+  "reward_fuel": 600,
+  "reward_ammo": 0,
+  "reward_steel": 600,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "洋上补给",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "紧急修理资材",
+          "amount": 2
+        },
+        {
+          "name": "高速修复材",
+          "amount": 5
+        },
+        {
+          "name": "开发资材",
+          "amount": 6
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "and",
+    "list": [
+      {
+        "category": "sortie",
+        "times": 1,
+        "map": "1-6",
+        "result": "クリア",
+        "groups": [
+          {
+            "ship": "明石",
+            "flagship": true
+          },
+          {
+            "ship": "駆逐",
+            "amount": 3
+          },
+          {
+            "ship": "艦",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "category": "sortie",
+        "times": 1,
+        "map": [
+          "1-3",
+          "2-1",
+          "2-2",
+          "2-3"
+        ],
+        "boss": true,
+        "result": "A",
+        "groups": [
+          {
+            "ship": "明石",
+            "flagship": true
+          },
+          {
+            "ship": "駆逐",
+            "amount": 3
+          },
+          {
+            "ship": "艦",
+            "amount": 2
+          }
+        ]
+      }
+    ]
+  }
 }

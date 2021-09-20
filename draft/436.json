@@ -1,6 +1,61 @@
 {
   "game_id": 436,
+  "wiki_id": "D33",
   "category": 4,
   "type": 5,
-  "name": "練習航海及び警備任務を実施せよ！"
+  "name": "練習航海及び警備任務を実施せよ！",
+  "detail": "練習航海及び警備任務：「練習航海」「長距離練習航海」「警備任務」「対潜警戒任務」「強行偵察任務」の各遠征任務を、軽巡・駆逐艦・海防艦などの艦艇で実施せよ！",
+  "reward_fuel": 400,
+  "reward_ammo": 400,
+  "reward_steel": 400,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "鼓筒（运输用）",
+          "category": "装备",
+          "amount": 2
+        },
+        {
+          "name": "高速修复材",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "大发动艇",
+          "category": "装备",
+          "amount": 1
+        },
+        {
+          "name": "洋上补给",
+          "category": "装备",
+          "amount": 2
+        },
+        {
+          "name": "特制家具职人",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "expedition",
+    "objects": [
+      {
+        "id": [
+          1,
+          2,
+          3,
+          4,
+          10
+        ],
+        "times": 1
+      }
+    ]
+  }
 }

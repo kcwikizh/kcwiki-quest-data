@@ -1,6 +1,60 @@
 {
   "game_id": 344,
+  "wiki_id": "C48",
   "category": 3,
   "type": 4,
-  "name": "「第十方面艦隊」演習！"
+  "name": "「第十方面艦隊」演習！",
+  "detail": "第十方面艦隊演習任務：同艦隊の基幹戦力である重巡「羽黒」「足柄」、駆逐艦「神風」のうち2隻以上を含む艦隊を編成。同艦隊で、本日中に【A判定】以上の勝利を4回以上達成せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 500,
+  "reward_steel": 500,
+  "reward_bauxite": 500,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "改修资材",
+          "amount": 2
+        },
+        {
+          "name": "高速修复材",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "25mm三连装机枪",
+          "amount": 2
+        },
+        {
+          "name": "新型兵装资材",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    303
+  ],
+  "requirements": {
+    "category": "excercise",
+    "times": 4,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": [
+          "羽黑",
+          "足柄",
+          "神风"
+        ],
+        "amount": [
+          2,
+          99
+        ]
+      }
+    ]
+  }
 }

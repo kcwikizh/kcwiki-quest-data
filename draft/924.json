@@ -1,6 +1,60 @@
 {
   "game_id": 924,
+  "wiki_id": "B152",
   "category": 9,
   "type": 4,
-  "name": "【航空母艦特別任務】航空戦隊、精鋭無比！"
+  "name": "【航空母艦特別任務】航空戦隊、精鋭無比！",
+  "detail": "航空母艦特別任務：精強な正規空母2隻以上を擁する航空戦隊を中核とした機動部隊の精鋭で、南西諸島海域沖ノ島海域、同沖ノ島沖、西方海域リランカ島に出撃！各方面の敵戦力を撃滅せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 880,
+  "reward_bauxite": 880,
+  "reward_other": [
+    {
+      "name": "勋章",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "开发资材",
+          "amount": 88
+        },
+        {
+          "name": "试制甲板用弹射器",
+          "amount": 1
+        },
+        {
+          "name": "TBF★+4",
+          "category": "装备",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    285,
+    182
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "2-4",
+      "2-5",
+      "4-3"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "正规空母",
+        "amount": 2
+      },
+      {
+        "ship": "自由舰",
+        "amount": 4
+      }
+    ]
+  }
 }

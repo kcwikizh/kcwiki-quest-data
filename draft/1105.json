@@ -1,7 +1,78 @@
 {
   "game_id": 1105,
+  "wiki_id": "F100",
   "category": 11,
   "type": 5,
-  "name": "夏の格納庫整備＆航空基地整備",
-  "release_date": "2021/7/16"
+  "name": "夏の格納庫整備&航空基地整備",
+  "detail": "九六式や一式陸攻等の陸上攻撃機x3廃棄、弾薬x2800と「九七式艦攻」「天山」各x4を準備せよ！※任務達成後、用意した弾薬及び必要装備(低改修値のもの優先)は消費します。",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 400,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "新型兵装資材",
+          "amount": 1
+        },
+        {
+          "name": "新型航空兵装資材",
+          "amount": 2
+        },
+        {
+          "name": "開発資材",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "熟練搭乗員",
+          "amount": 2
+        },
+        {
+          "name": "設営隊",
+          "amount": 1
+        },
+        {
+          "name": "改修資材",
+          "amount": 8
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    1102
+  ],
+  "requirements": {
+    "category": "equipexchange",
+    "equipments": [
+      {
+        "name": "九七式艦攻",
+        "amount": 4
+      },
+      {
+        "name": "天山",
+        "amount": 4
+      }
+    ],
+    "scraps": [
+      {
+        "name": "九六式陸攻",
+        "amount": 3
+      },
+      {
+        "name": "一式陸攻",
+        "amount": 3
+      }
+    ],
+    "resources": [
+      0,
+      2800,
+      0,
+      0
+    ]
+  }
 }

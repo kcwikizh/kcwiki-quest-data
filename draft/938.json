@@ -1,7 +1,70 @@
 {
   "game_id": 938,
+  "wiki_id": "B166",
   "category": 9,
   "type": 4,
   "name": "改装航空巡洋艦「最上」、抜錨せよ！",
-  "release_date": "2021/4/1"
+  "release_date": "2021/4/1",
+  "detail": "旗艦に改装航空巡洋艦「最上改二(改二特含む)」を配備した精鋭艦隊で、南西諸島海域バシー海峡、沖ノ島海域、西方海域カレー沖リランカ島沖、南方海域前面に展開、敵艦隊を撃滅せよ！",
+  "reward_fuel": 880,
+  "reward_ammo": 880,
+  "reward_steel": 0,
+  "reward_bauxite": 880,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "勋章",
+          "amount": 1
+        },
+        {
+          "name": "开发资材",
+          "amount": 8
+        },
+        {
+          "name": "瑞云12型",
+          "category": "装备",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "特制家具职人",
+          "amount": 1
+        },
+        {
+          "name": "间宫",
+          "amount": 1
+        },
+        {
+          "name": "熟练搭乘员",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "2-2",
+      "2-4",
+      "4-5",
+      "5-1"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": [
+          "最上改二",
+          "最上改二特"
+        ],
+        "flagship": true
+      }
+    ]
+  }
 }

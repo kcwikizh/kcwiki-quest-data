@@ -1,7 +1,59 @@
 {
   "game_id": 354,
+  "wiki_id": "C60",
   "category": 3,
   "type": 5,
   "name": "「改装特務空母」任務部隊演習！",
-  "release_date": "2021/7/16"
+  "release_date": "2021/7/16",
+  "detail": "旗艦に「改装特務空母」、僚艦に「Fletcher級駆逐艦」または「John C.Butler級護衛駆逐艦」計2隻以上を含む任務部隊を編成。同艦隊で、本日中に「S判定」勝利を4回以上達成せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 730,
+  "reward_steel": 0,
+  "reward_bauxite": 730,
+  "reward_other": [
+    {
+      "name": "设营队",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "FM-2",
+          "category": "装备",
+          "amount": 2
+        },
+        {
+          "name": "TBF",
+          "category": "装备",
+          "amount": 2
+        },
+        {
+          "name": "SK雷达★5",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "excercise",
+    "times": 4,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": "Gambier Bay Mk.II",
+        "flagship": true,
+        "amount": 1
+      },
+      {
+        "ship": [
+          "Fletcher",
+          "Johnston",
+          "Samuel B. Roberts"
+        ],
+        "amount": 2
+      }
+    ]
+  }
 }

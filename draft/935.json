@@ -1,7 +1,71 @@
 {
   "game_id": 935,
+  "wiki_id": "B161",
   "category": 9,
   "type": 4,
   "name": "最精強！「呉の雪風」「佐世保の時雨」",
-  "release_date": "2020/11/14"
+  "release_date": "2020/11/14",
+  "detail": "歴戦の精鋭駆逐艦「雪風改二」及び「時雨改二」を配備した艦隊で、サブ島沖海域、サーモン海域北方、カレー洋リランカ島沖、中部北海域ピーコック島沖、KW環礁沖海域に突入！敵戦力を撃滅せよ！",
+  "reward_fuel": 1945,
+  "reward_ammo": 2020,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "战斗详报",
+          "amount": 1
+        },
+        {
+          "name": "改修资材",
+          "amount": 6
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "5inch单装炮 Mk.30改★+4",
+          "category": "装备",
+          "amount": 1
+        },
+        {
+          "name": "22号对水上电探改四（后期调整型）★+4",
+          "category": "装备",
+          "amount": 1
+        },
+        {
+          "name": "61cm四连装（酸素）鱼雷后期型★+4",
+          "category": "装备",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    933,
+    934
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "4-5",
+      "5-3",
+      "5-5",
+      "6-4",
+      "6-5"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "雪风改二"
+      },
+      {
+        "ship": "时雨改二"
+      }
+    ]
+  }
 }

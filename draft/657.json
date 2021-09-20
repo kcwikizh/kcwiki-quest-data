@@ -1,6 +1,54 @@
 {
   "game_id": 657,
+  "wiki_id": "F92",
   "category": 6,
   "type": 5,
-  "name": "新型兵装開発整備の強化"
+  "name": "新型兵装開発整備の強化",
+  "detail": "新型兵装の開発体制整備を実施する！「小口径主砲」系装備x6、「中口径主砲」系装備x5、「魚雷」系装備x4を廃棄、鋼材4,000を準備せよ！　※任務達成後、準備した資源は消費します。",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "开发资材",
+      "amount": 10
+    },
+    {
+      "choices": [
+        {
+          "name": "改修资材",
+          "amount": 5
+        },
+        {
+          "name": "新型兵装资材",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "equipexchange",
+    "scraps": [
+      {
+        "name": "小口径主砲",
+        "amount": 6
+      },
+      {
+        "name": "中口径主砲",
+        "amount": 5
+      },
+      {
+        "name": "魚雷",
+        "amount": 4
+      }
+    ],
+    "resources": [
+      0,
+      0,
+      4000,
+      0
+    ]
+  }
 }

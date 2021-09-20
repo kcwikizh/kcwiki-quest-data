@@ -1,7 +1,59 @@
 {
   "game_id": 446,
+  "wiki_id": "D42",
   "category": 4,
   "type": 4,
   "name": "【作戦準備】第一段階任務(対潜整備)",
-  "release_date": "2021/8/5"
+  "release_date": "2021/8/5",
+  "detail": "作戦準備(第一段階任務)：「警備任務」「対潜警戒任務」「海上護衛任務」「海峡警備行動」及び「兵站強化任務」各遠征を実施、これをそれぞれ1回以上成功させよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 350,
+  "reward_steel": 350,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "九三式水中听音机",
+          "amount": 3
+        },
+        {
+          "name": "开发资材",
+          "amount": 6
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "九四式爆雷投射机",
+          "amount": 3
+        },
+        {
+          "name": "改修资材",
+          "amount": 4
+        },
+        {
+          "name": "间宫",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "expedition",
+    "objects": [
+      {
+        "id": [
+          3,
+          4,
+          5,
+          "A1",
+          "A2"
+        ],
+        "times": 1
+      }
+    ]
+  }
 }

@@ -1,7 +1,61 @@
 {
   "game_id": 442,
+  "wiki_id": "D38",
   "category": 4,
   "type": 5,
   "name": "西方連絡作戦準備を実施せよ！",
-  "release_date": "2021/3/3"
+  "detail": "西方連絡作戦準備:「西方海域偵察作戦」「潜水艦派遣演習」「潜水艦派遣作戦」及び「欧州方面友軍との接触」各遠征を実施、これを成功させよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 900,
+  "reward_steel": 500,
+  "reward_bauxite": 500,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "給糧艦「伊良湖」",
+          "amount": 2
+        },
+        {
+          "name": "開発資材",
+          "amount": 6
+        },
+        {
+          "name": "改修資材",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "新型砲熕兵装資材",
+          "amount": 1
+        },
+        {
+          "name": "洋上補給",
+          "amount": 2
+        },
+        {
+          "name": "新型兵装資材",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "expedition",
+    "objects": [
+      {
+        "id": [
+          29,
+          30,
+          "D1",
+          "D3"
+        ],
+        "times": 1
+      }
+    ]
+  }
 }

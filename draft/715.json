@@ -1,7 +1,61 @@
 {
   "game_id": 715,
+  "wiki_id": "G07",
   "category": 7,
   "type": 5,
   "name": "続：「駆逐艦」の改修工事を実施せよ！",
-  "release_date": "2020/11/14"
+  "detail": "近代化改修任務：鋼材900及びボーキサイト500を準備して、任意の駆逐艦を近代化改修！[軽巡洋艦]x3隻同時使用により2回成功させよ！※任務達成後、準備資源は消費します。",
+  "reward_fuel": 0,
+  "reward_ammo": 300,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "高速修復材",
+          "amount": 2
+        },
+        {
+          "name": "開発資材",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "改修資材",
+          "amount": 2
+        },
+        {
+          "name": "25mm単装機銃",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    714,
+    607
+  ],
+  "requirements": {
+    "category": "modernization",
+    "times": 2,
+    "ship": "駆逐艦",
+    "consumptions": [
+      {
+        "ship": [
+          "軽巡洋艦"
+        ],
+        "amount": 3
+      }
+    ],
+    "resources": [
+      0,
+      0,
+      900,
+      500
+    ]
+  }
 }

@@ -1,7 +1,75 @@
 {
   "game_id": 946,
+  "wiki_id": "By8",
   "category": 9,
   "type": 5,
   "name": "空母機動部隊、出撃！敵艦隊を迎撃せよ！",
-  "release_date": "2021/6/23"
+  "release_date": "2021/6/23",
+  "detail": "旗艦に「航空母艦」、随伴に「重巡洋艦・航空巡洋艦」から2隻以上(他自由)の機動部隊を編成。バシー海峡、東部オリョール海、沖ノ島海域へ展開！敵艦隊主力を捕捉、これを撃滅せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 400,
+  "reward_steel": 0,
+  "reward_bauxite": 400,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "零式舰战32型",
+          "category": "装备",
+          "amount": 2
+        },
+        {
+          "name": "F4F-3",
+          "category": "装备",
+          "amount": 2
+        },
+        {
+          "name": "高速修复材",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "九九式舰爆二二型",
+          "category": "装备",
+          "amount": 2
+        },
+        {
+          "name": "SBD",
+          "category": "装备",
+          "amount": 2
+        },
+        {
+          "name": "战斗详报",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    944
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "2-2",
+      "2-3",
+      "2-4"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "CV",
+        "flagship": true
+      },
+      {
+        "ship": "CA",
+        "amount": 2
+      }
+    ]
+  }
 }

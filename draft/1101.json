@@ -1,7 +1,72 @@
 {
   "game_id": 1101,
+  "wiki_id": "F96",
   "category": 11,
   "type": 4,
-  "name": "海軍工廠の再整備",
-  "release_date": "2021/6/23"
+  "name": "海軍工廠の再整備！",
+  "detail": "工廠整備：「12.7cm連装砲」×8廃棄、家具コイン×4000と「14cm単装砲」「20.3cm連装砲」各×4を準備せよ！※任務達成後、用意した家具コイン及び必要装備(低改修値のもの優先)は消滅します。",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 300,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "高速建造材",
+          "amount": 8
+        },
+        {
+          "name": "開発資材",
+          "amount": 8
+        },
+        {
+          "name": "特注家具職人",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "新型砲熕兵装資材",
+          "amount": 1
+        },
+        {
+          "name": "新型噴進装備開発資材",
+          "amount": 1
+        },
+        {
+          "name": "改修資材",
+          "amount": 4
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "equipexchange",
+    "equipments": [
+      {
+        "name": "20.3cm連装砲",
+        "amount": 4
+      },
+      {
+        "name": "14cm単装砲",
+        "amount": 3
+      }
+    ],
+    "scraps": [
+      {
+        "name": "12.7cm連装砲",
+        "amount": 8
+      }
+    ],
+    "consumptions": [
+      {
+        "name": "家具コイン",
+        "amount": 4000
+      }
+    ]
+  }
 }

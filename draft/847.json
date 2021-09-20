@@ -1,6 +1,76 @@
 {
   "game_id": 847,
+  "wiki_id": "B163",
   "category": 8,
   "type": 4,
-  "name": "球磨型軽巡一番艦、出撃だクマ！"
+  "name": "球磨型軽巡一番艦、出撃だクマ！",
+  "detail": "改装軽巡「球磨改二/球磨改二丁」旗艦の艦隊を、鎮守府近海航路、南西諸島バシー海峡、 北方海域キス島沖、南西海域マラッカ海峡ペナン島沖深部へ展開！各方面の作戦を成功させよ！",
+  "reward_fuel": 550,
+  "reward_ammo": 550,
+  "reward_steel": 550,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "補強増設",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "25mm三連装機銃",
+          "amount": 1
+        },
+        {
+          "name": "大発動艇",
+          "amount": 2
+        },
+        {
+          "name": "改修資材",
+          "amount": 3
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "and",
+    "list": [
+      {
+        "category": "sortie",
+        "map": [
+          "2-2",
+          "3-2",
+          "7-3-P2"
+        ],
+        "times": 1,
+        "boss": true,
+        "result": "S",
+        "groups": [
+          {
+            "ship": [
+              "球磨改二",
+              "球磨改二丁"
+            ],
+            "flagship": true
+          }
+        ]
+      },
+      {
+        "category": "sortie",
+        "times": 1,
+        "map": "1-6",
+        "boss": true,
+        "groups": [
+          {
+            "ship": [
+              "球磨改二",
+              "球磨改二丁"
+            ],
+            "flagship": true
+          }
+        ],
+        "result": "クリア"
+      }
+    ]
+  }
 }

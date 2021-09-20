@@ -1,7 +1,58 @@
 {
   "game_id": 444,
+  "wiki_id": "D40",
   "category": 4,
   "type": 5,
   "name": "新兵装開発資材輸送を船団護衛せよ！",
-  "release_date": "2021/4/1"
+  "detail": "新兵装開発資材輸送護衛：「海上護衛任務」「資源輸送任務」「タンカー護衛任務」「南西方面航空偵察作戦」「ボーキサイト輸送任務」遠征を実施、これを成功させよ！",
+  "reward_fuel": 1000,
+  "reward_ammo": 300,
+  "reward_steel": 300,
+  "reward_bauxite": 600,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "開発資材",
+          "amount": 6
+        },
+        {
+          "name": "高速修復材",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "新型砲熕兵装資材",
+          "amount": 1
+        },
+        {
+          "name": "新型航空兵装資材",
+          "amount": 1
+        },
+        {
+          "name": "改修資材",
+          "amount": 4
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "expedition",
+    "objects": [
+      {
+        "id": [
+          5,
+          9,
+          11,
+          12,
+          "B1"
+        ],
+        "times": 1
+      }
+    ]
+  }
 }

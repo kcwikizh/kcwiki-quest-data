@@ -1,7 +1,57 @@
 {
   "game_id": 353,
+  "wiki_id": "C58",
   "category": 3,
   "type": 5,
   "name": "「巡洋艦戦隊」演習！",
-  "release_date": "2021/6/23"
+  "release_date": "2021/6/23",
+  "detail": "「重巡洋艦」または「航空巡洋艦」、旗艦を含む重巡級4隻による巡洋艦部隊を基幹とし、随伴駆逐艦2隻による計6隻編成の艦隊で、本日中に5回以上演習で勝利せよ！",
+  "reward_fuel": 500,
+  "reward_ammo": 500,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "间宫",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "22号对水上电探改四",
+          "amount": 2
+        },
+        {
+          "name": "20.3cm（3号）连装炮",
+          "amount": 2
+        },
+        {
+          "name": "熟练瞭望员★+2",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "excercise",
+    "times": 5,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": "重巡洋舰或航空巡洋舰",
+        "flagship": true,
+        "amount": 1
+      },
+      {
+        "ship": "重巡洋舰或航空巡洋舰",
+        "amount": 3
+      },
+      {
+        "ship": "駆逐艦",
+        "amount": 2
+      }
+    ]
+  }
 }
