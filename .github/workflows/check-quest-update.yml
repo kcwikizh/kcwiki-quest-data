@@ -58,7 +58,7 @@ jobs:
       # see https://github.com/repo-sync/pull-request
       - name: Create Pull Request
         if: steps.push.outputs.skipPR != 'true'
-        uses: repo-sync/pull-request@v2.2
+        uses: repo-sync/pull-request@v2
         with:
           source_branch: 'bot/new-quest' # If blank, default: triggered branch
           pr_title: New quest (${{ steps.date.outputs.date }}) # Title of pull request
