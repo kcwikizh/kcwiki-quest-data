@@ -1,7 +1,64 @@
 {
   "game_id": 1106,
+  "wiki_id": "F101",
   "category": 11,
   "type": 4,
   "name": "精鋭三座水上偵察機隊の前線投入",
-  "release_date": "2021/7/16"
+  "detail": "旗艦「由良改二」第一スロに最大改修「零式水上偵察機11型乙」。「零式水上偵察機」「瑞雲」各x3廃棄、燃料x1300、ボーキx1700、新型航空兵装資材x1、戦闘詳報x1、熟練搭乗員x3を準備せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 400,
+  "reward_other": [
+    {
+      "name": "零式水上偵察機11型乙(熟練)",
+      "category": "装備",
+      "amount": 1
+    }
+  ],
+  "prerequisite": [
+    659
+  ],
+  "requirements": {
+    "category": "equipexchange",
+    "secretary": [
+      "由良改二"
+    ],
+    "slots": [
+      {
+        "slot": 1,
+        "equipment": "零式水上偵察機11型乙"
+      }
+    ],
+    "scraps": [
+      {
+        "name": "零式水上偵察機",
+        "amount": 3
+      },
+      {
+        "name": "瑞雲",
+        "amount": 3
+      }
+    ],
+    "consumptions": [
+      {
+        "name": "戦闘詳報",
+        "amount": 1
+      },
+      {
+        "name": "新型航空兵装資材",
+        "amount": 1
+      },
+      {
+        "name": "熟練搭乗員",
+        "amount": 1
+      }
+    ],
+    "resources": [
+      1300,
+      0,
+      0,
+      1700
+    ]
+  }
 }

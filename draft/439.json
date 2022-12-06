@@ -1,6 +1,53 @@
 {
   "game_id": 439,
+  "wiki_id": "D36",
   "category": 4,
   "type": 5,
-  "name": "兵站強化遠征任務【基本作戦】"
+  "name": "兵站強化遠征任務【基本作戦】",
+  "detail": "兵站強化遠征任務：「海上護衛任務」「兵站強化任務」「ボーキサイト輸送任務」及び「南西方面航空偵察作戦」の各遠征任務を実施、これを成功させよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 480,
+  "reward_bauxite": 480,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "开发资材",
+          "amount": 4
+        },
+        {
+          "name": "伊良湖",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "高速修复材",
+          "amount": 6
+        },
+        {
+          "name": "新型兵装资材",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "expedition",
+    "objects": [
+      {
+        "id": [
+          5,
+          "A1",
+          11,
+          "B1"
+        ],
+        "times": 1
+      }
+    ]
+  }
 }

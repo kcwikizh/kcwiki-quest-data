@@ -1,7 +1,62 @@
 {
   "game_id": 717,
+  "wiki_id": "G09",
   "category": 7,
   "type": 5,
   "name": "続：「軽巡」級の改修工事を実施せよ！",
-  "release_date": "2021/3/3"
+  "detail": "軽巡近代化改修:鋼材900及び弾薬900を準備して、任意の軽巡級を近代化改修！「重巡級」*3隻同時使用により2回成功させよ！※任務達成後、準備資源は消費します。",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 500,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "開発資材",
+          "amount": 4
+        },
+        {
+          "name": "15.2cm連装砲",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "22号対水上電探",
+          "amount": 2
+        },
+        {
+          "name": "改修資材",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "modernization",
+    "times": 2,
+    "ship": [
+      "軽巡洋艦",
+      "重雷装巡洋艦",
+      "練習巡洋艦"
+    ],
+    "consumptions": [
+      {
+        "ship": [
+          "重巡洋艦"
+        ],
+        "amount": 3
+      }
+    ],
+    "resources": [
+      0,
+      900,
+      900,
+      0
+    ]
+  }
 }

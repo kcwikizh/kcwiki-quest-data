@@ -1,7 +1,56 @@
 {
   "game_id": 352,
+  "wiki_id": "C57",
   "category": 3,
   "type": 4,
   "name": "改装「矢矧」、精鋭水雷戦隊旗艦演習！",
-  "release_date": "2021/4/1"
+  "release_date": "2021/4/1",
+  "detail": "水雷戦隊旗艦演習：改装軽巡「矢矧改二」または「矢矧改二乙」を旗艦として、同指揮下に精鋭駆逐艦4隻以上を含む水雷戦隊を編成！本日中に「S判定」を4回以上達成せよ！",
+  "reward_fuel": 480,
+  "reward_ammo": 0,
+  "reward_steel": 480,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "15.2cm连装炮改二",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "25mm三连装机枪",
+          "amount": 2
+        },
+        {
+          "name": "新型兵装资材",
+          "amount": 1
+        },
+        {
+          "name": "萩の床",
+          "category": "家具",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    317
+  ],
+  "requirements": {
+    "category": "excercise",
+    "times": 4,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": "矢矧改二或矢矧改二乙",
+        "flagship": true,
+        "amount": 1
+      },
+      {
+        "ship": "駆逐艦",
+        "amount": 4
+      }
+    ]
+  }
 }

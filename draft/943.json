@@ -1,7 +1,77 @@
 {
   "game_id": 943,
+  "wiki_id": "B169",
   "category": 9,
   "type": 4,
   "name": "新しき翼。改装航空母艦「龍鳳」、出撃せよ！",
-  "release_date": "2021/4/23"
+  "release_date": "2021/4/23",
+  "detail": "旗艦に「龍鳳改二(改二戊含む)」、随伴に「時雨改二」を編成した第一艦隊で南西諸島海域バシー海峡、東部オリョール海、沖ノ島海域、沖ノ島沖、タウイタウイ泊地沖深部へ出撃。敵艦隊を捕捉撃滅せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 1946,
+  "reward_bauxite": 2021,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "高速修复材",
+          "amount": 8
+        },
+        {
+          "name": "天山一二型甲",
+          "category": "装備",
+          "amount": 1
+        },
+        {
+          "name": "应急修理女神",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "8cm高角炮改+增设机枪★+2",
+          "category": "装備",
+          "amount": 1
+        },
+        {
+          "name": "零式舰战63型（爆战）",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "天山一二型甲改（空六号电探改装備机）",
+          "category": "装備",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "2-2",
+      "2-3",
+      "2-4",
+      "2-5",
+      "7-2P2"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": [
+          "龙凤改二",
+          "龙凤改二戊"
+        ],
+        "flagship": true
+      },
+      {
+        "ship": "时雨改二"
+      }
+    ]
+  }
 }

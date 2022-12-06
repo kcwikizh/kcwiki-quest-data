@@ -1,6 +1,66 @@
 {
   "game_id": 345,
+  "wiki_id": "C49",
   "category": 3,
   "type": 5,
-  "name": "演習ティータイム！"
+  "name": "演習ティータイム！",
+  "detail": "「Warspite」「金剛」「Ark Royal」「Nelson」及びJ級駆逐艦から4隻以上含む艦隊を編成！同ティータイム艦隊で、本日中に【A判定】以上の勝利を4回以上達成せよ！Tea Timeは大切ネー！",
+  "reward_fuel": 0,
+  "reward_ammo": 600,
+  "reward_steel": 600,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "剑鱼（Swordfish）",
+          "amount": 1
+        },
+        {
+          "name": "管鼻鹱（Fulmar）",
+          "amount": 1
+        },
+        {
+          "name": "开发资材",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "新型航空兵装资材",
+          "amount": 1
+        },
+        {
+          "name": "高速修复材",
+          "amount": 5
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    343
+  ],
+  "requirements": {
+    "category": "excercise",
+    "times": 4,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": [
+          "Warspite",
+          "金剛",
+          "Ark Royal",
+          "Nelson",
+          "J级驱逐舰（Jervis、Janus）"
+        ],
+        "amount": [
+          4,
+          99
+        ]
+      }
+    ]
+  }
 }

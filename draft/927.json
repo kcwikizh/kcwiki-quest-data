@@ -1,6 +1,53 @@
 {
   "game_id": 927,
+  "wiki_id": "B155",
   "category": 9,
   "type": 4,
-  "name": "重巡「羽黒」、出撃！ペナン沖海戦"
+  "name": "重巡「羽黒」、出撃！ペナン沖海戦",
+  "detail": "重巡「羽黒」を旗艦とした5隻以下の艦隊で、南西海域マラッカ海峡に進出！ペナン島沖において、敵駆逐隊を捕捉、これに複数回痛打を与えよ！精強たる我が重巡「羽黒」、出撃せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 2020,
+  "reward_steel": 1945,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "20.3cm（3号）连装炮★+6",
+      "category": "装備",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "战斗详报",
+          "amount": 1
+        },
+        {
+          "name": "新型兵装资材",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    223
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 4,
+    "map": [
+      "7-3p1"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "羽黑",
+        "flagship": true
+      },
+      {
+        "ship": "自由舰",
+        "amount": 4
+      }
+    ]
+  }
 }

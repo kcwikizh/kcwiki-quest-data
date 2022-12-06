@@ -1,7 +1,65 @@
 {
   "game_id": 936,
+  "wiki_id": "B164",
   "category": 9,
   "type": 4,
   "name": "改装最新鋭軽巡「能代改二」、出撃せよ！",
-  "release_date": "2021/3/3"
+  "release_date": "2021/3/3",
+  "detail": "旗艦に「能代改二」、同指揮下に駆逐艦3隻以上を配備した艦隊で、沖ノ島海域、キス島沖、サブ島沖海域、ブルネイ泊地沖、タウイタウイ泊地沖深部に出撃！敵艦隊を捕捉撃滅せよ！",
+  "reward_fuel": 1026,
+  "reward_ammo": 0,
+  "reward_steel": 1944,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "15.2cm连装炮改二",
+      "category": "装備",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "15.2cm连装炮",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "8cm高角炮",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "25mm三连装机铳",
+          "category": "装備",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    812
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "2-4",
+      "3-2",
+      "5-3",
+      "7-1",
+      "7-2P2"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "能代改二",
+        "flagship": true
+      },
+      {
+        "ship": "驱逐舰",
+        "amount": 3
+      }
+    ]
+  }
 }

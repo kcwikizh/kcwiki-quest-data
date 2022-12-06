@@ -1,6 +1,52 @@
 {
   "game_id": 654,
+  "wiki_id": "F93",
   "category": 6,
   "type": 5,
-  "name": "精鋭複葉機飛行隊の編成"
+  "name": "精鋭複葉機飛行隊の編成",
+  "detail": "精鋭複葉機飛行隊の編成：秘書艦「Ark Royal」に改修max「Swordfish」を一番スロットに搭載、「Swordfish」x1「Fulmar」x2を廃棄、「熟練搭乗員」、弾薬とボーキサイトを各1,500用意せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "剑鱼（Swordfish） Mk.II（熟练）",
+      "category": "装備",
+      "amount": 1
+    }
+  ],
+  "prerequisite": [
+    619
+  ],
+  "requirements": {
+    "category": "modelconversion",
+    "equipment": [
+      "Swordfish"
+    ],
+    "secretary": "Ark Royal",
+    "maxmodified": true,
+    "scraps": [
+      {
+        "name": "Swordfish",
+        "amount": 1
+      },
+      {
+        "name": "Fulmar",
+        "amount": 2
+      }
+    ],
+    "resources": [
+      0,
+      1500,
+      0,
+      1500
+    ],
+    "consumptions": [
+      {
+        "name": "熟练搭乘员",
+        "amount": 1
+      }
+    ]
+  }
 }

@@ -1,6 +1,73 @@
 {
   "game_id": 928,
+  "wiki_id": "By5",
   "category": 9,
   "type": 5,
-  "name": "歴戦「第十方面艦隊」、全力出撃！"
+  "name": "歴戦「第十方面艦隊」、全力出撃！",
+  "detail": "重巡「羽黒」「足柄」「妙高」「高雄」、駆逐艦「神風」のうち2隻以上を含む精強な艦隊を編成！マラッカ海峡ペナン島沖深部、タウイタウイ泊地沖深部、西方カレー洋海域に反復出撃！敵を撃滅せよ！",
+  "reward_fuel": 1000,
+  "reward_ammo": 1000,
+  "reward_steel": 1000,
+  "reward_bauxite": 1000,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "新型火炮兵装资材",
+          "amount": 1
+        },
+        {
+          "name": "新型航空兵装资材",
+          "amount": 1
+        },
+        {
+          "name": "开发资材",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "瑞云12型",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "新型兵装资材",
+          "amount": 2
+        },
+        {
+          "name": "改修资材",
+          "amount": 8
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    237
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 2,
+    "map": [
+      "7-3p2",
+      "7-2p2",
+      "4-2"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": [
+          "羽黒",
+          "足柄",
+          "妙高",
+          "高雄",
+          "神风"
+        ],
+        "select": 2
+      }
+    ]
+  }
 }

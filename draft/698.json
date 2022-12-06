@@ -1,6 +1,57 @@
 {
   "game_id": 698,
+  "wiki_id": "F91",
   "category": 6,
   "type": 4,
-  "name": "新鋭対潜哨戒航空戦力の導入"
+  "name": "新鋭対潜哨戒航空戦力の導入",
+  "detail": "旗艦「加賀改二護」第一スロに「TBM-3D」を搭載。「TBF」x2、「流星」x1、「流星改」x1を廃棄、弾薬x1,840、ボーキx6,200、新型航空兵装資材x2、熟練搭乗員x1を準備せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "TBM-3W+3S",
+      "category": "装備",
+      "amount": 1
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "modelconversion",
+    "equipment": [
+      "TBM-3D"
+    ],
+    "secretary": "加賀改二護",
+    "scraps": [
+      {
+        "name": "TBF",
+        "amount": 2
+      },
+      {
+        "name": "流星",
+        "amount": 1
+      },
+      {
+        "name": "流星改",
+        "amount": 1
+      }
+    ],
+    "resources": [
+      0,
+      1840,
+      0,
+      6200
+    ],
+    "consumptions": [
+      {
+        "name": "新型航空兵装資材",
+        "amount": 2
+      },
+      {
+        "name": "熟练搭乘员",
+        "amount": 1
+      }
+    ]
+  }
 }

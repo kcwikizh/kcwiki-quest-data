@@ -1,6 +1,62 @@
 {
   "game_id": 922,
+  "wiki_id": "B150",
   "category": 9,
   "type": 4,
-  "name": "合同艦隊作戦任務【拡張作戦】"
+  "name": "合同艦隊作戦任務【拡張作戦】",
+  "detail": "【拡張作戦：甲作戦級】「Fletcher MK.II」を含む米・英・豪・蘭出身の艦娘計4隻以上の含む精鋭艦隊を編成、カレー洋リランカ島沖、サーモン海域北方、中部北海域ピーコック島沖に反復出撃！敵戦力を撃滅せよ！",
+  "reward_fuel": 1000,
+  "reward_ammo": 1000,
+  "reward_steel": 1000,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "勋章",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "试制甲板用弹射器",
+          "amount": 1
+        },
+        {
+          "name": "对潜短鱼雷（试做初期型）",
+          "category": "装備",
+          "amount": 1
+        },
+        {
+          "name": "改装设计图",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    921
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 2,
+    "map": [
+      "4-5",
+      "5-5",
+      "6-4"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "Fletcher改 Mod.2"
+      },
+      {
+        "ship": "美/英/澳/荷",
+        "amount": 2
+      },
+      {
+        "ship": "自由舰",
+        "amount": 3
+      }
+    ]
+  }
 }

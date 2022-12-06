@@ -1,7 +1,56 @@
 {
   "game_id": 350,
+  "wiki_id": "C55",
   "category": 3,
   "type": 5,
   "name": "精鋭「第七駆逐隊」演習開始！",
-  "release_date": "2021/3/3"
+  "release_date": "2021/3/3",
+  "detail": "七駆演習任務：第七駆逐隊「朧」「曙」「漣」「潮」の4隻を含む演習艦隊を編成、本日中に「A判定」勝利3回以上達成せよ。精鋭第七駆逐隊、演習開始！",
+  "reward_fuel": 350,
+  "reward_ammo": 350,
+  "reward_steel": 350,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "间宫",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "伊良湖",
+          "amount": 2
+        },
+        {
+          "name": "新型兵装资材",
+          "amount": 1
+        },
+        {
+          "name": "高速修复材",
+          "amount": 4
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "excercise",
+    "times": 3,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": [
+          "朧",
+          "曙",
+          "漣",
+          "潮"
+        ],
+        "amount": [
+          4,
+          99
+        ]
+      }
+    ]
+  }
 }

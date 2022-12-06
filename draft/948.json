@@ -1,7 +1,77 @@
 {
   "game_id": 948,
+  "wiki_id": "By10",
   "category": 9,
   "type": 5,
   "name": "機動部隊決戦",
-  "release_date": "2021/6/24"
+  "release_date": "2021/6/24",
+  "detail": "旗艦に「航空母艦」を編成した第一艦隊で、珊瑚諸島沖、サーモン海域北方、KW環礁沖海域へ反復出撃、敵主力を撃滅！さらに中部北海域ピーコック島沖へも反復展開、敵戦力を撃破せよ！",
+  "reward_fuel": 1300,
+  "reward_ammo": 1300,
+  "reward_steel": 0,
+  "reward_bauxite": 1300,
+  "reward_other": [
+    {
+      "name": "战果",
+      "amount": 600
+    },
+    {
+      "choices": [
+        {
+          "name": "熟练搭乘员",
+          "amount": 5
+        },
+        {
+          "name": "试制甲板用弹射器",
+          "amount": 1
+        },
+        {
+          "name": "橘花改",
+          "category": "装備",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    925,
+    947
+  ],
+  "requirements": {
+    "category": "and",
+    "list": [
+      {
+        "category": "sortie",
+        "times": 2,
+        "map": [
+          "5-2",
+          "5-5",
+          "6-5"
+        ],
+        "boss": true,
+        "result": "S",
+        "groups": [
+          {
+            "ship": "CV",
+            "flagship": true
+          }
+        ]
+      },
+      {
+        "category": "sortie",
+        "times": 2,
+        "map": [
+          "6-4"
+        ],
+        "boss": true,
+        "result": "A",
+        "groups": [
+          {
+            "ship": "CV",
+            "flagship": true
+          }
+        ]
+      }
+    ]
+  }
 }

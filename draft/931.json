@@ -1,6 +1,60 @@
 {
   "game_id": 931,
+  "wiki_id": "B158",
   "category": 9,
   "type": 4,
-  "name": "精鋭「二七駆」、回避運動は気をつけて！"
+  "name": "精鋭「二七駆」、回避運動は気をつけて！",
+  "detail": "第二七駆逐隊特別任務：改装白露型一番艦「白露改二」及び同二番艦「時雨改二」を含む艦隊で、鎮守府近海、沖ノ島沖、ブルネイ泊地沖、サーモン海域北方、グアノ環礁沖海域に出撃！敵を駆逐せよ！",
+  "reward_fuel": 1270,
+  "reward_ammo": 270,
+  "reward_steel": 270,
+  "reward_bauxite": 270,
+  "reward_other": [
+    {
+      "name": "焼き芋と読书の时间",
+      "category": "家具",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "洋上补给",
+          "amount": 2
+        },
+        {
+          "name": "应急修理女神",
+          "amount": 1
+        },
+        {
+          "name": "秋刀鱼罐头",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    210,
+    889
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "1-5",
+      "2-5",
+      "7-1",
+      "5-5",
+      "6-3"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "白露改二"
+      },
+      {
+        "ship": "时雨改二"
+      }
+    ]
+  }
 }

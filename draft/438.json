@@ -1,6 +1,62 @@
 {
   "game_id": 438,
+  "wiki_id": "D35",
   "category": 4,
   "type": 5,
-  "name": "南西諸島方面の海上護衛を強化せよ！"
+  "name": "南西諸島方面の海上護衛を強化せよ！",
+  "detail": "海上護衛任務：「兵站強化任務」「対潜警戒任務」「タンカー護衛任務」及び「南西諸島捜索撃滅戦」の各遠征任務を実施、これを成功させよ！",
+  "reward_fuel": 2000,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "间宫",
+          "amount": 1
+        },
+        {
+          "name": "开发资材",
+          "amount": 5
+        },
+        {
+          "name": "特制家具职人",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "洋上补给",
+          "category": "装備",
+          "amount": 3
+        },
+        {
+          "name": "改修资材",
+          "amount": 4
+        },
+        {
+          "name": "新型航空兵装资材",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "expedition",
+    "objects": [
+      {
+        "id": [
+          4,
+          "A1",
+          9,
+          "B5"
+        ],
+        "times": 1
+      }
+    ]
+  }
 }

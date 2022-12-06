@@ -1,7 +1,99 @@
 {
   "game_id": 949,
+  "wiki_id": "B170",
   "category": 9,
   "type": 4,
   "name": "改装特務空母「Gambier Bay Mk.II」抜錨！",
-  "release_date": "2021/7/16"
+  "release_date": "2021/7/16",
+  "detail": "旗艦「Gambier Bay Mk.II」、僚艦に「Fletcher級駆逐艦」1隻以上を含む第一艦隊で、沖ノ島海域、北方AL海域の敵艦隊を反復撃滅、中部北海域ピーコック島沖に反復展開、同地の敵を撃滅せよ！",
+  "reward_fuel": 730,
+  "reward_ammo": 730,
+  "reward_steel": 730,
+  "reward_bauxite": 730,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "TBF★4",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "改修资材",
+          "amount": 7
+        },
+        {
+          "name": "战斗详报",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "战果",
+          "amount": 800
+        },
+        {
+          "name": "FR-1 Fireball",
+          "category": "装備",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    923,
+    933
+  ],
+  "requirements": {
+    "category": "and",
+    "list": [
+      {
+        "category": "sortie",
+        "times": 2,
+        "map": [
+          "2-4",
+          "3-5"
+        ],
+        "boss": true,
+        "result": "S",
+        "groups": [
+          {
+            "ship": "Gambier Bay Mk.II",
+            "flagship": true
+          },
+          {
+            "ship": [
+              "Fletcher",
+              "Johnston"
+            ],
+            "select": 1
+          }
+        ]
+      },
+      {
+        "category": "sortie",
+        "times": 2,
+        "map": [
+          "6-4"
+        ],
+        "boss": true,
+        "result": "A",
+        "groups": [
+          {
+            "ship": "Gambier Bay Mk.II",
+            "flagship": true
+          },
+          {
+            "ship": [
+              "Fletcher",
+              "Johnston"
+            ],
+            "select": 1
+          }
+        ]
+      }
+    ]
+  }
 }

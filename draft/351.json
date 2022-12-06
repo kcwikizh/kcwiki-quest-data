@@ -1,7 +1,57 @@
 {
   "game_id": 351,
+  "wiki_id": "C56",
   "category": 3,
   "type": 4,
   "name": "改装航空巡洋艦「最上」、進発せよ！",
-  "release_date": "2021/4/1"
+  "release_date": "2021/4/1",
+  "detail": "改装航空巡洋艦「最上改二」または特殊改装航空巡洋艦「最上改二特」を旗艦として、随伴駆逐艦3隻以上を含む演習艦隊を編成！本日中に「A勝利」を4回以上達成せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 400,
+  "reward_steel": 0,
+  "reward_bauxite": 400,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "21号对空电探",
+          "amount": 1
+        },
+        {
+          "name": "开发资材",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "伊良湖",
+          "amount": 3
+        },
+        {
+          "name": "特制家具职人",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "excercise",
+    "times": 4,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": "最上改二或最上改二特",
+        "flagship": true,
+        "amount": 1
+      },
+      {
+        "ship": "駆逐艦",
+        "amount": 3
+      }
+    ]
+  }
 }

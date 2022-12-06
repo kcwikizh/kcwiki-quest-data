@@ -1,7 +1,65 @@
 {
   "game_id": 348,
+  "wiki_id": "C53",
   "category": 3,
   "type": 5,
   "name": "「精鋭軽巡」演習！",
-  "release_date": "2021/3/3"
+  "release_date": "2021/3/3",
+  "detail": "旗艦を軽巡級(雷巡を除く)、旗艦含む3隻以上の軽巡級と随伴駆逐艦2隻を配備した軽巡演習艦隊を編成、同艦隊により本日中に演習で「A判定」以上の勝利を4回以上達成せよ！",
+  "reward_fuel": 200,
+  "reward_ammo": 0,
+  "reward_steel": 200,
+  "reward_bauxite": 200,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "伊良湖",
+          "amount": 1
+        },
+        {
+          "name": "高速修复材",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "14cm连装炮",
+          "amount": 2
+        },
+        {
+          "name": "15.2cm连装炮",
+          "amount": 2
+        },
+        {
+          "name": "改修资材",
+          "amount": 3
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "excercise",
+    "times": 4,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": "轻巡(除雷巡)",
+        "flagship": true,
+        "amount": 1
+      },
+      {
+        "ship": "轻巡",
+        "amount": 2
+      },
+      {
+        "ship": "驱逐",
+        "amount": 2
+      }
+    ]
+  }
 }

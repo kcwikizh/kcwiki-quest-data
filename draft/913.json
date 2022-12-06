@@ -1,6 +1,73 @@
 {
   "game_id": 913,
+  "wiki_id": "B143",
   "category": 9,
   "type": 4,
-  "name": "「第五航空戦隊」、縦横無尽！"
+  "name": "「第五航空戦隊」、縦横無尽！",
+  "detail": "航空母艦「翔鶴」「瑞鶴」、護衛随伴駆逐艦「朧」「秋雲」を中核とした機動部隊を編成。同機動部隊を北方AL海域、珊瑚諸島沖、タウイタウイ泊地沖深部、KW環礁沖海域に展開、敵艦隊を捕捉撃滅せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 1000,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "洋上补给",
+          "amount": 2
+        },
+        {
+          "name": "高速修复材",
+          "amount": 6
+        },
+        {
+          "name": "25mm三连装机枪",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "试制东海",
+          "category": "装備",
+          "amount": 1
+        },
+        {
+          "name": "试制景云（舰侦型）",
+          "category": "装備",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    423
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "3-5",
+      "5-2",
+      "7-2P2",
+      "6-5"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "翔鹤"
+      },
+      {
+        "ship": "瑞鹤"
+      },
+      {
+        "ship": "胧"
+      },
+      {
+        "ship": "秋云"
+      }
+    ]
+  }
 }

@@ -1,6 +1,68 @@
 {
   "game_id": 681,
+  "wiki_id": "F95",
   "category": 6,
   "type": 5,
-  "name": "航空戦力の再編増強準備"
+  "name": "航空戦力の再編増強準備",
+  "detail": "航空戦力の再編増強準備を実施する！「艦爆」系装備x４、「艦攻」系装備x４を廃棄、開発資材２０及びボーキサイト1600を準備せよ！※任務達成後、準備した資材は消費します。",
+  "reward_fuel": 0,
+  "reward_ammo": 400,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "熟练搭乘员",
+          "amount": 1
+        },
+        {
+          "name": "改修资材",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "九六式陆攻",
+          "amount": 3
+        },
+        {
+          "name": "一式陆攻 二二型甲",
+          "amount": 1
+        },
+        {
+          "name": "新型航空兵装资材",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "equipexchange",
+    "scraps": [
+      {
+        "name": "艦爆",
+        "amount": 4
+      },
+      {
+        "name": "艦攻",
+        "amount": 4
+      }
+    ],
+    "consumptions": [
+      {
+        "name": "開発資材",
+        "amount": 20
+      }
+    ],
+    "resources": [
+      0,
+      0,
+      0,
+      1600
+    ]
+  }
 }

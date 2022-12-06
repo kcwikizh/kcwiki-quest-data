@@ -1,7 +1,95 @@
 {
   "game_id": 945,
+  "wiki_id": "By7",
   "category": 9,
   "type": 5,
   "name": "南西方面の兵站航路の安全を図れ！",
-  "release_date": "2021/6/23"
+  "release_date": "2021/6/23",
+  "detail": "旗艦に「軽巡・練巡・駆逐艦」、随伴に「駆逐艦・海防艦」より旗艦含めず3隻以上(他自由)の艦隊で、反復出撃！鎮守府近海、南西諸島近海、鎮守府近海航路の安全確保と対潜掃蕩を図れ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 300,
+  "reward_bauxite": 300,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "二式12cm迫击炮改",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "舰载型 四式20cm对地喷进炮",
+          "category": "装備",
+          "amount": 1
+        },
+        {
+          "name": "战斗粮食",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "大发动艇",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "新型火炮兵装资材",
+          "amount": 1
+        },
+        {
+          "name": "改修资材",
+          "amount": 3
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    944
+  ],
+  "requirements": {
+    "category": "and",
+    "list": [
+      {
+        "category": "sortie",
+        "times": 2,
+        "map": [
+          "1-5",
+          "2-1"
+        ],
+        "boss": true,
+        "result": "S",
+        "groups": [
+          {
+            "ship": "CL/CT/DD",
+            "flagship": true
+          },
+          {
+            "ship": "DD/DE",
+            "amount": 3
+          }
+        ]
+      },
+      {
+        "category": "sortie",
+        "times": 2,
+        "map": "1-6",
+        "boss": true,
+        "groups": [
+          {
+            "ship": "CL/CT/DD",
+            "flagship": true
+          },
+          {
+            "ship": "DD/DE",
+            "amount": 3
+          }
+        ],
+        "result": "クリア"
+      }
+    ]
+  }
 }

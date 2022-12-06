@@ -1,6 +1,56 @@
 {
   "game_id": 343,
+  "wiki_id": "C46",
   "category": 3,
   "type": 4,
-  "name": "航空母艦演習"
+  "name": "航空母艦演習",
+  "detail": "航空母艦演習任務：正規空母を旗艦に、また僚艦に正規空母を1隻以上、さらに駆逐艦2隻以上を含む艦隊を編成。航空母艦の練度向上を図る！同艦隊で、本日中に4回以上演習で勝利せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 800,
+  "reward_steel": 0,
+  "reward_bauxite": 800,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "新型航空兵装资材",
+          "amount": 1
+        },
+        {
+          "name": "熟练搭乘员",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "‘加贺岬’挂轴",
+      "category": "家具",
+      "amount": 1
+    }
+  ],
+  "prerequisite": [
+    301,
+    334
+  ],
+  "requirements": {
+    "category": "excercise",
+    "times": 4,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": "正規空母",
+        "flagship": true,
+        "amount": 1
+      },
+      {
+        "ship": "正規空母",
+        "amount": 1
+      },
+      {
+        "ship": "駆逐艦",
+        "amount": 2
+      }
+    ]
+  }
 }

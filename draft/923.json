@@ -1,6 +1,60 @@
 {
   "game_id": 923,
+  "wiki_id": "B151",
   "category": 9,
   "type": 4,
-  "name": "合同艦隊機動部隊、出撃せよ！"
+  "name": "合同艦隊機動部隊、出撃せよ！",
+  "detail": "米・英出身航空母艦を1隻以上の含む機動部隊で、西方海域リランカ島、北方海域全域、さらに南方海域珊瑚諸島沖、南西海域タウイタウイ泊地沖深部に展開、各方面の敵戦力を撃滅せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 500,
+  "reward_bauxite": 1000,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "SK雷达",
+          "category": "装備",
+          "amount": 1
+        },
+        {
+          "name": "新型航空兵装资材",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "高速修复材",
+          "amount": 4
+        },
+        {
+          "name": "开发资材",
+          "amount": 5
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    919
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "3-4",
+      "4-3",
+      "5-2",
+      "7-2P2"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "美/英CV系",
+        "amount": 1
+      }
+    ]
+  }
 }

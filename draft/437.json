@@ -1,6 +1,58 @@
 {
   "game_id": 437,
+  "wiki_id": "D34",
   "category": 4,
   "type": 5,
-  "name": "小笠原沖哨戒線の強化を実施せよ！"
+  "name": "小笠原沖哨戒線の強化を実施せよ！",
+  "detail": "小笠原沖哨戒線任務:「対潜警戒任務」「小笠原沖哨戒線遠征」「小笠原沖戦闘哨戒」「南西方面航空偵察作戦」の各遠征任務を軽巡・駆逐艦など実施、これを成功させよ！",
+  "reward_fuel": 600,
+  "reward_ammo": 600,
+  "reward_steel": 0,
+  "reward_bauxite": 400,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "间宫",
+          "amount": 1
+        },
+        {
+          "name": "特制家具职人",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "大发动艇",
+          "category": "装備",
+          "amount": 1
+        },
+        {
+          "name": "改修资材",
+          "amount": 3
+        },
+        {
+          "name": "开发资材",
+          "amount": 7
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "expedition",
+    "objects": [
+      {
+        "id": [
+          4,
+          "A5",
+          "A6",
+          "B1"
+        ],
+        "times": 1
+      }
+    ]
+  }
 }

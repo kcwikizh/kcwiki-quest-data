@@ -1,7 +1,57 @@
 {
   "game_id": 947,
+  "wiki_id": "By9",
   "category": 9,
   "type": 5,
   "name": "AL作戦",
-  "release_date": "2021/6/23"
+  "release_date": "2021/6/23",
+  "detail": "軽空母2隻を基幹とした艦隊を編成。北方海域モーレイ海、アルフォンシーノ方面、北方海域全域、北方AL海域へ展開！AL方面へと至るこれらの北方海域で敵主力を積極攻撃、これを撃滅せよ！",
+  "reward_fuel": 880,
+  "reward_ammo": 880,
+  "reward_steel": 880,
+  "reward_bauxite": 880,
+  "reward_other": [
+    {
+      "name": "战果",
+      "amount": 480
+    },
+    {
+      "choices": [
+        {
+          "name": "13号对空电探改",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "勋章",
+          "amount": 1
+        },
+        {
+          "name": "补强增设",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    946
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "3-1",
+      "3-3",
+      "3-4",
+      "3-5"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "CVL",
+        "amount": 2
+      }
+    ]
+  }
 }

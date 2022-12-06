@@ -1,7 +1,63 @@
 {
   "game_id": 347,
+  "wiki_id": "C51",
   "category": 3,
   "type": 4,
   "name": "奇跡の駆逐艦",
-  "release_date": "2020/11/14"
+  "release_date": "2020/11/14",
+  "detail": "旗艦「雪風」を含む合計4隻以上の駆逐艦を配備した精強な演習艦隊を編成、本日中に演習で【S判定】以上の勝利を4回以上達成せよ！",
+  "reward_fuel": 160,
+  "reward_ammo": 160,
+  "reward_steel": 0,
+  "reward_bauxite": 160,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "间宫",
+          "amount": 1
+        },
+        {
+          "name": "高速修复材",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "开发资材",
+          "amount": 8
+        },
+        {
+          "name": "新型兵装资材",
+          "amount": 1
+        },
+        {
+          "name": "改修资材",
+          "amount": 4
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    323
+  ],
+  "requirements": {
+    "category": "excercise",
+    "times": 4,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": "雪風",
+        "flagship": true,
+        "amount": 1
+      },
+      {
+        "ship": "駆逐艦",
+        "amount": 3
+      }
+    ]
+  }
 }

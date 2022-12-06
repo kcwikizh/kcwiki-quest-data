@@ -1,6 +1,77 @@
 {
   "game_id": 926,
+  "wiki_id": "B154",
   "category": 9,
   "type": 4,
-  "name": "最精鋭「第一航空戦隊」、出撃！鎧袖一触！"
+  "name": "最精鋭「第一航空戦隊」、出撃！鎧袖一触！",
+  "detail": "「赤城改二」「加賀改二」両航空母艦による最精鋭「第一航空戦隊」を中核とした艦隊でサーモン海域北方、タウイタウイ泊地沖深部、中部海域MS諸島沖、同KW環礁沖海域に展開！敵を捕捉撃滅せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 1830,
+  "reward_bauxite": 1840,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "试制甲板用弹射器",
+          "amount": 1
+        },
+        {
+          "name": "天山一二型甲改（空六号电探改装備机）",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "一式陆攻 三四型★2",
+          "category": "装備",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "战斗详报",
+          "amount": 2
+        },
+        {
+          "name": "改装设计图",
+          "amount": 1
+        },
+        {
+          "name": "流星改（一航战/熟练）★+2",
+          "category": "装備",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    925,
+    283
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "5-5",
+      "7-2P2",
+      "6-2",
+      "6-5"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "加贺改二/改二戊/改二护"
+      },
+      {
+        "ship": "赤城改二/改二戊"
+      },
+      {
+        "ship": "自由舰",
+        "amount": 4
+      }
+    ]
+  }
 }

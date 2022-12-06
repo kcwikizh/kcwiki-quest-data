@@ -1,7 +1,58 @@
 {
   "game_id": 445,
+  "wiki_id": "D41",
   "category": 4,
-  "type": 4,
+  "type": 5,
   "name": "航空基地を整備拡張せよ！",
-  "release_date": "2021/7/16"
+  "detail": "航空基地整備：「海上護衛任務」「兵站強化任務」「タンカー護衛任務」「航空機輸送作戦」「水上機基地建設」「水上機前線輸送」「ボーキサイト船団護衛」を実施せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 0,
+  "reward_steel": 0,
+  "reward_bauxite": 800,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "設営隊",
+          "amount": 1
+        },
+        {
+          "name": "一式陸攻",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "設営隊",
+          "amount": 1
+        },
+        {
+          "name": "新型航空兵装資材",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    1105
+  ],
+  "requirements": {
+    "category": "expedition",
+    "objects": [
+      {
+        "id": [
+          5,
+          9,
+          18,
+          36,
+          40,
+          45,
+          "A1"
+        ],
+        "times": 1
+      }
+    ]
+  }
 }

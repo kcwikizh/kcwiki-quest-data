@@ -1,7 +1,83 @@
 {
   "game_id": 939,
+  "wiki_id": "B167",
   "category": 9,
   "type": 4,
   "name": "西村艦隊、精鋭先行掃討隊、前進せよ！",
-  "release_date": "2021/4/1"
+  "release_date": "2021/4/1",
+  "detail": "「最上改二(改二特含む)」旗艦、時雨・満潮・朝雲・山雲より2隻を配備した艦隊で、東部オリョール海、中部北海域ピーコック島沖、タウイタウイ泊地沖深部、マラッカ海峡ペナン島沖深部の敵を撃滅せよ！",
+  "reward_fuel": 2021,
+  "reward_ammo": 0,
+  "reward_steel": 1944,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "8cm高角炮改+增设机枪",
+          "category": "装備",
+          "amount": 1
+        },
+        {
+          "name": "战斗详报",
+          "amount": 1
+        },
+        {
+          "name": "应急修理女神",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "勋章",
+          "amount": 2
+        },
+        {
+          "name": "甲标的 丙型",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "强风改",
+          "category": "装備",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    938
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "2-3",
+      "6-4",
+      "7-2P2",
+      "7-3P2"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": [
+          "最上改二",
+          "最上改二特"
+        ],
+        "flagship": true
+      },
+      {
+        "ship": [
+          "时雨",
+          "满潮",
+          "朝云",
+          "山云"
+        ],
+        "select": 2
+      }
+    ]
+  }
 }

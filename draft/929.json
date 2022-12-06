@@ -1,6 +1,64 @@
 {
   "game_id": 929,
+  "wiki_id": "B156",
   "category": 9,
   "type": 4,
-  "name": "静かな海を護る「鯨」、動き出す！"
+  "name": "静かな海を護る「鯨」、動き出す！",
+  "detail": "潜水母艦「大鯨」または「迅鯨」型を旗艦として、潜水艦/潜水空母2隻以上の第一艦隊を編成！同艦隊で南西諸島沖、製油所地帯沿岸、南西諸島近海、東部オリョール海を哨戒！各海域の制海権を保持せよ！",
+  "reward_fuel": 513,
+  "reward_ammo": 513,
+  "reward_steel": 513,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "“鲸”的挂轴",
+      "category": "家具",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "新型兵装资材",
+          "amount": 1
+        },
+        {
+          "name": "后期型舰首鱼雷（6门）★+2",
+          "category": "装備",
+          "amount": 1
+        },
+        {
+          "name": "战斗详报",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    235
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "1-2",
+      "1-3",
+      "2-1",
+      "2-3"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": [
+          "大鯨",
+          "迅鯨"
+        ],
+        "flagship": true
+      },
+      {
+        "ship": "潜水艦/潜水空母",
+        "amount": 2
+      }
+    ]
+  }
 }

@@ -1,7 +1,56 @@
 {
   "game_id": 937,
+  "wiki_id": "B165",
   "category": 9,
   "type": 4,
   "name": "精鋭「第七駆逐隊」、出撃せよ！",
-  "release_date": "2021/3/3"
+  "release_date": "2021/3/3",
+  "detail": "精鋭七駆任務：第七駆逐隊「曙改二」「潮改二」を含む精鋭艦隊で、南西諸島海域東部オリョール海、北方海域キス島沖、西方海域カスガダマ島、南方海域サーモン海域に展開、敵艦隊を撃滅せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 1944,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "12.7cm连装高角炮改二",
+      "category": "装備",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "补强增设",
+          "amount": 2
+        },
+        {
+          "name": "爆装一式战 隼III型改（65战队）",
+          "category": "装備",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    298
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "2-3",
+      "3-2",
+      "4-4",
+      "5-4"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "曙改二"
+      },
+      {
+        "ship": "潮改二"
+      }
+    ]
+  }
 }

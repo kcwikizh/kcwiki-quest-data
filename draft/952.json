@@ -1,7 +1,74 @@
 {
   "game_id": 952,
+  "wiki_id": "B171",
   "category": 9,
   "type": 4,
   "name": "【作戦準備】第二段階任務(対地/対空整備)",
-  "release_date": "2021/8/5"
+  "release_date": "2021/8/5",
+  "detail": "作戦準備(第二段階任務)：駆逐艦3隻以上編成した艦隊で、製油所地帯沿岸、南西諸島防衛線、南西諸島近海、南西諸島海域バシー海峡へ出撃、各作戦海域の敵を撃滅、制海権を確保せよ！",
+  "reward_fuel": 750,
+  "reward_ammo": 750,
+  "reward_steel": 0,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "三式弹",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "12cm30连装喷进炮",
+          "category": "装備",
+          "amount": 3
+        },
+        {
+          "name": "舰载型 四式20cm对地喷进炮",
+          "category": "装備",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "大发动艇",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "25mm三连装机枪",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "应急修理女神",
+          "category": "装備",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    446
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "1-3",
+      "1-4",
+      "2-1",
+      "2-2"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "驱逐舰",
+        "amount": 3
+      }
+    ]
+  }
 }

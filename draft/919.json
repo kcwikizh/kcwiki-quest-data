@@ -1,6 +1,68 @@
 {
   "game_id": 919,
+  "wiki_id": "B147",
   "category": 9,
   "type": 4,
-  "name": "南西諸島海域合同哨戒"
+  "name": "南西諸島海域合同哨戒",
+  "detail": "米出身(USS)艦娘を2隻以上含む艦隊で、南西諸島海域のバシー海峡、東部オリョール海、沖ノ島海域の哨戒を実施。各作戦海域における敵艦隊を捜索、これを補捉撃滅せよ！",
+  "reward_fuel": 400,
+  "reward_ammo": 400,
+  "reward_steel": 0,
+  "reward_bauxite": 400,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "改修资材",
+          "amount": 2
+        },
+        {
+          "name": "紧急修理资材",
+          "amount": 2
+        },
+        {
+          "name": "高速修复材",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "天山",
+          "category": "装備",
+          "amount": 3
+        },
+        {
+          "name": "OS2U",
+          "category": "装備",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    235
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "2-2",
+      "2-3",
+      "2-4"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "美国舰娘",
+        "amount": 2
+      },
+      {
+        "ship": "自由舰",
+        "amount": 4
+      }
+    ]
+  }
 }

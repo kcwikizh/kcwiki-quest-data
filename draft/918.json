@@ -1,6 +1,61 @@
 {
   "game_id": 918,
+  "wiki_id": "B146",
   "category": 9,
   "type": 4,
-  "name": "「Gotland」戦隊、進撃せよ！"
+  "name": "「Gotland」戦隊、進撃せよ！",
+  "detail": "「Gotland　andra」旗艦、随伴駆逐艦1隻以上を含む艦隊で，南西諸島海域沖ノ島沖に進撃！更に中部海域に展開，グアノ環礁冲海域，中部北海域ピーコック島沖，KW環礁冲海域の敵を撃滅せよ！",
+  "reward_fuel": 1000,
+  "reward_ammo": 1000,
+  "reward_steel": 1000,
+  "reward_bauxite": 2020,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "海狐（Fairey Seafox）改",
+          "category": "装備",
+          "amount": 1
+        },
+        {
+          "name": "新型航空兵装资材",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "北欧沙发家具",
+      "category": "家具",
+      "amount": 1
+    }
+  ],
+  "prerequisite": [
+    917
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "2-5",
+      "6-3",
+      "6-4",
+      "6-5"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "Gotland andra",
+        "flagship": true
+      },
+      {
+        "ship": "駆逐",
+        "amount": 1
+      },
+      {
+        "ship": "艦",
+        "amount": 4
+      }
+    ]
+  }
 }

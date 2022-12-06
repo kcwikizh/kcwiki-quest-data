@@ -1,6 +1,69 @@
 {
   "game_id": 342,
-  "category": 3,
-  "type": 5,
-  "name": "小艦艇群演習強化任務"
+  "wiki_id": "C44",
+  "category": 2,
+  "type": 4,
+  "name": "小艦艇群演習強化任務",
+  "detail": "駆逐艦または海防艦計4隻(軽巡級1隻導入可能)を含む演習艦隊を編成、同演習艦隊による演習で本日中に【A判定】以上の勝利を4回以上達成せよ！",
+  "reward_fuel": 300,
+  "reward_ammo": 300,
+  "reward_steel": 300,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "九五式爆雷",
+          "amount": 1
+        },
+        {
+          "name": "開発資材",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "零式水上偵察機",
+          "amount": 1
+        },
+        {
+          "name": "25mm単装機銃",
+          "amount": 1
+        },
+        {
+          "name": "高速修復材",
+          "amount": 4
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "excercise",
+    "times": 4,
+    "victory": true,
+    "daily": true,
+    "groups": [
+      {
+        "ship": [],
+        "amount": 1
+      },
+      {
+        "ship": [
+          "駆逐",
+          "海防艦",
+          "軽巡",
+          "練習巡洋艦",
+          "重雷装巡洋艦"
+        ],
+        "amount": 4
+      },
+      {
+        "ship": "艦",
+        "amount": 2
+      }
+    ]
+  }
 }

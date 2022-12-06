@@ -1,6 +1,66 @@
 {
   "game_id": 920,
+  "wiki_id": "B148",
   "category": 9,
   "type": 4,
-  "name": "合同艦隊旗艦、改装「Fletcher」、抜錨！"
+  "name": "合同艦隊旗艦、改装「Fletcher」、抜錨！",
+  "detail": "「Fletcher改 Mod.2」を旗艦とする米・英・豪・蘭出身の艦娘計3隻以上の含む艦隊を編成、同艦隊を南西諸島防衛線、沖ノ島沖、北方AL海域に展開！各作戰海域の敵艦隊と交戦、これを撃滅せよ！",
+  "reward_fuel": 600,
+  "reward_ammo": 600,
+  "reward_steel": 600,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "name": "533mm五连装鱼雷（后期型）",
+      "category": "装備",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "F4F-3★+3",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "TBD★+3",
+          "category": "装備",
+          "amount": 2
+        },
+        {
+          "name": "开发资材",
+          "amount": 6
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    919,
+    255
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 1,
+    "map": [
+      "1-4",
+      "2-5",
+      "3-5"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "Fletcher改 Mod.2",
+        "flagship": true
+      },
+      {
+        "ship": "美/英/澳/荷",
+        "amount": 2
+      },
+      {
+        "ship": "自由舰",
+        "amount": 3
+      }
+    ]
+  }
 }

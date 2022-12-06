@@ -1,6 +1,65 @@
 {
   "game_id": 921,
+  "wiki_id": "B149",
   "category": 9,
   "type": 4,
-  "name": "改装護衛駆逐艦「Fletcher Mk.II」作戦開始！"
+  "name": "改装護衛駆逐艦「Fletcher Mk.II」作戦開始！",
+  "detail": "「Fletcher MK.II」を旗艦とする米・英・豪・蘭出身の艦娘計3隻以上の含む精鋭艦隊を編成、同艦隊を鎮守府近海、ブルネイ泊地沖、MS諸島沖、KW環礁沖海域に反復出撃！敵艦隊を捕捉、擊滅せよ！",
+  "reward_fuel": 700,
+  "reward_ammo": 700,
+  "reward_steel": 700,
+  "reward_bauxite": 700,
+  "reward_other": [
+    {
+      "name": "RUR-4A Weapon Alpha 改",
+      "category": "装備",
+      "amount": 1
+    },
+    {
+      "choices": [
+        {
+          "name": "改修资材",
+          "amount": 4
+        },
+        {
+          "name": "熟练搭乘员",
+          "amount": 1
+        },
+        {
+          "name": "洋上补给",
+          "amount": 3
+        }
+      ]
+    }
+  ],
+  "prerequisite": [
+    920,
+    855
+  ],
+  "requirements": {
+    "category": "sortie",
+    "times": 2,
+    "map": [
+      "1-5",
+      "7-1",
+      "6-2",
+      "6-5"
+    ],
+    "boss": true,
+    "result": "S",
+    "groups": [
+      {
+        "ship": "Fletcher改 Mod.2",
+        "flagship": true
+      },
+      {
+        "ship": "美/英/澳/荷",
+        "amount": 2
+      },
+      {
+        "ship": "自由舰",
+        "amount": 3
+      }
+    ]
+  }
 }
