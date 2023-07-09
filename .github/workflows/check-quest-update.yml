@@ -61,7 +61,7 @@ jobs:
         uses: repo-sync/pull-request@v2
         with:
           source_branch: 'bot/new-quest' # If blank, default: triggered branch
-          pr_title: New quest (${{ steps.date.outputs.date }}) # Title of pull request
+          pr_title: 'feta(data): draft new quest (${{ steps.date.outputs.date }})' # Title of pull request
           pr_body: ${{ join(steps.check-update.outputs.*, '') }} # Full markdown support, requires pr_title to be set
           pr_label: 'data,bot' # Comma-separated list (no spaces)
           github_token: ${{ secrets.GITHUB_TOKEN }}

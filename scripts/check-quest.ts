@@ -129,13 +129,15 @@ const main = async () => {
           `${newQuest.game_id}_${existedQuest.name}.json`,
         ),
       )
-      console.log(`Move outdated quest ${newQuest.game_id} ${existedQuest.name}`);
+      console.log(
+        `Move outdated quest ${newQuest.game_id} ${existedQuest.name}`,
+      )
     }
     fs.writeFileSync(
       newQuestPath,
       JSON.stringify(newQuest, undefined, 2) + '\n',
     )
-    console.log(`Add new quest ${newQuest.game_id} ${newQuest.name}`);
+    console.log(`Add new quest ${newQuest.game_id} ${newQuest.name}`)
   }
 }
 
