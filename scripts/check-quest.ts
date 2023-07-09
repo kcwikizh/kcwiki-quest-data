@@ -116,8 +116,22 @@ const main = async () => {
       }),
     }
 
+    // Move existing quest to outdated folder
+    const newQuestPath = path.resolve('draft', `${newQuest.game_id}.json`)
+    if (fs.existsSync(newQuestPath)) {
+      const existedQuest = JSON.parse(
+        fs.readFileSync(newQuestPath, 'utf8'),
+      ) as { name: string }
+      fs.renameSync(
+        newQuestPath,
+        path.resolve(
+          'outdated',
+          `${newQuest.game_id}_${existedQuest.name}.json`,
+        ),
+      )
+    }
     fs.writeFileSync(
-      path.resolve('draft', `${newQuest.game_id}.json`),
+      newQuestPath,
       JSON.stringify(newQuest, undefined, 2) + '\n',
     )
   }
