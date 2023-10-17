@@ -1,0 +1,69 @@
+{
+  "game_id": 914,
+  "wiki_id": "By4",
+  "category": 2,
+  "type": 7,
+  "name": "重巡戦隊、西へ！",
+  "detail": "重巡(航空巡洋艦含まず)3隻以上、駆逐艦1隻以上を中核とした艦隊を編成。同艦隊を西方に展開。西方海域ジャム島沖、カレー洋海域、リランカ島、カスガダマ島の敵戦力と交戦、これを撃破せよ！",
+  "reward_fuel": 0,
+  "reward_ammo": 800,
+  "reward_steel": 800,
+  "reward_bauxite": 0,
+  "reward_other": [
+    {
+      "choices": [
+        {
+          "name": "高速修復材",
+          "amount": 5
+        },
+        {
+          "name": "新型砲熕兵装資材",
+          "amount": 1
+        },
+        {
+          "name": "増設バルジ(中型艦)",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "choices": [
+        {
+          "name": "改修資材",
+          "amount": 4
+        },
+        {
+          "name": "20.3cm(2号)連装砲",
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "prerequisite": [],
+  "requirements": {
+    "category": "sortie",
+    "map": [
+      "4-1",
+      "4-2",
+      "4-3",
+      "4-4"
+    ],
+    "boss": true,
+    "result": "A",
+    "times": 1,
+    "groups": [
+      {
+        "ship": "重巡",
+        "amount": 3
+      },
+      {
+        "ship": "駆逐",
+        "amount": 1
+      },
+      {
+        "ship": "艦",
+        "amount": 2
+      }
+    ]
+  }
+}
