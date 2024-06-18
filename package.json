@@ -44,7 +44,7 @@
     "https-proxy-agent": "^5.0.0",
     "i18next": "^19.8.4",
     "inflection": "^1.12.0",
-    "jest": "^26.6.3",
+    "jest": "^29.7.0",
     "node-fetch": "^2.6.1",
     "poi-plugin-translator": "^3.0.1",
     "prettier": "^2.2.1",
