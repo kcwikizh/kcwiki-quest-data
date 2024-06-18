@@ -1,0 +1,1472 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "Item": {
+            "description": "物品",
+            "title": "Item",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "名称",
+                    "type": "string",
+                    "title": "name"
+                },
+                "category": {
+                    "description": "类型",
+                    "enum": [
+                        "家具",
+                        "艦娘",
+                        "装備"
+                    ],
+                    "type": "string",
+                    "title": "category"
+                },
+                "amount": {
+                    "description": "数量",
+                    "type": "number",
+                    "title": "amount"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "FriendlyShipType": {
+            "enum": [
+                "低速戦艦",
+                "戦艦",
+                "水母",
+                "海防艦",
+                "潜水母艦",
+                "潜水空母",
+                "潜水艦",
+                "空母",
+                "航巡",
+                "航戦",
+                "艦",
+                "装母",
+                "軽巡",
+                "軽母",
+                "重巡",
+                "駆逐",
+                "高速艦"
+            ],
+            "type": "string"
+        },
+        "EnemyType": {
+            "enum": [
+                "敵潜水艦",
+                "敵空母",
+                "敵補給艦",
+                "敵軽母"
+            ],
+            "type": "string"
+        },
+        "OtherShipType": {
+            "type": "string",
+            "enum": [
+                "他の艦"
+            ]
+        },
+        "ShipType": {
+            "enum": [
+                "他の艦",
+                "低速戦艦",
+                "戦艦",
+                "敵潜水艦",
+                "敵空母",
+                "敵補給艦",
+                "敵軽母",
+                "水母",
+                "海防艦",
+                "潜水母艦",
+                "潜水空母",
+                "潜水艦",
+                "空母",
+                "航巡",
+                "航戦",
+                "艦",
+                "装母",
+                "軽巡",
+                "軽母",
+                "重巡",
+                "駆逐",
+                "高速艦"
+            ],
+            "type": "string"
+        },
+        "Resources": {
+            "description": "资源（油弹钢铝）",
+            "type": "array",
+            "items": [
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "number"
+                }
+            ],
+            "minItems": 4,
+            "additionalItems": {
+                "anyOf": [
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "number"
+                    }
+                ]
+            }
+        },
+        "RewardChoices": {
+            "description": "选择奖励",
+            "title": "RewardChoices",
+            "type": "object",
+            "properties": {
+                "choices": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    },
+                    "title": "choices"
+                }
+            }
+        },
+        "RewardOther": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/Item"
+                    },
+                    {
+                        "$ref": "#/definitions/RewardChoices"
+                    }
+                ]
+            }
+        },
+        "Group": {
+            "description": "编成要求",
+            "title": "Group",
+            "type": "object",
+            "properties": {
+                "ship": {
+                    "anyOf": [
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "title": "ship"
+                },
+                "amount": {
+                    "anyOf": [
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            }
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "title": "amount"
+                },
+                "flagship": {
+                    "description": "是否要求旗舰",
+                    "type": "boolean",
+                    "title": "flagship"
+                },
+                "lv": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    },
+                    "title": "lv"
+                },
+                "shipclass": {
+                    "anyOf": [
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "title": "shipclass"
+                },
+                "select": {
+                    "type": "number",
+                    "title": "select"
+                },
+                "place": {
+                    "type": "number",
+                    "title": "place"
+                },
+                "note": {
+                    "type": "string",
+                    "title": "note"
+                }
+            }
+        },
+        "AndRequirement": {
+            "title": "AndRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "enum": [
+                        "and"
+                    ],
+                    "title": "category"
+                },
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/AGouRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/SimpleRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/FleetRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/EquipexchangeRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ScrapequipmentRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ExcerciseRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ExpeditionRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ModelconversionRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ModernizationRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/SinkRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/SortieRequirement"
+                            }
+                        ]
+                    },
+                    "title": "list"
+                }
+            },
+            "required": [
+                "category",
+                "list"
+            ]
+        },
+        "ThenRequirement": {
+            "title": "ThenRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "enum": [
+                        "then"
+                    ],
+                    "title": "category"
+                },
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/AGouRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/SimpleRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/FleetRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/EquipexchangeRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ScrapequipmentRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ExcerciseRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ExpeditionRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ModelconversionRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ModernizationRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/SinkRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/SortieRequirement"
+                            }
+                        ]
+                    },
+                    "title": "list"
+                }
+            },
+            "required": [
+                "category",
+                "list"
+            ]
+        },
+        "OrRequirement": {
+            "title": "OrRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "enum": [
+                        "or"
+                    ],
+                    "title": "category"
+                },
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/AGouRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/SimpleRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/FleetRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/EquipexchangeRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ScrapequipmentRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ExcerciseRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ExpeditionRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ModelconversionRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/ModernizationRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/SinkRequirement"
+                            },
+                            {
+                                "$ref": "#/definitions/SortieRequirement"
+                            }
+                        ]
+                    },
+                    "title": "list"
+                }
+            },
+            "required": [
+                "category",
+                "list"
+            ]
+        },
+        "ConjunctionRequirement": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/AndRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ThenRequirement"
+                },
+                {
+                    "$ref": "#/definitions/OrRequirement"
+                }
+            ]
+        },
+        "AGouRequirement": {
+            "title": "AGouRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "あ 号",
+                    "type": "string",
+                    "enum": [
+                        "a-gou"
+                    ],
+                    "title": "category"
+                }
+            },
+            "required": [
+                "category"
+            ]
+        },
+        "SimpleRequirement": {
+            "title": "SimpleRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "简单任务",
+                    "type": "string",
+                    "enum": [
+                        "simple"
+                    ],
+                    "title": "category"
+                },
+                "subcategory": {
+                    "enum": [
+                        "battle",
+                        "equipment",
+                        "improvement",
+                        "modernization",
+                        "repair",
+                        "resupply",
+                        "scrapequipment",
+                        "scrapship",
+                        "ship"
+                    ],
+                    "type": "string",
+                    "title": "subcategory"
+                },
+                "times": {
+                    "type": "number",
+                    "title": "times"
+                },
+                "batch": {
+                    "description": "for scrapequipment\nscrapping together is ok",
+                    "type": "boolean",
+                    "title": "batch"
+                }
+            },
+            "required": [
+                "category",
+                "subcategory",
+                "times"
+            ]
+        },
+        "FleetRequirement": {
+            "title": "FleetRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "编成任务",
+                    "type": "string",
+                    "enum": [
+                        "fleet"
+                    ],
+                    "title": "category"
+                },
+                "groups": {
+                    "description": "编成要求",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Group"
+                    },
+                    "title": "groups"
+                },
+                "disallowed": {
+                    "enum": [
+                        "他の艦",
+                        "低速戦艦",
+                        "戦艦",
+                        "敵潜水艦",
+                        "敵空母",
+                        "敵補給艦",
+                        "敵軽母",
+                        "水母",
+                        "海防艦",
+                        "潜水母艦",
+                        "潜水空母",
+                        "潜水艦",
+                        "空母",
+                        "航巡",
+                        "航戦",
+                        "艦",
+                        "装母",
+                        "軽巡",
+                        "軽母",
+                        "重巡",
+                        "駆逐",
+                        "高速艦"
+                    ],
+                    "type": "string",
+                    "title": "disallowed"
+                },
+                "fleetid": {
+                    "description": "第几舰队",
+                    "type": "number",
+                    "title": "fleetid"
+                }
+            },
+            "required": [
+                "category",
+                "groups"
+            ]
+        },
+        "EquipexchangeRequirement": {
+            "title": "EquipexchangeRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "装备准备",
+                    "type": "string",
+                    "enum": [
+                        "equipexchange"
+                    ],
+                    "title": "category"
+                },
+                "equipments": {
+                    "description": "准备",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    },
+                    "title": "equipments"
+                },
+                "scraps": {
+                    "description": "废弃",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    },
+                    "title": "scraps"
+                },
+                "resources": {
+                    "description": "消耗资源",
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "minItems": 4,
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            }
+                        ]
+                    },
+                    "title": "resources"
+                },
+                "consumptions": {
+                    "description": "消耗物品",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    },
+                    "title": "consumptions"
+                }
+            },
+            "required": [
+                "category"
+            ]
+        },
+        "ScrapequipmentRequirement": {
+            "description": "May be can alternative with EquipexchangeRequirement",
+            "title": "ScrapequipmentRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "废弃装备",
+                    "type": "string",
+                    "enum": [
+                        "scrapequipment"
+                    ],
+                    "title": "category"
+                },
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    },
+                    "title": "list"
+                }
+            },
+            "required": [
+                "category",
+                "list"
+            ]
+        },
+        "ExcerciseRequirement": {
+            "title": "ExcerciseRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "演习任务",
+                    "type": "string",
+                    "enum": [
+                        "excercise"
+                    ],
+                    "title": "category"
+                },
+                "times": {
+                    "description": "次数",
+                    "type": "number",
+                    "title": "times"
+                },
+                "victory": {
+                    "description": "是否需要胜利",
+                    "type": "boolean",
+                    "title": "victory"
+                },
+                "daily": {
+                    "description": "是否要求同一天",
+                    "type": "boolean",
+                    "title": "daily"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Group"
+                    },
+                    "title": "groups"
+                }
+            },
+            "required": [
+                "category",
+                "times"
+            ]
+        },
+        "ExpeditionRequirement": {
+            "title": "ExpeditionRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "远征任务",
+                    "type": "string",
+                    "enum": [
+                        "expedition"
+                    ],
+                    "title": "category"
+                },
+                "objects": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "description": "远征 id",
+                                "anyOf": [
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "type": [
+                                                "string",
+                                                "number"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "type": [
+                                            "string",
+                                            "number"
+                                        ]
+                                    }
+                                ],
+                                "title": "id"
+                            },
+                            "times": {
+                                "type": "number",
+                                "title": "times"
+                            }
+                        },
+                        "required": [
+                            "times"
+                        ]
+                    },
+                    "title": "objects"
+                },
+                "resources": {
+                    "description": "消耗资源",
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "minItems": 4,
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            }
+                        ]
+                    },
+                    "title": "resources"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Group"
+                    },
+                    "title": "groups"
+                },
+                "disallowed": {
+                    "enum": [
+                        "他の艦",
+                        "低速戦艦",
+                        "戦艦",
+                        "敵潜水艦",
+                        "敵空母",
+                        "敵補給艦",
+                        "敵軽母",
+                        "水母",
+                        "海防艦",
+                        "潜水母艦",
+                        "潜水空母",
+                        "潜水艦",
+                        "空母",
+                        "航巡",
+                        "航戦",
+                        "艦",
+                        "装母",
+                        "軽巡",
+                        "軽母",
+                        "重巡",
+                        "駆逐",
+                        "高速艦"
+                    ],
+                    "type": "string",
+                    "title": "disallowed"
+                }
+            },
+            "required": [
+                "category",
+                "objects"
+            ]
+        },
+        "ModelconversionRequirement": {
+            "title": "ModelconversionRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "机种转换",
+                    "type": "string",
+                    "enum": [
+                        "modelconversion"
+                    ],
+                    "title": "category"
+                },
+                "slots": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "slot": {
+                                "description": "0 任意格",
+                                "enum": [
+                                    0,
+                                    1,
+                                    2,
+                                    3,
+                                    4
+                                ],
+                                "type": "number",
+                                "title": "slot"
+                            },
+                            "equipment": {
+                                "type": "string",
+                                "title": "equipment"
+                            },
+                            "fullyskilled": {
+                                "enum": [
+                                    true
+                                ],
+                                "type": "boolean",
+                                "title": "fullyskilled"
+                            },
+                            "maxmodified": {
+                                "enum": [
+                                    true
+                                ],
+                                "type": "boolean",
+                                "title": "maxmodified"
+                            },
+                            "count": {
+                                "type": "number",
+                                "title": "count"
+                            }
+                        },
+                        "required": [
+                            "equipment",
+                            "slot"
+                        ]
+                    },
+                    "title": "slots"
+                },
+                "equipment": {
+                    "description": "搭载未上锁的",
+                    "anyOf": [
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "title": "equipment"
+                },
+                "fullyskilled": {
+                    "description": "满熟练度",
+                    "enum": [
+                        true
+                    ],
+                    "type": "boolean",
+                    "title": "fullyskilled"
+                },
+                "maxmodified": {
+                    "description": "改修Max的",
+                    "enum": [
+                        true
+                    ],
+                    "type": "boolean",
+                    "title": "maxmodified"
+                },
+                "scraps": {
+                    "description": "废弃",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    },
+                    "title": "scraps"
+                },
+                "consumptions": {
+                    "description": "消耗",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    },
+                    "title": "consumptions"
+                },
+                "resources": {
+                    "description": "资源（油弹钢铝）",
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "minItems": 4,
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            }
+                        ]
+                    },
+                    "title": "resources"
+                },
+                "secretary": {
+                    "description": "秘书舰 默认为空母",
+                    "anyOf": [
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "title": "secretary"
+                },
+                "use_skilled_crew": {
+                    "description": "消耗一个熟练搭乘员",
+                    "enum": [
+                        true
+                    ],
+                    "type": "boolean",
+                    "title": "use_skilled_crew"
+                }
+            },
+            "required": [
+                "category"
+            ]
+        },
+        "ModernizationRequirement": {
+            "title": "ModernizationRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "近代化改修/舰装合成\n\n准备资源 resources，对 ship 近代化改造成功 times 次，每次消耗 consumptions",
+                    "type": "string",
+                    "enum": [
+                        "modernization"
+                    ],
+                    "title": "category"
+                },
+                "times": {
+                    "type": "number",
+                    "title": "times"
+                },
+                "ship": {
+                    "description": "对空母",
+                    "type": "string",
+                    "title": "ship"
+                },
+                "consumptions": {
+                    "description": "每次消耗",
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "ship": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "title": "ship"
+                                },
+                                "amount": {
+                                    "type": "number",
+                                    "title": "amount"
+                                }
+                            },
+                            "required": [
+                                "amount",
+                                "ship"
+                            ]
+                        }
+                    ],
+                    "minItems": 1,
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "ship": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "title": "ship"
+                                    },
+                                    "amount": {
+                                        "type": "number",
+                                        "title": "amount"
+                                    }
+                                },
+                                "required": [
+                                    "amount",
+                                    "ship"
+                                ]
+                            }
+                        ]
+                    },
+                    "title": "consumptions"
+                },
+                "resources": {
+                    "description": "准备/消耗资源",
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "minItems": 4,
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "number"
+                            }
+                        ]
+                    },
+                    "title": "resources"
+                }
+            },
+            "required": [
+                "category",
+                "resources",
+                "ship",
+                "times"
+            ]
+        },
+        "SinkRequirement": {
+            "title": "SinkRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "击沉",
+                    "type": "string",
+                    "enum": [
+                        "sink"
+                    ],
+                    "title": "category"
+                },
+                "amount": {
+                    "type": "number",
+                    "title": "amount"
+                },
+                "ship": {
+                    "type": "string",
+                    "title": "ship"
+                }
+            },
+            "required": [
+                "amount",
+                "category",
+                "ship"
+            ]
+        },
+        "Result": {
+            "enum": [
+                "A",
+                "B",
+                "C",
+                "S",
+                "クリア"
+            ],
+            "type": "string"
+        },
+        "SortieRequirement": {
+            "title": "SortieRequirement",
+            "type": "object",
+            "properties": {
+                "category": {
+                    "description": "出击任务",
+                    "type": "string",
+                    "enum": [
+                        "sortie"
+                    ],
+                    "title": "category"
+                },
+                "times": {
+                    "type": "number",
+                    "title": "times"
+                },
+                "map": {
+                    "anyOf": [
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "title": "map"
+                },
+                "result": {
+                    "enum": [
+                        "A",
+                        "B",
+                        "C",
+                        "S",
+                        "クリア"
+                    ],
+                    "type": "string",
+                    "title": "result"
+                },
+                "boss": {
+                    "enum": [
+                        true
+                    ],
+                    "type": "boolean",
+                    "title": "boss"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Group"
+                    },
+                    "title": "groups"
+                },
+                "fleetid": {
+                    "description": "第几舰队",
+                    "type": "number",
+                    "title": "fleetid"
+                },
+                "disallowed": {
+                    "enum": [
+                        "他の艦",
+                        "低速戦艦",
+                        "戦艦",
+                        "敵潜水艦",
+                        "敵空母",
+                        "敵補給艦",
+                        "敵軽母",
+                        "水母",
+                        "海防艦",
+                        "潜水母艦",
+                        "潜水空母",
+                        "潜水艦",
+                        "空母",
+                        "航巡",
+                        "航戦",
+                        "艦",
+                        "装母",
+                        "軽巡",
+                        "軽母",
+                        "重巡",
+                        "駆逐",
+                        "高速艦"
+                    ],
+                    "type": "string",
+                    "title": "disallowed"
+                }
+            },
+            "required": [
+                "category",
+                "times"
+            ]
+        },
+        "NormalRequirement": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/AGouRequirement"
+                },
+                {
+                    "$ref": "#/definitions/SimpleRequirement"
+                },
+                {
+                    "$ref": "#/definitions/FleetRequirement"
+                },
+                {
+                    "$ref": "#/definitions/EquipexchangeRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ScrapequipmentRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ExcerciseRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ExpeditionRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ModelconversionRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ModernizationRequirement"
+                },
+                {
+                    "$ref": "#/definitions/SinkRequirement"
+                },
+                {
+                    "$ref": "#/definitions/SortieRequirement"
+                }
+            ]
+        },
+        "Requirements": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/AndRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ThenRequirement"
+                },
+                {
+                    "$ref": "#/definitions/OrRequirement"
+                },
+                {
+                    "$ref": "#/definitions/AGouRequirement"
+                },
+                {
+                    "$ref": "#/definitions/SimpleRequirement"
+                },
+                {
+                    "$ref": "#/definitions/FleetRequirement"
+                },
+                {
+                    "$ref": "#/definitions/EquipexchangeRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ScrapequipmentRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ExcerciseRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ExpeditionRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ModelconversionRequirement"
+                },
+                {
+                    "$ref": "#/definitions/ModernizationRequirement"
+                },
+                {
+                    "$ref": "#/definitions/SinkRequirement"
+                },
+                {
+                    "$ref": "#/definitions/SortieRequirement"
+                }
+            ]
+        },
+        "Quest": {
+            "description": "Kancolle Quest Data",
+            "title": "Quest",
+            "type": "object",
+            "properties": {
+                "game_id": {
+                    "description": "api上使用的任务识别号",
+                    "type": "number",
+                    "title": "game_id"
+                },
+                "wiki_id": {
+                    "description": "任务在wiki的编号",
+                    "type": "string",
+                    "title": "wiki_id"
+                },
+                "category": {
+                    "description": "任务类别\n\n0. Unknown\n1. Composition\n1. Sortie\n1. Exercise\n1. Expedition\n1. Supply/Docking\n1. Arsenal\n1. Modernization",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
+                    ],
+                    "type": "number",
+                    "title": "category"
+                },
+                "type": {
+                    "description": "任务类型\n\n1. One-time\n1. Daily\n1. Weekly\n1. -3rd/-7th/-0th\n1. -2nd/-8th\n1. Monthly\n1. Quarterly",
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
+                    ],
+                    "type": "number",
+                    "title": "type"
+                },
+                "name": {
+                    "description": "任务名",
+                    "type": "string",
+                    "title": "name"
+                },
+                "detail": {
+                    "description": "任务描述",
+                    "type": "string",
+                    "title": "detail"
+                },
+                "reward_fuel": {
+                    "description": "任务奖励 油",
+                    "type": "number",
+                    "title": "reward_fuel"
+                },
+                "reward_ammo": {
+                    "description": "任务奖励 弹",
+                    "type": "number",
+                    "title": "reward_ammo"
+                },
+                "reward_steel": {
+                    "description": "任务奖励 钢",
+                    "type": "number",
+                    "title": "reward_steel"
+                },
+                "reward_bauxite": {
+                    "description": "任务奖励 铝",
+                    "type": "number",
+                    "title": "reward_bauxite"
+                },
+                "reward_other": {
+                    "description": "任务奖励 其他奖励",
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/Item"
+                            },
+                            {
+                                "$ref": "#/definitions/RewardChoices"
+                            }
+                        ]
+                    },
+                    "title": "reward_other"
+                },
+                "prerequisite": {
+                    "description": "前置任务",
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    },
+                    "title": "prerequisite"
+                },
+                "requirements": {
+                    "description": "任务要求",
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AndRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/ThenRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/OrRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/AGouRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/SimpleRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/FleetRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/EquipexchangeRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/ScrapequipmentRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/ExcerciseRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/ExpeditionRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/ModelconversionRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/ModernizationRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/SinkRequirement"
+                        },
+                        {
+                            "$ref": "#/definitions/SortieRequirement"
+                        }
+                    ],
+                    "title": "requirements"
+                }
+            },
+            "required": [
+                "category",
+                "detail",
+                "game_id",
+                "name",
+                "prerequisite",
+                "requirements",
+                "reward_ammo",
+                "reward_bauxite",
+                "reward_fuel",
+                "reward_other",
+                "reward_steel",
+                "type",
+                "wiki_id"
+            ]
+        }
+    }
+}
